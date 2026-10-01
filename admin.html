@@ -20,6 +20,44 @@
 </head>
 <body class="admin-body">
 
+    <!-- CỔNG ĐĂNG NHẬP BẢO MẬT ADMIN (AUTHENTICATION GATEWAY) -->
+    <div class="admin-login-overlay" id="adminLoginOverlay" style="display: none;">
+        <div class="admin-login-box">
+            <img src="./images/Logo.png" alt="IT Mart Logo" class="admin-login-logo">
+            <div class="admin-login-badge"><i class="fa-solid fa-shield-halved"></i> Trung Tâm Quản Trị Hệ Thống</div>
+            <h2>IT MART ADMIN PORTAL</h2>
+            <p class="subtitle">Đăng nhập tài khoản quản trị viên để truy cập dữ liệu và vận hành siêu thị</p>
+
+            <form onsubmit="AdminApp.handleLogin(event)">
+                <div class="admin-login-field">
+                    <label for="adminUsername"><i class="fa-solid fa-user-shield"></i> Tài khoản hoặc SĐT</label>
+                    <div class="admin-login-input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="adminUsername" required placeholder="Nhập 'admin' hoặc '098122445'" autocomplete="username" value="admin">
+                    </div>
+                </div>
+
+                <div class="admin-login-field">
+                    <label for="adminPassword"><i class="fa-solid fa-lock"></i> Mật khẩu quản trị</label>
+                    <div class="admin-login-input-wrap">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="adminPassword" required placeholder="Mật khẩu: admin123" autocomplete="current-password" value="admin123">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-admin-login-submit">
+                    <i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập Hệ Thống
+                </button>
+            </form>
+
+            <div class="admin-hint-card">
+                <strong><i class="fa-solid fa-circle-info"></i> Thông tin đăng nhập quản trị:</strong>
+                <div style="margin-top: 4px;">• Super Admin: <b>admin</b> | Mật khẩu: <b>admin123</b></div>
+                <div>• Store Manager: <b>098122445</b> | Mật khẩu: <b>admin123</b></div>
+            </div>
+        </div>
+    </div>
+
     <!-- SIDEBAR -->
     <aside class="admin-sidebar">
         <div class="sidebar-brand">
@@ -63,6 +101,10 @@
                 <i class="fa-solid fa-store"></i>
                 <span>Xem Website Bán Hàng</span>
             </a>
+            <button type="button" class="btn-sidebar-logout" onclick="AdminApp.logout()" title="Đăng xuất quản trị">
+                <i class="fa-solid fa-power-off"></i>
+                <span>Đăng Xuất</span>
+            </button>
         </div>
     </aside>
 
@@ -84,6 +126,10 @@
                         <div class="admin-user-role">Super Admin</div>
                     </div>
                 </div>
+                <button type="button" class="btn-admin-logout" onclick="AdminApp.logout()" title="Đăng xuất khỏi hệ thống">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Đăng xuất</span>
+                </button>
             </div>
         </header>
 

@@ -233,9 +233,33 @@ const CartSystem = {
             return;
         }
 
-        const coupon = this.coupons[cleanCode];
+        let coupon = this.coupons[cleanCode];
+        if (!coupon) {
+            try {
+                const storedCoupons = JSON.parse(localStorage.getItem("itmart_coupons")) || [];
+                const found = storedCoupons.find(c => c.code.toUpperCase() === cleanCode);
+                if (found) {
+                    coupon = {
+                        code: found.code,
+                        freeShip: found.type === "freeship",
+                        discountPercent: found.type === "percent" ? found.value : 0,
+                        discountAmount: found.type === "amount" ? found.value : 0,
+                        minOrder: found.minOrder || 0,
+                        desc: found.desc
+                    };
+                }
+            } catch (e) {}
+        }
+
         if (!coupon) {
             alert(`Mã giảm giá "${cleanCode}" không hợp lệ hoặc đã hết hạn! Thử mã: ITMART10 hoặc FREESHIP`);
+            return;
+        }
+
+        // Kiểm tra điều kiện đơn tối thiểu
+        const subtotal = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        if (coupon.minOrder && subtotal < coupon.minOrder) {
+            alert(`Mã "${cleanCode}" chỉ áp dụng cho đơn hàng từ ${(coupon.minOrder).toLocaleString("vi-VN")} đ trở lên!`);
             return;
         }
 

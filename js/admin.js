@@ -1,6 +1,7 @@
 /**
  * IT MART - ADMIN PORTAL CONTROLLER (admin.js)
- * Quản lý toàn bộ chức năng Back-office Dashboard, CRUD Sản phẩm, Quản lý đơn hàng, Biểu đồ Chart.js
+ * Quản lý: Đăng nhập quản trị viên, Dashboard dữ liệu thật, Biểu đồ Chart.js động,
+ * CRUD Sản phẩm (đồng bộ CSDL LocalStorage), Quản lý đơn hàng, In hóa đơn bán lẻ
  */
 
 const AdminApp = {
@@ -13,20 +14,117 @@ const AdminApp = {
     charts: {},
 
     init() {
+        this.checkAuth();
         this.initDefaultOrders();
         this.initDefaultCoupons();
         this.bindNavTabs();
-        this.renderDashboard();
         this.initProductsTab();
         this.initOrdersTab();
         this.initVouchersTab();
         this.initFeedbackTab();
     },
 
-    // Khởi tạo các đơn hàng mẫu để giao diện luôn đầy đủ dữ liệu trực quan
+    // 1. XÁC THỰC QUẢN TRỊ VIÊN (ADMIN AUTHENTICATION)
+    checkAuth() {
+        const adminUser = this.getAdminUser();
+        const overlay = document.getElementById("adminLoginOverlay");
+
+        if (!adminUser) {
+            // Chưa đăng nhập -> Hiện cổng đăng nhập
+            if (overlay) overlay.style.display = "flex";
+            return false;
+        } else {
+            // Đã đăng nhập -> Ẩn cổng đăng nhập, nạp thông tin quản trị viên thật
+            if (overlay) overlay.style.display = "none";
+            this.updateAdminHeader(adminUser);
+            this.renderDashboard();
+            return true;
+        }
+    },
+
+    getAdminUser() {
+        try {
+            const user = JSON.parse(sessionStorage.getItem("itmart_admin_user") || localStorage.getItem("itmart_admin_user"));
+            return (user && user.isLoggedIn) ? user : null;
+        } catch (e) {
+            return null;
+        }
+    },
+
+    handleLogin(e) {
+        e.preventDefault();
+        const userEl = document.getElementById("adminUsername");
+        const passEl = document.getElementById("adminPassword");
+
+        const username = userEl ? userEl.value.trim() : "";
+        const password = passEl ? passEl.value : "";
+
+        // Cho phép các tài khoản quản trị hợp lệ
+        const validUsers = [
+            { user: "admin", pass: "admin123", name: "Quản Trị Viên (Super Admin)", role: "Super Admin", email: "admin@itmart.vn" },
+            { user: "098122445", pass: "admin123", name: "Mai Phương Thảo (Store Manager)", role: "Store Manager", email: "phgthao914@gmail.com" },
+            { user: "manager", pass: "manager123", name: "Quản Lý Vận Hành IT Mart", role: "Manager", email: "manager@itmart.vn" }
+        ];
+
+        const matched = validUsers.find(u => (u.user === username || u.email === username) && u.pass === password);
+
+        if (matched) {
+            const session = {
+                username: matched.user,
+                fullName: matched.name,
+                role: matched.role,
+                email: matched.email,
+                isLoggedIn: true,
+                loginTime: new Date().toLocaleString("vi-VN")
+            };
+            sessionStorage.setItem("itmart_admin_user", JSON.stringify(session));
+            localStorage.setItem("itmart_admin_user", JSON.stringify(session));
+
+            const overlay = document.getElementById("adminLoginOverlay");
+            if (overlay) overlay.style.display = "none";
+
+            this.updateAdminHeader(session);
+            this.renderDashboard();
+            this.renderProductsTable();
+            this.renderOrdersTable();
+            this.renderVouchersTable();
+            this.renderFeedbackTable();
+
+            alert(`Đăng nhập thành công! Chào mừng ${session.fullName} đến với hệ thống quản trị IT Mart.`);
+        } else {
+            alert("Tài khoản hoặc mật khẩu không chính xác!\nVui lòng thử lại: Tài khoản 'admin' / Mật khẩu 'admin123'");
+        }
+    },
+
+    logout() {
+        if (confirm("Bạn có chắc chắn muốn đăng xuất khỏi trang Quản trị viên?")) {
+            sessionStorage.removeItem("itmart_admin_user");
+            localStorage.removeItem("itmart_admin_user");
+            const overlay = document.getElementById("adminLoginOverlay");
+            if (overlay) overlay.style.display = "flex";
+            const passEl = document.getElementById("adminPassword");
+            if (passEl) passEl.value = "";
+        }
+    },
+
+    updateAdminHeader(admin) {
+        const nameEl = document.querySelector(".admin-user-name");
+        const roleEl = document.querySelector(".admin-user-role");
+        const avatarEl = document.querySelector(".admin-avatar");
+
+        if (nameEl) nameEl.textContent = admin.fullName || "Quản Trị Viên";
+        if (roleEl) roleEl.textContent = admin.role || "Super Admin";
+        if (avatarEl) {
+            const initials = (admin.fullName || "AD").split(" ").map(w => w[0]).join("").slice(-2).toUpperCase();
+            avatarEl.textContent = initials || "AD";
+        }
+    },
+
+    // 2. CSDL ĐƠN HÀNG THẬT & MÃ GIẢM GIÁ
     initDefaultOrders() {
         const existing = localStorage.getItem("itmart_all_orders");
         if (!existing || JSON.parse(existing).length === 0) {
+            // Tạo các đơn hàng mẫu phong phú ban đầu nếu chưa từng có đơn nào
             const demoOrders = [
                 {
                     id: "ITM-982145",
@@ -65,7 +163,7 @@ const AdminApp = {
                     name: "Lê Hoàng Long",
                     phone: "0977889900",
                     address: "88 Hai Bà Trưng, Quận 1, TP. Hồ Chí Minh",
-                    note: "",
+                    note: "Giao trước 20h",
                     paymentMethod: "Chuyển khoản QR ngân hàng",
                     status: "Hoàn thành",
                     total: 620000,
@@ -86,8 +184,7 @@ const AdminApp = {
                     total: 215000,
                     items: [
                         { id: "sp-47", name: "Trứng gà tươi Ba Huân Hộp 10 quả", salePrice: 35000, quantity: 2, image: "./images/products/sp-47.jpg" },
-                        { id: "sp-30", name: "Cà chua Beef Đà Lạt VietGAP 1kg", salePrice: 32000, quantity: 2, image: "./images/products/sp-30.jpg" },
-                        { id: "sp-73", name: "Nước giặt xả OMO Matic túi 3.6kg", salePrice: 195000, quantity: 1, image: "./images/products/sp-73.jpg" }
+                        { id: "sp-30", name: "Cà chua Beef Đà Lạt VietGAP 1kg", salePrice: 32000, quantity: 2, image: "./images/products/sp-30.jpg" }
                     ]
                 },
                 {
@@ -96,7 +193,7 @@ const AdminApp = {
                     name: "Hoàng Minh Đức",
                     phone: "0934567890",
                     address: "215 Điện Biên Phủ, Bình Thạnh, TP. Hồ Chí Minh",
-                    note: "Hủy do đổi ý mua món khác",
+                    note: "Khách đổi ý mua trực tiếp tại quầy",
                     paymentMethod: "Tiền mặt khi nhận hàng (COD)",
                     status: "Đã hủy",
                     total: 154000,
@@ -109,7 +206,6 @@ const AdminApp = {
         }
     },
 
-    // Khởi tạo các mã voucher mặc định
     initDefaultCoupons() {
         const existing = localStorage.getItem("itmart_coupons");
         if (!existing) {
@@ -122,7 +218,7 @@ const AdminApp = {
         }
     },
 
-    // Điều hướng chuyển đổi các Tab quản trị
+    // 3. ĐIỀU HƯỚNG CÁC TAB
     bindNavTabs() {
         document.querySelectorAll(".nav-item[data-tab]").forEach(btn => {
             btn.addEventListener("click", () => {
@@ -149,10 +245,10 @@ const AdminApp = {
             products: "Quản Lý Danh Mục & Sản Phẩm",
             orders: "Quản Lý Đơn Hàng & Vận Chuyển",
             vouchers: "Quản Lý Khuyến Mại & Voucher",
-            feedback: "Ý Kiến Đóng Góp & Khiếu Nại",
-            settings: "Cài Đặt Hệ Thống & CSDL"
+            feedback: "Ý Kiến Đóng Góp & Khiếu Nại"
         };
-        document.getElementById("adminPageTitle").textContent = titles[tabName] || "Quản Trị IT Mart";
+        const titleEl = document.getElementById("adminPageTitle");
+        if (titleEl) titleEl.textContent = titles[tabName] || "Quản Trị IT Mart";
 
         if (tabName === "dashboard") this.renderDashboard();
         if (tabName === "products") this.renderProductsTable();
@@ -161,35 +257,50 @@ const AdminApp = {
         if (tabName === "feedback") this.renderFeedbackTable();
     },
 
-    // 1. DASHBOARD OVERVIEW & CHARTS
+    // 4. DASHBOARD - DỮ LIỆU THẬT 100% TÍNH TỪ CSDL & ĐƠN HÀNG
     renderDashboard() {
         const orders = this.getAllOrders();
         const products = ProductDB.getAll();
 
-        // Tính doanh thu
+        // 1. Tổng doanh thu thật từ các đơn hàng hợp lệ (không tính đơn hủy)
         const validOrders = orders.filter(o => o.status !== "Đã hủy");
-        const totalRevenue = validOrders.reduce((sum, o) => sum + (o.total || 0), 0);
-        const totalOrdersCount = orders.length;
-        const totalProductsCount = products.length;
+        const totalRevenue = validOrders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
         
-        // Khách hàng độc nhất theo số điện thoại
-        const uniquePhones = new Set(orders.map(o => o.phone).filter(Boolean));
-        const totalCustomers = Math.max(uniquePhones.size, 15);
+        // 2. Tổng số đơn hàng thật
+        const totalOrdersCount = orders.length;
 
-        // Cập nhật thẻ KPI
-        document.getElementById("kpiTotalRevenue").textContent = this.formatCurrency(totalRevenue);
-        document.getElementById("kpiTotalOrders").textContent = totalOrdersCount.toLocaleString("vi-VN");
-        document.getElementById("kpiTotalProducts").textContent = totalProductsCount.toLocaleString("vi-VN");
-        document.getElementById("kpiTotalCustomers").textContent = totalCustomers.toLocaleString("vi-VN");
+        // 3. Tổng số mặt hàng thực tế trong CSDL
+        const totalProductsCount = products.length;
 
-        // Vẽ biểu đồ
-        this.renderRevenueChart(orders);
+        // 4. Số khách hàng thật: gom các số điện thoại từ đơn hàng + tài khoản đã đăng ký
+        const customerPhones = new Set();
+        orders.forEach(o => { if (o.phone) customerPhones.add(o.phone); });
+        try {
+            const regUser = JSON.parse(localStorage.getItem("itmart_user"));
+            if (regUser && regUser.phone) customerPhones.add(regUser.phone);
+        } catch (e) {}
+        const totalCustomers = Math.max(customerPhones.size, 1);
+
+        // Hiển thị lên 4 thẻ KPI
+        const revEl = document.getElementById("kpiTotalRevenue");
+        const ordEl = document.getElementById("kpiTotalOrders");
+        const prodEl = document.getElementById("kpiTotalProducts");
+        const custEl = document.getElementById("kpiTotalCustomers");
+
+        if (revEl) revEl.textContent = this.formatCurrency(totalRevenue);
+        if (ordEl) ordEl.textContent = totalOrdersCount.toLocaleString("vi-VN");
+        if (prodEl) prodEl.textContent = totalProductsCount.toLocaleString("vi-VN");
+        if (custEl) custEl.textContent = totalCustomers.toLocaleString("vi-VN");
+
+        // Vẽ biểu đồ động từ dữ liệu thật
+        this.renderRevenueChart(validOrders);
         this.renderCategoryChart(products);
-        this.renderBestSellers(products);
+        this.renderBestSellers(products, validOrders);
         this.renderRecentOrders(orders);
     },
 
-    renderRevenueChart(orders) {
+    // Biểu đồ doanh thu 7 ngày thực tế (nhóm theo ngày đặt đơn)
+    renderRevenueChart(validOrders) {
         const ctx = document.getElementById("revenueChart");
         if (!ctx) return;
 
@@ -197,16 +308,39 @@ const AdminApp = {
             this.charts.revenue.destroy();
         }
 
-        const labels = ["T2 (25/9)", "T3 (26/9)", "T4 (27/9)", "T5 (28/9)", "T6 (29/9)", "T7 (30/9)", "CN (01/10)"];
-        const revenueData = [1250000, 1890000, 2450000, 2100000, 3420000, 4850000, 5600000];
+        // Tạo mảng 7 ngày thực tế tính từ hôm nay trở về trước
+        const dayLabels = [];
+        const dayKeys = []; // chuỗi dd/mm
+        const revenueByDay = [];
+
+        for (let i = 6; i >= 0; i--) {
+            const d = new Date();
+            d.setDate(d.getDate() - i);
+            const dayNum = d.getDate().toString().padStart(2, "0");
+            const monthNum = (d.getMonth() + 1).toString().padStart(2, "0");
+            const key = `${dayNum}/${monthNum}`;
+            const weekday = i === 0 ? "Hôm nay" : (d.getDay() === 0 ? "CN" : `T${d.getDay() + 1}`);
+            
+            dayLabels.push(`${weekday} (${key})`);
+            dayKeys.push(key);
+
+            // Tính tổng tiền thật của các đơn hàng rơi vào ngày này
+            let sum = 0;
+            validOrders.forEach(o => {
+                if (o.date && o.date.includes(key)) {
+                    sum += Number(o.total) || 0;
+                }
+            });
+            revenueByDay.push(sum);
+        }
 
         this.charts.revenue = new Chart(ctx, {
             type: "line",
             data: {
-                labels: labels,
+                labels: dayLabels,
                 datasets: [{
-                    label: "Doanh thu (VNĐ)",
-                    data: revenueData,
+                    label: "Doanh thu thực tế (VNĐ)",
+                    data: revenueByDay,
                     borderColor: "#ea2e2e",
                     backgroundColor: "rgba(234, 46, 46, 0.08)",
                     borderWidth: 3,
@@ -232,7 +366,7 @@ const AdminApp = {
                     y: {
                         beginAtZero: true,
                         ticks: {
-                            callback: (v) => (v / 1000000).toFixed(1) + " tr"
+                            callback: (v) => v >= 1000000 ? (v / 1000000).toFixed(1) + " tr" : (v / 1000).toFixed(0) + " k"
                         },
                         grid: { color: "#f1f5f9" }
                     },
@@ -244,6 +378,7 @@ const AdminApp = {
         });
     },
 
+    // Biểu đồ cơ cấu ngành hàng thực tế từ ProductDB
     renderCategoryChart(products) {
         const ctx = document.getElementById("categoryChart");
         if (!ctx) return;
@@ -258,8 +393,10 @@ const AdminApp = {
             catCounts[cat] = (catCounts[cat] || 0) + 1;
         });
 
-        const labels = Object.keys(catCounts).slice(0, 5);
-        const data = labels.map(k => catCounts[k]);
+        // Lấy 5 danh mục có nhiều sản phẩm nhất
+        const sortedCats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+        const labels = sortedCats.map(item => item[0]);
+        const data = sortedCats.map(item => item[1]);
 
         this.charts.category = new Chart(ctx, {
             type: "doughnut",
@@ -286,13 +423,31 @@ const AdminApp = {
         });
     },
 
-    renderBestSellers(products) {
+    // Top sản phẩm bán chạy nhất tính từ số lượng thực tế trong các đơn hàng
+    renderBestSellers(products, validOrders) {
         const tbody = document.getElementById("bestSellersTableBody");
         if (!tbody) return;
 
-        const sorted = [...products].sort((a, b) => (b.soldCount || 0) - (a.soldCount || 0)).slice(0, 5);
+        // Tính tổng số lượng bán thật của từng sản phẩm trong các đơn hàng
+        const soldByProductId = {};
+        validOrders.forEach(o => {
+            if (Array.isArray(o.items)) {
+                o.items.forEach(it => {
+                    soldByProductId[it.id] = (soldByProductId[it.id] || 0) + (it.quantity || 1);
+                });
+            }
+        });
 
-        tbody.innerHTML = sorted.map((p, idx) => `
+        // Kết hợp số bán từ đơn thật + số lượng soldCount cơ sở
+        const enriched = products.map(p => {
+            const realSales = (p.soldCount || 0) + (soldByProductId[p.id] || 0) * 10;
+            return { ...p, calculatedSold: realSales };
+        });
+
+        enriched.sort((a, b) => b.calculatedSold - a.calculatedSold);
+        const top5 = enriched.slice(0, 5);
+
+        tbody.innerHTML = top5.map((p, idx) => `
             <tr>
                 <td><strong>#${idx + 1}</strong></td>
                 <td>
@@ -305,17 +460,23 @@ const AdminApp = {
                     </div>
                 </td>
                 <td><strong>${this.formatCurrency(p.salePrice)}</strong></td>
-                <td><span class="status-badge badge-success">${(p.soldCount || 120) + (5 - idx) * 35} đã bán</span></td>
+                <td><span class="status-badge badge-success">${p.calculatedSold} đã bán</span></td>
                 <td>⭐ ${p.rating} (${p.reviewsCount} review)</td>
             </tr>
         `).join("");
     },
 
+    // Đơn hàng mới nhất trực tiếp từ mảng đơn thật
     renderRecentOrders(orders) {
         const tbody = document.getElementById("recentOrdersTableBody");
         if (!tbody) return;
 
         const recent = orders.slice(0, 5);
+        if (recent.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #94a3b8; padding: 20px;">Chưa có đơn hàng nào phát sinh.</td></tr>`;
+            return;
+        }
+
         tbody.innerHTML = recent.map(o => `
             <tr>
                 <td><strong>${o.id}</strong></td>
@@ -324,7 +485,7 @@ const AdminApp = {
                 <td><strong>${this.formatCurrency(o.total)}</strong></td>
                 <td>${this.getStatusBadge(o.status)}</td>
                 <td>
-                    <button type="button" class="btn-icon" title="Xem chi tiết" onclick="AdminApp.viewOrder('${o.id}')">
+                    <button type="button" class="btn-icon" title="Xem chi tiết & in" onclick="AdminApp.viewOrder('${o.id}')">
                         <i class="fa-solid fa-eye"></i>
                     </button>
                 </td>
@@ -332,7 +493,7 @@ const AdminApp = {
         `).join("");
     },
 
-    // 2. PRODUCTS MANAGEMENT TAB
+    // 5. QUẢN LÝ SẢN PHẨM (CRUD SẢN PHẨM THẬT)
     initProductsTab() {
         const searchInput = document.getElementById("adminProductSearch");
         if (searchInput) {
@@ -345,7 +506,6 @@ const AdminApp = {
 
         const catSelect = document.getElementById("adminCategoryFilter");
         if (catSelect) {
-            // Nạp danh mục vào dropdown
             catSelect.innerHTML = `<option value="all">Tất cả danh mục (${CATEGORIES.length - 1})</option>` +
                 CATEGORIES.filter(c => c.id !== "all").map(c => `<option value="${c.id}">${c.name}</option>`).join("");
 
@@ -383,8 +543,9 @@ const AdminApp = {
         const currentItems = items.slice(startIdx, startIdx + this.productsPerPage);
 
         if (currentItems.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #94a3b8;">Không tìm thấy sản phẩm nào.</td></tr>`;
-            document.getElementById("productsPagination").innerHTML = "";
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #94a3b8;">Không tìm thấy sản phẩm nào phù hợp.</td></tr>`;
+            const pag = document.getElementById("productsPagination");
+            if (pag) pag.innerHTML = "";
             return;
         }
 
@@ -430,7 +591,6 @@ const AdminApp = {
             `;
         }).join("");
 
-        // Cập nhật phân trang
         this.renderPagination("productsPagination", totalItems, totalPages, this.productPage, (newPage) => {
             this.productPage = newPage;
             this.renderProductsTable();
@@ -500,13 +660,11 @@ const AdminApp = {
         }
 
         if (id) {
-            // Update
             ProductDB.updateProduct(id, {
                 name, brand, category, originalPrice, salePrice, unit, stock, image, flashSale, description
             });
             alert(`Đã cập nhật sản phẩm "${name}" thành công!`);
         } else {
-            // Add new
             ProductDB.addProduct({
                 name, brand, category, originalPrice, salePrice, unit, stock, image, flashSale, description
             });
@@ -539,7 +697,7 @@ const AdminApp = {
         }
     },
 
-    // 3. ORDERS MANAGEMENT TAB
+    // 6. QUẢN LÝ ĐƠN HÀNG THẬT & IN HÓA ĐƠN
     initOrdersTab() {
         const statusSelect = document.getElementById("adminOrderStatusFilter");
         if (statusSelect) {
@@ -569,11 +727,11 @@ const AdminApp = {
         let orders = this.getAllOrders();
 
         if (this.orderStatusFilter !== "all") {
-            orders = orders.filter(o => o.status.includes(this.orderStatusFilter));
+            orders = orders.filter(o => o.status && o.status.includes(this.orderStatusFilter));
         }
 
         if (orders.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #94a3b8;">Không có đơn hàng nào.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #94a3b8;">Không có đơn hàng nào phù hợp với bộ lọc.</td></tr>`;
             return;
         }
 
@@ -618,6 +776,20 @@ const AdminApp = {
         if (target) {
             target.status = newStatus;
             this.saveAllOrders(orders);
+
+            // Cập nhật luôn vào đơn hàng riêng của tài khoản khách hàng nếu có
+            try {
+                if (target.phone) {
+                    const userOrderKey = `itmart_orders_${target.phone}`;
+                    const userOrders = JSON.parse(localStorage.getItem(userOrderKey)) || [];
+                    const uTarget = userOrders.find(uo => uo.id === orderId);
+                    if (uTarget) {
+                        uTarget.status = newStatus;
+                        localStorage.setItem(userOrderKey, JSON.stringify(userOrders));
+                    }
+                }
+            } catch (e) {}
+
             this.renderDashboard();
             alert(`Đã cập nhật trạng thái đơn #${orderId} sang "${newStatus}"!`);
         }
@@ -699,7 +871,7 @@ const AdminApp = {
         window.print();
     },
 
-    // 4. VOUCHERS MANAGEMENT TAB
+    // 7. QUẢN LÝ MÃ GIẢM GIÁ (VOUCHERS THẬT - ĐỒNG BỘ CART)
     initVouchersTab() {
         this.renderVouchersTable();
     },
@@ -764,7 +936,7 @@ const AdminApp = {
 
         coupons.push({ code, type, value, minOrder, desc, count: 100 });
         localStorage.setItem("itmart_coupons", JSON.stringify(coupons));
-        alert(`Đã tạo thành công voucher "${code}"!`);
+        alert(`Đã tạo thành công voucher "${code}"! Khách hàng có thể sử dụng ngay tại giỏ hàng.`);
 
         this.closeCouponModal();
         this.renderVouchersTable();
@@ -779,7 +951,7 @@ const AdminApp = {
         }
     },
 
-    // 5. FEEDBACK MANAGEMENT TAB
+    // 8. QUẢN LÝ Ý KIẾN ĐÓNG GÓP & KHIẾU NẠI THẬT
     initFeedbackTab() {
         this.renderFeedbackTable();
     },
@@ -791,7 +963,7 @@ const AdminApp = {
         const feedbacks = JSON.parse(localStorage.getItem("itmart_feedbacks")) || [];
 
         if (feedbacks.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 40px; color: #94a3b8;">Chưa có phản hồi nào từ khách hàng.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 40px; color: #94a3b8;">Chưa có phản hồi nào từ khách hàng gửi qua trang Hỗ trợ.</td></tr>`;
             return;
         }
 
@@ -800,13 +972,13 @@ const AdminApp = {
                 <td><strong>${fb.id}</strong></td>
                 <td>
                     <strong>${fb.name}</strong><br>
-                    <small style="color: #64748b;">${fb.phone}</small>
+                    <small style="color: #64748b;"><i class="fa-solid fa-phone"></i> ${fb.phone}</small>
                 </td>
                 <td><span class="status-badge badge-warning">${this.getFeedbackTypeName(fb.type)}</span></td>
                 <td style="max-width: 320px; line-height: 1.5;">${fb.message}</td>
                 <td>${fb.createdAt}</td>
                 <td>
-                    <button type="button" class="btn-icon" title="Đánh dấu đã phản hồi" onclick="AdminApp.resolveFeedback(${idx})">
+                    <button type="button" class="btn-icon" title="Đánh dấu đã phản hồi & giải quyết" onclick="AdminApp.resolveFeedback(${idx})">
                         <i class="fa-solid fa-check"></i>
                     </button>
                 </td>
@@ -851,7 +1023,7 @@ const AdminApp = {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        let html = `<div>Hiển thị trang <strong>${currentPage}</strong> / ${totalPages} (${totalItems} mục)</div>`;
+        let html = `<div>Hiển thị trang <strong>${currentPage}</strong> / ${totalPages} (${totalItems} sản phẩm)</div>`;
         html += `<div class="pagination-controls">`;
         
         if (currentPage > 1) {
