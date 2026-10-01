@@ -527,6 +527,18 @@ const CartSystem = {
         orders.unshift(newOrder);
         this.saveOrders(orders);
 
+        // Đồng bộ vào CSDL Admin Portal để quản trị viên theo dõi & in hóa đơn
+        try {
+            let allOrders = JSON.parse(localStorage.getItem("itmart_all_orders")) || [];
+            allOrders.unshift(newOrder);
+            localStorage.setItem("itmart_all_orders", JSON.stringify(allOrders));
+        } catch (e) {}
+
+        // Tích điểm thưởng VIP Loyalty (10.000đ = 1 điểm)
+        if (typeof LoyaltySystem !== "undefined") {
+            LoyaltySystem.addPoints(total);
+        }
+
         // Lưu địa chỉ vào tài khoản nếu chưa có
         const savedUser = this.getUser();
         if (savedUser && !savedUser.address) {

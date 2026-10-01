@@ -3177,38 +3177,162 @@ class ProductDatabase {
     }
 
     _init() {
-        this._items = _RAW_PRODUCTS.map(r => {
-            const p = {
+        let sourceList = _RAW_PRODUCTS;
+        try {
+            if (typeof window !== "undefined" && window.localStorage) {
+                const custom = localStorage.getItem("itmart_custom_products");
+                if (custom) {
+                    const parsed = JSON.parse(custom);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        sourceList = parsed;
+                    }
+                }
+            }
+        } catch (e) {
+            console.warn("Could not load custom products from localStorage", e);
+        }
+
+        this._rebuildIndexes(sourceList);
+    }
+
+    _rebuildIndexes(list) {
+        this._items = list.map(r => {
+            const cat = r.cat || r.category || "rau-cu";
+            return {
                 id: r.id,
                 name: r.name,
-                brand: r.brand,
-                category: r.cat,
-                categoryName: _CAT_MAP.get(r.cat) || r.cat,
-                originalPrice: r.orig,
-                salePrice: r.sale,
-                unit: r.unit,
-                image: r.img,
-                badge: r.badge,
-                rating: r.rate,
-                reviewsCount: r.revs,
-                soldCount: r.sold,
-                flashSale: Boolean(r.flash),
-                flashProgress: r.prog,
-                stock: r.stock,
-                description: r.desc,
+                brand: r.brand || "IT Mart",
+                category: cat,
+                categoryName: _CAT_MAP.get(cat) || r.categoryName || cat,
+                originalPrice: r.orig !== undefined ? r.orig : (r.originalPrice || 0),
+                salePrice: r.sale !== undefined ? r.sale : (r.salePrice || 0),
+                unit: r.unit || "Hộp",
+                image: r.img || r.image || "./images/products/sp-29.jpg",
+                badge: r.badge || "",
+                rating: Number(r.rate !== undefined ? r.rate : (r.rating || 5.0)),
+                reviewsCount: Number(r.revs !== undefined ? r.revs : (r.reviewsCount || 0)),
+                soldCount: Number(r.sold !== undefined ? r.sold : (r.soldCount || 0)),
+                flashSale: Boolean(r.flash !== undefined ? r.flash : r.flashSale),
+                flashProgress: Number(r.prog !== undefined ? r.prog : (r.flashProgress || 45)),
+                stock: Number(r.stock !== undefined ? r.stock : 100),
+                description: r.desc || r.description || "",
                 specs: r.specs || {},
                 reviews: r.reviews || []
             };
+        });
 
-            // Ghi chỉ mục
+        this._indexById.clear();
+        this._indexByCat.clear();
+        this._indexByBrand.clear();
+
+        this._items.forEach(p => {
             this._indexById.set(p.id, p);
             if (!this._indexByCat.has(p.category)) this._indexByCat.set(p.category, []);
             this._indexByCat.get(p.category).push(p);
             if (!this._indexByBrand.has(p.brand)) this._indexByBrand.set(p.brand, []);
             this._indexByBrand.get(p.brand).push(p);
-
-            return p;
         });
+    }
+
+    saveToStorage() {
+        try {
+            if (typeof window !== "undefined" && window.localStorage) {
+                localStorage.setItem("itmart_custom_products", JSON.stringify(this._items));
+            }
+        } catch (e) {
+            console.error("Failed to save products to localStorage", e);
+        }
+    }
+
+    resetToDefault() {
+        try {
+            if (typeof window !== "undefined" && window.localStorage) {
+                localStorage.removeItem("itmart_custom_products");
+            }
+        } catch (e) {}
+        this._rebuildIndexes(_RAW_PRODUCTS);
+        return this._items;
+    }
+
+    addProduct(pData) {
+        const id = pData.id || `sp-${Date.now().toString().slice(-4)}`;
+        const newProduct = {
+            id: id,
+            name: pData.name,
+            brand: pData.brand || "IT Mart",
+            category: pData.category || "rau-cu",
+            categoryName: _CAT_MAP.get(pData.category) || pData.category,
+            originalPrice: Number(pData.originalPrice) || Number(pData.salePrice) || 0,
+            salePrice: Number(pData.salePrice) || 0,
+            unit: pData.unit || "Món",
+            image: pData.image || "./images/products/sp-29.jpg",
+            badge: pData.badge || "Mới",
+            rating: 5.0,
+            reviewsCount: 0,
+            soldCount: 0,
+            flashSale: Boolean(pData.flashSale),
+            flashProgress: 0,
+            stock: Number(pData.stock) || 50,
+            description: pData.description || "",
+            specs: pData.specs || { "Xuất Xứ": "Việt Nam", "Bảo Quản": "Nhiệt độ phòng", "Hạn Sử Dụng": "12 tháng" },
+            reviews: []
+        };
+
+        this._items.unshift(newProduct);
+        this._rebuildIndexes(this._items);
+        this.saveToStorage();
+        return newProduct;
+    }
+
+    updateProduct(id, fields) {
+        const p = this.findById(id);
+        if (!p) return null;
+
+        Object.assign(p, fields);
+        if (fields.category) {
+            p.categoryName = _CAT_MAP.get(fields.category) || fields.category;
+        }
+        this._rebuildIndexes(this._items);
+        this.saveToStorage();
+        return p;
+    }
+
+    deleteProduct(id) {
+        const idx = this._items.findIndex(p => p.id === id);
+        if (idx !== -1) {
+            this._items.splice(idx, 1);
+            this._rebuildIndexes(this._items);
+            this.saveToStorage();
+            return true;
+        }
+        return false;
+    }
+
+    addReview(productId, reviewData) {
+        const p = this.findById(productId);
+        if (!p) return null;
+
+        const rev = {
+            id: "REV-" + Date.now(),
+            author: reviewData.author || "Khách hàng ẩn danh",
+            phone: reviewData.phone ? reviewData.phone.replace(/(\d{3})\d{4}(\d{3})/, "$1****$2") : "",
+            rating: Number(reviewData.rating) || 5,
+            comment: reviewData.comment || "",
+            date: new Date().toLocaleDateString("vi-VN"),
+            verified: true
+        };
+
+        if (!p.reviews) p.reviews = [];
+        p.reviews.unshift(rev);
+
+        // Cập nhật rating và reviewsCount
+        const totalRating = p.reviews.reduce((sum, r) => sum + r.rating, 0);
+        p.reviewsCount = p.reviews.length;
+        p.rating = Number((totalRating / p.reviewsCount).toFixed(1));
+
+        this._rebuildIndexes(this._items);
+        this.saveToStorage();
+        return rev;
     }
 
     // Lấy toàn bộ danh sách sản phẩm

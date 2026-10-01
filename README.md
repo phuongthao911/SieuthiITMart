@@ -23,29 +23,34 @@ Dự án được tổ chức khoa học, phân tách rành mạch giữa Cấu 
 ```text
 BTL-Web/
 ├── index.html              # Trang chủ: Hero Banner, Flash Sale đếm ngược, danh mục cuộn ngang, Catalog lọc đa chiều
-├── product.html            # Trang chi tiết sản phẩm động (Dynamic URL: product.html?id=sp-01) kèm đánh giá & liên quan
+├── product.html            # Trang chi tiết sản phẩm động (product.html?id=sp-01), đánh giá sao tương tác, so sánh
 ├── Log_in.html             # Trang Đăng nhập / Đăng ký hiện đại (Validation form, xem/ẩn mật khẩu, lưu phiên làm việc)
 ├── about.html              # Trang Giới thiệu IT Mart, quy trình quản lý chất lượng, chính sách bảo mật & điều khoản
 ├── stores.html             # Trang Hệ thống siêu thị: Tìm kiếm, lọc theo tỉnh thành (Hà Nội, TP.HCM, ĐN), chỉ đường & hotline
 ├── policy.html             # Trang Hỗ trợ khách hàng: FAQ Accordion, Giao 2H, Đổi trả 7 ngày & Form góp ý tương tác
+├── admin.html              # Cổng Quản trị viên (Admin Portal): Dashboard Chart.js, CRUD Sản phẩm, Quản lý & In đơn hàng
 ├── README.md               # Báo cáo tổng kết dự án và hướng dẫn vận hành
 ├── server.js               # Máy chủ HTTP Node.js cục bộ tích hợp MIME types đầy đủ
 │
 ├── css/
-│   ├── main.css            # Hệ thống Design System chính (CSS Variables, Typography, Header, Footer, Modals, Drawer)
+│   ├── main.css            # Hệ thống Design System chính (Typography, Header, Footer, Modals, Drawer, Compare, Loyalty)
 │   ├── product.css         # Stylesheet chuyên biệt cho trang chi tiết sản phẩm (Gallery ảnh, tab thông số, review)
 │   ├── login.css           # Stylesheet tách biệt cho trang đăng nhập/đăng ký
-│   └── pages.css           # Stylesheet dùng chung cho các trang nội dung vệ tinh (About, Stores, Policy, FAQ)
+│   ├── pages.css           # Stylesheet dùng chung cho các trang nội dung vệ tinh (About, Stores, Policy, FAQ)
+│   └── admin.css           # Stylesheet Back-office Dashboard Quản trị viên (KPI cards, bảng dữ liệu, form modal, in hóa đơn)
 │
 ├── js/
-│   ├── products.js         # Nạp CSDL từ data/products.json, cung cấp API lấy danh sách, tìm kiếm, lọc danh mục & ID
+│   ├── products.js         # Nạp CSDL từ data/products.json, đồng bộ LocalStorage, cung cấp CRUD API thêm/sửa/xóa sản phẩm
 │   ├── app.js              # Bộ điều phối trung tâm trang chủ: Live search, lọc giá, phân trang, banner, tabs, random brand
-│   ├── product-detail.js   # Bộ xử lý dữ liệu trang chi tiết sản phẩm, render thông tin động theo URL query param
-│   ├── cart.js             # Quản lý Giỏ hàng (Cart Drawer), kho Voucher, tính phí ship thông minh, Checkout & VietQR
+│   ├── product-detail.js   # Bộ xử lý dữ liệu trang chi tiết sản phẩm, nạp động theo URL, gửi đánh giá sao tương tác
+│   ├── cart.js             # Quản lý Giỏ hàng (Cart Drawer), kho Voucher, tính phí ship, Checkout, VietQR, đồng bộ đơn Admin
 │   ├── quickview.js        # Logic popup xem nhanh sản phẩm (Quick View Modal) và chọn số lượng mua ngay
 │   ├── wishlist.js         # Tính năng Yêu thích sản phẩm (Wishlist) lưu LocalStorage
+│   ├── compare.js          # Hệ thống So sánh Sản phẩm (Compare Tool): Thanh dock nổi và Modal đối chiếu thông số
+│   ├── loyalty.js          # Hệ thống Điểm tích lũy & Hạng thành viên VIP (Bronze, Silver, Gold, Diamond)
 │   ├── auth.js             # Xử lý xác thực tài khoản, đăng nhập, đăng ký, đồng bộ phiên người dùng
-│   └── pages.js            # Tương tác các trang nội dung: Accordion FAQ, bộ lọc cửa hàng theo thành phố, form góp ý
+│   ├── pages.js            # Tương tác các trang nội dung: Accordion FAQ, bộ lọc cửa hàng theo thành phố, form góp ý
+│   └── admin.js            # Điều khiển Admin Dashboard: Biểu đồ Chart.js, CRUD sản phẩm, cập nhật đơn & in hóa đơn bán lẻ
 │
 ├── data/
 │   └── products.json       # CSDL chuẩn hóa 91 sản phẩm đầy đủ thông tin (ID, tên, giá, giảm giá, ảnh, xuất xứ, mô tả...)
@@ -101,6 +106,35 @@ BTL-Web/
 ### 📱 7. Thiết Kế Responsive 100% (Mobile-First)
 - **Desktop (màn hình rộng)**: Bố cục lưới thoáng đãng, sắc nét, đầy đủ thanh công cụ và banner khuyến mãi.
 - **Mobile / Tablet**: Tối ưu vuốt chạm ngón tay, ẩn bớt thành phần dư thừa, tích hợp **Thanh điều hướng dưới đáy (Mobile Bottom Navigation)** cố định chuẩn trải nghiệm App di động.
+
+### 🌟 8. Cổng Quản Trị Hệ Thống Toàn Diện (Admin Portal - admin.html)
+- **Dashboard Thống kê KPI & Biểu đồ Chart.js**:
+  - 4 Thẻ KPI thời gian thực: Tổng doanh thu, Tổng đơn hàng, Số mặt hàng kho, Tổng khách hàng.
+  - Biểu đồ đường (Line Chart) xu hướng doanh thu 7 ngày qua.
+  - Biểu đồ tròn (Doughnut Chart) cơ cấu doanh thu theo nhóm ngành hàng.
+  - Bảng xếp hạng Top 5 sản phẩm bán chạy nhất (Best Sellers) và 5 đơn hàng mới nhất cần duyệt.
+- **Quản lý Sản phẩm (CRUD Sản phẩm)**:
+  - Xem danh sách bảng sản phẩm có tìm kiếm nhanh, lọc theo danh mục, phân trang.
+  - Modal Thêm mới / Chỉnh sửa sản phẩm (Tên, thương hiệu, giá gốc, giá khuyến mãi, đơn vị, tồn kho, ảnh, Flash Sale, mô tả).
+  - Xóa sản phẩm và nút "Khôi phục CSDL gốc" tiện lợi.
+- **Quản lý Đơn hàng & In Hóa Đơn Bán Lẻ**:
+  - Xem danh sách đơn đặt từ khách hàng, lọc theo trạng thái đơn.
+  - Cập nhật trực tiếp tiến trình đơn hàng (*Chờ xác nhận &rarr; Đang xử lý &rarr; Đang giao &rarr; Hoàn thành / Hủy*).
+  - **Mẫu Hóa Đơn Bán Lẻ Siêu Thị (Receipt Print)**: Xem chi tiết hóa đơn và kích hoạt lệnh in ấn trình duyệt (`window.print()`) chuyên nghiệp.
+- **Quản lý Khuyến mãi (Vouchers)**: Tạo mới mã coupon, chọn loại chiết khấu (% / số tiền / freeship), giới hạn giá trị đơn hàng tối thiểu.
+- **Quản lý Phản hồi khách hàng (Feedback)**: Xem danh sách góp ý/khiếu nại gửi từ trang `policy.html` và đánh dấu đã xử lý.
+
+### ⭐ 9. Nâng Cấp Tương Tác: Đánh Giá Sao, Thẻ VIP & So Sánh Sản Phẩm
+- **Đánh giá sao & Bình luận tương tác (Reviews & Star Ratings)**:
+  - Khách hàng có thể tự do bấm chọn số sao (1-5 sao vàng), nhập nhận xét tại trang chi tiết sản phẩm.
+  - Dữ liệu được ghi nhận vào `ProductDB` và `LocalStorage`, tự động tính toán lại điểm rating trung bình và phân phối sao của sản phẩm ngay lập tức.
+- **Hệ thống Điểm tích lũy & Hạng Thẻ VIP (Loyalty Rewards)**:
+  - Mua sắm tích lũy điểm thưởng: 10.000đ = 1 điểm IT Mart.
+  - Thẻ VIP thành viên hiển thị sang trọng trong Modal Hồ sơ cá nhân với 4 hạng: *🥉 Đồng &rarr; 🥈 Bạc &rarr; 🥇 Vàng (Giảm 2%) &rarr; 💎 Kim Cương (Giảm 5% + Freeship)* cùng thanh tiến trình thăng hạng.
+- **Công cụ So Sánh Sản Phẩm (Compare Tool)**:
+  - Nút icon so sánh xuất hiện trên từng thẻ sản phẩm và trang chi tiết.
+  - Thanh Dock nổi ghim dưới đáy màn hình hiển thị danh sách đang chọn (tối đa 3 sản phẩm).
+  - Bảng so sánh Modal trực quan từng thông số: Ảnh, Tên, Giá bán, Mức tiết kiệm, Đánh giá, Quy cách, Xuất xứ, Tình trạng kho và nút Mua ngay.
 
 ---
 

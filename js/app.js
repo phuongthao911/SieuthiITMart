@@ -150,6 +150,11 @@ window.openProfileModal = function() {
         </div>
     `;
 
+    // Nạp thẻ VIP Hạng Thành Viên & Điểm Tích Lũy
+    if (typeof LoyaltySystem !== "undefined" && typeof LoyaltySystem.renderProfileCard === "function") {
+        LoyaltySystem.renderProfileCard(body);
+    }
+
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
 };
@@ -800,6 +805,9 @@ function renderProducts() {
                         <button class="btn-card-wishlist ${typeof WishlistSystem !== 'undefined' && WishlistSystem.isWishlisted(p.id) ? 'active' : ''}" 
                                 onclick="WishlistSystem.toggle('${p.id}')" title="Yêu thích">
                             <i class="${typeof WishlistSystem !== 'undefined' && WishlistSystem.isWishlisted(p.id) ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                        </button>
+                        <button class="btn-card-wishlist" onclick="if(typeof CompareSystem !== 'undefined') CompareSystem.toggle('${p.id}')" title="So sánh sản phẩm">
+                            <i class="fa-solid fa-code-compare"></i>
                         </button>
                     </div>
                 </div>

@@ -153,6 +153,9 @@
                         <button type="button" class="btn-detail-wishlist" id="btnDetailWishlist" title="Lưu vào yêu thích">
                             <i class="fa-regular fa-heart"></i>
                         </button>
+                        <button type="button" class="btn-detail-wishlist" id="btnDetailCompare" title="Thêm vào danh sách so sánh" onclick="if(currentProduct) CompareSystem.toggle(currentProduct.id);">
+                            <i class="fa-solid fa-code-compare"></i>
+                        </button>
                     </div>
 
                     <div class="detail-desc-box">
@@ -386,6 +389,8 @@
     <!-- SCRIPTS (Tách riêng biệt) -->
     <script src="js/products.js"></script>
     <script src="js/wishlist.js"></script>
+    <script src="js/loyalty.js"></script>
+    <script src="js/compare.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/product-detail.js"></script>
 </body>

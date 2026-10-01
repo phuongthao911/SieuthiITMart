@@ -295,6 +295,15 @@ function initStarSelector() {
     const starContainer = document.getElementById("starSelector");
     if (!starContainer) return;
 
+    // Tự động điền họ tên nếu người dùng đã đăng nhập
+    try {
+        const user = JSON.parse(localStorage.getItem("itmart_user"));
+        if (user && user.fullName) {
+            const nameInput = document.getElementById("reviewerName");
+            if (nameInput) nameInput.value = user.fullName;
+        }
+    } catch (e) {}
+
     const stars = starContainer.querySelectorAll(".star-opt");
     stars.forEach(star => {
         star.addEventListener("click", () => {
@@ -309,7 +318,7 @@ function initStarSelector() {
 }
 
 /**
- * Xử lý gửi đánh giá của khách hàng
+ * Xử lý gửi đánh giá của khách hàng (Lưu vào CSDL ProductDB)
  */
 window.handleReviewSubmit = function(event) {
     event.preventDefault();
@@ -326,30 +335,45 @@ window.handleReviewSubmit = function(event) {
         return;
     }
 
-    const newReview = {
-        name: name,
-        rating: currentRatingSelection,
-        date: "Hôm nay",
-        comment: comment
-    };
+    // 1. Lưu đánh giá vào ProductDB & LocalStorage
+    if (typeof ProductDB !== "undefined" && typeof ProductDB.addReview === "function") {
+        ProductDB.addReview(currentProduct.id, {
+            author: name,
+            rating: currentRatingSelection,
+            comment: comment
+        });
+        currentProduct = ProductDB.findById(currentProduct.id);
+    } else {
+        const newReview = {
+            name: name,
+            rating: currentRatingSelection,
+            date: "Hôm nay",
+            comment: comment
+        };
+        const savedKey = "itmart_custom_reviews_" + currentProduct.id;
+        const customReviews = JSON.parse(localStorage.getItem(savedKey)) || [];
+        customReviews.unshift(newReview);
+        localStorage.setItem(savedKey, JSON.stringify(customReviews));
+    }
 
-    const savedKey = "itmart_custom_reviews_" + currentProduct.id;
-    const customReviews = JSON.parse(localStorage.getItem(savedKey)) || [];
-    customReviews.unshift(newReview);
-    localStorage.setItem(savedKey, JSON.stringify(customReviews));
+    // 2. Thưởng 10 điểm tích lũy thành viên vì đã đánh giá sản phẩm!
+    if (typeof LoyaltySystem !== "undefined" && LoyaltySystem.getUser()) {
+        const u = LoyaltySystem.getUser();
+        u.points = (u.points || 120) + 10;
+        localStorage.setItem("itmart_user", JSON.stringify(u));
+    }
 
     // Reset form
-    nameInput.value = "";
     commentInput.value = "";
 
-    // Cập nhật lại giao diện reviews
+    // 3. Cập nhật lại giao diện reviews & số sao sản phẩm trên trang
     renderProductReviews(currentProduct);
 
-    if (typeof showToast === "function") {
-        showToast("Cảm ơn bạn đã gửi đánh giá! Nhận xét đã được đăng công khai.");
-    } else {
-        alert("Cảm ơn bạn đã gửi đánh giá! Nhận xét đã được đăng công khai.");
-    }
+    // Cập nhật lại số sao ở phần đầu trang
+    const ratingTopEl = document.getElementById("pRating");
+    if (ratingTopEl) ratingTopEl.textContent = `★ ${currentProduct.rating.toFixed(1)} (${currentProduct.reviewsCount} đánh giá)`;
+
+    alert("Cảm ơn bạn đã gửi đánh giá! Nhận xét đã được ghi nhận vào hệ thống và bạn được thưởng +10 điểm tích lũy thành viên.");
 };
 
 function renderRelatedProducts(curr) {
