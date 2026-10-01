@@ -92,7 +92,7 @@ const AdminApp = {
 
             alert(`Đăng nhập thành công! Chào mừng ${session.fullName} đến với hệ thống quản trị IT Mart.`);
         } else {
-            alert("Tài khoản hoặc mật khẩu không chính xác!\nVui lòng thử lại: Tài khoản 'admin' / Mật khẩu 'admin123'");
+            alert("Tài khoản hoặc mật khẩu không chính xác! Vui lòng kiểm tra lại thông tin đăng nhập.");
         }
     },
 

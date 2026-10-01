@@ -30,18 +30,18 @@
 
             <form onsubmit="AdminApp.handleLogin(event)">
                 <div class="admin-login-field">
-                    <label for="adminUsername"><i class="fa-solid fa-user-shield"></i> Tài khoản hoặc SĐT</label>
+                    <label for="adminUsername"><i class="fa-solid fa-user-shield"></i> Tài khoản quản trị / SĐT</label>
                     <div class="admin-login-input-wrap">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="adminUsername" required placeholder="Nhập 'admin' hoặc '098122445'" autocomplete="username" value="admin">
+                        <input type="text" id="adminUsername" required placeholder="Tên đăng nhập hoặc SĐT..." autocomplete="username">
                     </div>
                 </div>
 
                 <div class="admin-login-field">
-                    <label for="adminPassword"><i class="fa-solid fa-lock"></i> Mật khẩu quản trị</label>
+                    <label for="adminPassword"><i class="fa-solid fa-lock"></i> Mật khẩu</label>
                     <div class="admin-login-input-wrap">
                         <i class="fa-solid fa-key"></i>
-                        <input type="password" id="adminPassword" required placeholder="Mật khẩu: admin123" autocomplete="current-password" value="admin123">
+                        <input type="password" id="adminPassword" required placeholder="Nhập mật khẩu..." autocomplete="current-password">
                     </div>
                 </div>
 
@@ -49,12 +49,6 @@
                     <i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập Hệ Thống
                 </button>
             </form>
-
-            <div class="admin-hint-card">
-                <strong><i class="fa-solid fa-circle-info"></i> Thông tin đăng nhập quản trị:</strong>
-                <div style="margin-top: 4px;">• Super Admin: <b>admin</b> | Mật khẩu: <b>admin123</b></div>
-                <div>• Store Manager: <b>098122445</b> | Mật khẩu: <b>admin123</b></div>
-            </div>
         </div>
     </div>
 
