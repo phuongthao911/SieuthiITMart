@@ -92,7 +92,9 @@ const QuickViewSystem = {
         if (val < 1) val = 1;
         if (this.currentProduct && val > this.currentProduct.stock) {
             val = this.currentProduct.stock;
-            alert(`Rất tiếc, kho chỉ còn tối đa ${this.currentProduct.stock} sản phẩm!`);
+            if (window.ITMToast) {
+                window.ITMToast.warning(`Rất tiếc, kho chỉ còn tối đa ${this.currentProduct.stock} sản phẩm!`, "Kho giới hạn");
+            }
         }
         document.getElementById("qvQtyInput").value = val;
         this.selectedQuantity = val;

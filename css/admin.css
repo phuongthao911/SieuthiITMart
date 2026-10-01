@@ -3,6 +3,8 @@
    Thiết kế giao diện Quản trị viên (Back-office Dashboard) chuyên nghiệp, hiện đại
    ========================================================================== */
 
+@import url('notification.css');
+
 :root {
     --admin-bg: #f8fafc;
     --admin-sidebar-bg: #0f172a;

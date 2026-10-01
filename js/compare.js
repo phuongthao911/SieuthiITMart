@@ -29,7 +29,9 @@ const CompareSystem = {
         if (this.items.includes(id)) return;
 
         if (this.items.length >= this.maxItems) {
-            alert(`Hệ thống chỉ hỗ trợ so sánh tối đa ${this.maxItems} sản phẩm cùng lúc. Vui lòng bỏ bớt sản phẩm khác!`);
+            if (window.ITMToast) {
+                window.ITMToast.warning(`Hệ thống chỉ hỗ trợ so sánh tối đa ${this.maxItems} sản phẩm cùng lúc. Vui lòng bỏ bớt sản phẩm khác!`, "Giới hạn so sánh");
+            }
             return;
         }
 
@@ -136,7 +138,9 @@ const CompareSystem = {
 
     openModal() {
         if (this.items.length < 2) {
-            alert("Vui lòng chọn ít nhất 2 sản phẩm để thực hiện so sánh đối chiếu!");
+            if (window.ITMToast) {
+                window.ITMToast.warning("Vui lòng chọn ít nhất 2 sản phẩm để thực hiện so sánh đối chiếu!", "Chưa đủ sản phẩm");
+            }
             return;
         }
         this.renderModalContent();

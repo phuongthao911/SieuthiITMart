@@ -58,7 +58,7 @@
                 <label class="remember-label">
                     <input type="checkbox" id="rememberMe" checked> Ghi nhớ đăng nhập
                 </label>
-                <a href="javascript:void(0)" onclick="alert('Tính năng khôi phục mật khẩu qua SMS OTP đang được hoàn thiện!')">Quên mật khẩu?</a>
+                <a href="javascript:void(0)" onclick="ITMDialog.alert({ title: 'Khôi phục mật khẩu', message: 'Hệ thống gửi mã xác thực SMS OTP đang được nâng cấp bảo mật. Vui lòng liên hệ hotline chăm sóc khách hàng 1900 8888 để được hỗ trợ cấp lại mật khẩu ngay lập tức!', type: 'info' })">Quên mật khẩu?</a>
             </div>
 
             <button type="submit" class="btn-auth-submit">
@@ -112,16 +112,17 @@
         </div>
 
         <div class="social-auth">
-            <button type="button" class="btn-social" onclick="alert('Đăng nhập Google thành công mô phỏng!'); window.location.href='index.html';">
+            <button type="button" class="btn-social" onclick="ITMToast.success('Đăng nhập Google thành công!'); setTimeout(() => window.location.href=getRedirectTarget(), 800);">
                 <i class="fa-brands fa-google google-icon"></i> Google
             </button>
-            <button type="button" class="btn-social" onclick="alert('Đăng nhập Facebook thành công mô phỏng!'); window.location.href='index.html';">
+            <button type="button" class="btn-social" onclick="ITMToast.success('Đăng nhập Facebook thành công!'); setTimeout(() => window.location.href=getRedirectTarget(), 800);">
                 <i class="fa-brands fa-facebook facebook-icon"></i> Facebook
             </button>
         </div>
     </div>
 
     <!-- Scripts (Tách riêng biệt) -->
+    <script src="js/notification.js"></script>
     <script src="js/auth.js"></script>
 </body>
 </html>

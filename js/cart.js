@@ -213,23 +213,29 @@ const CartSystem = {
         }
     },
 
-    clearCart() {
+    async clearCart() {
         if (this.items.length === 0) return;
-        if (confirm("Bạn có chắc chắn muốn xóa toàn bộ sản phẩm trong giỏ hàng?")) {
-            this.items = [];
-            this.appliedCoupon = null;
-            this.save();
-            this.renderDrawer();
-            if (typeof showToast === "function") {
-                showToast("Đã làm trống giỏ hàng!", "info");
-            }
-        }
+        const confirmed = await ITMDialog.confirm({
+            title: "Làm trống giỏ hàng",
+            message: "Bạn có chắc chắn muốn xóa toàn bộ sản phẩm trong giỏ hàng?",
+            type: "danger",
+            confirmText: "Xóa toàn bộ",
+            cancelText: "Giữ lại",
+            icon: "fa-solid fa-trash-can"
+        });
+        if (!confirmed) return;
+
+        this.items = [];
+        this.appliedCoupon = null;
+        this.save();
+        this.renderDrawer();
+        ITMToast.info("Đã làm trống giỏ hàng!");
     },
 
     applyCoupon(code) {
-        const cleanCode = code.trim().toUpperCase();
+        const cleanCode = (code || "").trim().toUpperCase();
         if (!cleanCode) {
-            alert("Vui lòng nhập mã giảm giá!");
+            ITMForm.showError("couponInput", "Vui lòng nhập mã giảm giá trước khi áp dụng!");
             return;
         }
 
@@ -252,23 +258,22 @@ const CartSystem = {
         }
 
         if (!coupon) {
-            alert(`Mã giảm giá "${cleanCode}" không hợp lệ hoặc đã hết hạn! Thử mã: ITMART10 hoặc FREESHIP`);
+            ITMForm.showError("couponInput", `Mã giảm giá "${cleanCode}" không hợp lệ hoặc đã hết hạn! Thử mã: ITMART10 hoặc FREESHIP`);
             return;
         }
 
         // Kiểm tra điều kiện đơn tối thiểu
         const subtotal = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         if (coupon.minOrder && subtotal < coupon.minOrder) {
-            alert(`Mã "${cleanCode}" chỉ áp dụng cho đơn hàng từ ${(coupon.minOrder).toLocaleString("vi-VN")} đ trở lên!`);
+            ITMForm.showError("couponInput", `Mã "${cleanCode}" chỉ áp dụng cho đơn từ ${(coupon.minOrder).toLocaleString("vi-VN")} đ trở lên!`);
             return;
         }
 
+        ITMForm.clearError("couponInput");
         this.appliedCoupon = coupon;
         this.save();
         this.renderDrawer();
-        if (typeof showToast === "function") {
-            showToast(`Đã áp dụng mã "${cleanCode}": ${coupon.desc}`);
-        }
+        ITMToast.success(`Đã áp dụng mã "${cleanCode}": ${coupon.desc}`, "Áp dụng voucher");
     },
 
     removeCoupon() {
@@ -526,10 +531,32 @@ const CartSystem = {
         const paymentRadio = document.querySelector('input[name="paymentMethod"]:checked');
         const paymentMethod = paymentRadio ? paymentRadio.value : "cod";
 
-        if (!name || !phone || !address) {
-            alert("Vui lòng điền đầy đủ Họ tên, Số điện thoại và Địa chỉ giao hàng!");
+        let hasError = false;
+        if (!name) {
+            ITMForm.showError("orderName", "Vui lòng nhập họ và tên người nhận hàng!");
+            hasError = true;
+        }
+        if (!phone) {
+            ITMForm.showError("orderPhone", "Vui lòng nhập số điện thoại nhận hàng!");
+            hasError = true;
+        } else {
+            const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            if (!phoneRegex.test(phone) && phone.length < 9) {
+                ITMForm.showError("orderPhone", "Số điện thoại không đúng định dạng (Ví dụ: 098122445)!");
+                hasError = true;
+            }
+        }
+        if (!address) {
+            ITMForm.showError("orderAddress", "Vui lòng nhập địa chỉ giao hàng chi tiết!");
+            hasError = true;
+        }
+
+        if (hasError) {
+            ITMToast.error("Vui lòng kiểm tra lại các thông tin giao hàng còn thiếu!");
             return;
         }
+
+        ITMForm.clearAll();
 
         const orderId = "ITM-" + Math.floor(100000 + Math.random() * 900000);
         const { total } = this.calculateTotals();
@@ -635,10 +662,10 @@ const CartSystem = {
 
     copyText(text, successMsg = "Đã sao chép!") {
         navigator.clipboard.writeText(text).then(() => {
-            if (typeof showToast === "function") {
+            if (window.ITMToast) {
+                window.ITMToast.success(successMsg);
+            } else if (typeof showToast === "function") {
                 showToast(successMsg, "success");
-            } else {
-                alert(successMsg);
             }
         });
     },
@@ -703,8 +730,16 @@ const CartSystem = {
         document.body.style.overflow = "hidden";
     },
 
-    cancelOrder(orderId) {
-        if (!confirm(`Bạn có chắc chắn muốn hủy đơn hàng "${orderId}" không?`)) return;
+    async cancelOrder(orderId) {
+        const confirmed = await ITMDialog.confirm({
+            title: "Hủy đơn hàng",
+            message: `Bạn có chắc chắn muốn hủy đơn hàng "${orderId}" không? Trạng thái đơn sẽ được cập nhật thành Đã hủy.`,
+            type: "danger",
+            confirmText: "Xác nhận hủy",
+            cancelText: "Không hủy",
+            icon: "fa-solid fa-ban"
+        });
+        if (!confirmed) return;
 
         let orders = this.getOrders();
         const order = orders.find(o => o.id === orderId);
@@ -712,9 +747,7 @@ const CartSystem = {
             order.status = "Đã hủy bởi khách hàng";
             this.saveOrders(orders);
             this.openOrderHistoryModal();
-            if (typeof showToast === "function") {
-                showToast(`Đã hủy đơn hàng "${orderId}" thành công`, "info");
-            }
+            ITMToast.info(`Đã hủy đơn hàng "${orderId}" thành công`);
         }
     },
 

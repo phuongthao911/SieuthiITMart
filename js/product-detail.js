@@ -108,15 +108,24 @@ function checkAuthSessionDetail() {
             topBarAuthLink.innerHTML = `<i class="fa-solid fa-right-from-bracket"></i> Đăng xuất`;
             topBarAuthLink.href = "javascript:void(0);";
             topBarAuthLink.title = `Đang đăng nhập: ${user.name} - Bấm để đăng xuất`;
-            topBarAuthLink.onclick = (e) => {
+            topBarAuthLink.onclick = async (e) => {
                 e.preventDefault();
-                if (confirm("Bạn có muốn đăng xuất khỏi tài khoản không?")) {
-                    localStorage.removeItem("itmart_user");
-                    localStorage.removeItem("itmart_cart");
-                    localStorage.removeItem("itmart_orders");
-                    localStorage.removeItem("itmart_wishlist");
-                    location.reload();
-                }
+                const confirmed = await ITMDialog.confirm({
+                    title: "Đăng xuất tài khoản",
+                    message: "Bạn có muốn đăng xuất khỏi tài khoản IT Mart không?",
+                    type: "danger",
+                    confirmText: "Đăng xuất",
+                    cancelText: "Hủy bỏ",
+                    icon: "fa-solid fa-arrow-right-from-bracket"
+                });
+                if (!confirmed) return;
+
+                localStorage.removeItem("itmart_user");
+                localStorage.removeItem("itmart_cart");
+                localStorage.removeItem("itmart_orders");
+                localStorage.removeItem("itmart_wishlist");
+                ITMToast.info("Đã đăng xuất thành công!");
+                setTimeout(() => location.reload(), 400);
             };
         }
     } else {
@@ -221,7 +230,7 @@ function adjustQty(delta) {
     if (val < 1) val = 1;
     if (currentProduct && val > (currentProduct.stock || 99)) {
         val = currentProduct.stock || 99;
-        alert(`Rất tiếc, kho chỉ còn tối đa ${val} sản phẩm!`);
+        ITMToast.warning(`Rất tiếc, kho chỉ còn tối đa ${val} sản phẩm!`, "Kho giới hạn");
     }
     input.value = val;
 }
@@ -330,10 +339,18 @@ window.handleReviewSubmit = function(event) {
     const name = nameInput.value.trim();
     const comment = commentInput.value.trim();
 
-    if (!name || !comment) {
-        alert("Vui lòng nhập đầy đủ họ tên và cảm nhận!");
-        return;
+    let hasError = false;
+    if (!name) {
+        ITMForm.showError("reviewerName", "Vui lòng nhập họ tên của bạn!");
+        hasError = true;
     }
+    if (!comment) {
+        ITMForm.showError("reviewerComment", "Vui lòng viết cảm nhận đánh giá sản phẩm!");
+        hasError = true;
+    }
+    if (hasError) return;
+
+    ITMForm.clearAll();
 
     // 1. Lưu đánh giá vào ProductDB & LocalStorage
     if (typeof ProductDB !== "undefined" && typeof ProductDB.addReview === "function") {
@@ -373,7 +390,7 @@ window.handleReviewSubmit = function(event) {
     const ratingTopEl = document.getElementById("pRating");
     if (ratingTopEl) ratingTopEl.textContent = `★ ${currentProduct.rating.toFixed(1)} (${currentProduct.reviewsCount} đánh giá)`;
 
-    alert("Cảm ơn bạn đã gửi đánh giá! Nhận xét đã được ghi nhận vào hệ thống và bạn được thưởng +10 điểm tích lũy thành viên.");
+    ITMToast.success("Cảm ơn bạn đã gửi đánh giá! Nhận xét đã được ghi nhận và bạn được thưởng +10 điểm tích lũy.", "Đánh giá thành công");
 };
 
 function renderRelatedProducts(curr) {

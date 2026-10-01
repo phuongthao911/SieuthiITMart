@@ -59,13 +59,29 @@ function getRedirectTarget() {
 function handleLogin(e) {
     e.preventDefault();
     const phoneInput = document.getElementById("loginPhone");
+    const pwdInput = document.getElementById("loginPassword");
     if (!phoneInput) return;
 
     const phone = phoneInput.value.trim();
+    const password = pwdInput ? pwdInput.value : "";
+
     if (!phone) {
-        alert("Vui lòng nhập số điện thoại!");
+        ITMForm.showError("loginPhone", "Vui lòng nhập số điện thoại của bạn!");
         return;
     }
+
+    const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+    if (!phoneRegex.test(phone) && phone.length < 9) {
+        ITMForm.showError("loginPhone", "Số điện thoại không đúng định dạng (Ví dụ: 098122445)!");
+        return;
+    }
+
+    if (!password) {
+        ITMForm.showError("loginPassword", "Vui lòng nhập mật khẩu tài khoản!");
+        return;
+    }
+
+    ITMForm.clearAll();
 
     const user = { phone: phone, name: "Khách hàng " + phone.slice(-4), isLoggedIn: true };
     localStorage.setItem("itmart_user", JSON.stringify(user));
@@ -76,8 +92,10 @@ function handleLogin(e) {
     const savedOrders = localStorage.getItem(`itmart_orders_${phone}`);
     if (savedOrders) localStorage.setItem("itmart_orders", savedOrders);
 
-    alert("Đăng nhập thành công! Chào mừng " + user.name);
-    window.location.href = getRedirectTarget();
+    ITMToast.success("Chào mừng " + user.name + " đã trở lại mua sắm!", "Đăng nhập thành công");
+    setTimeout(() => {
+        window.location.href = getRedirectTarget();
+    }, 800);
 }
 
 function handleRegister(e) {
@@ -94,15 +112,38 @@ function handleRegister(e) {
     const pwd = pwdInput.value;
     const confirmPwd = confirmPwdInput.value;
 
-    if (pwd !== confirmPwd) {
-        alert("Mật khẩu xác nhận không khớp! Vui lòng kiểm tra lại.");
+    if (!name) {
+        ITMForm.showError("regName", "Vui lòng nhập họ và tên của bạn!");
+        return;
+    }
+
+    if (!phone) {
+        ITMForm.showError("regPhone", "Vui lòng nhập số điện thoại!");
+        return;
+    }
+
+    const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+    if (!phoneRegex.test(phone) && phone.length < 9) {
+        ITMForm.showError("regPhone", "Số điện thoại không đúng định dạng (Ví dụ: 098122445)!");
+        return;
+    }
+
+    if (!pwd) {
+        ITMForm.showError("regPassword", "Vui lòng thiết lập mật khẩu!");
         return;
     }
 
     if (pwd.length < 6) {
-        alert("Mật khẩu phải có tối thiểu 6 ký tự!");
+        ITMForm.showError("regPassword", "Mật khẩu phải có tối thiểu 6 ký tự!");
         return;
     }
+
+    if (pwd !== confirmPwd) {
+        ITMForm.showError("regConfirmPassword", "Mật khẩu xác nhận không khớp! Vui lòng kiểm tra lại.");
+        return;
+    }
+
+    ITMForm.clearAll();
 
     const user = { phone: phone, name: name, isLoggedIn: true };
     localStorage.setItem("itmart_user", JSON.stringify(user));
@@ -113,8 +154,10 @@ function handleRegister(e) {
     const savedOrders = localStorage.getItem(`itmart_orders_${phone}`);
     if (savedOrders) localStorage.setItem("itmart_orders", savedOrders);
 
-    alert("Đăng ký tài khoản thành công! Tặng bạn mã giảm giá CHAOBANMOI (20.000đ).");
-    window.location.href = getRedirectTarget();
+    ITMToast.success("Chúc mừng bạn được tặng voucher CHAOBANMOI (20.000đ)!", "Đăng ký thành công");
+    setTimeout(() => {
+        window.location.href = getRedirectTarget();
+    }, 1000);
 }
 
 // Khởi tạo tab từ URL query (?action=register)

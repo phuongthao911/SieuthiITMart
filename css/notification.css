@@ -1,0 +1,379 @@
+/* ==========================================================================
+   IT MART - NOTIFICATION & DIALOG & FORM ERROR STYLESHEET (notification.css)
+   Cung cấp: Toast Notification cao cấp, Modal Dialog xác nhận (thay thế confirm/alert),
+   và Thông báo lỗi form (Error Message) màu đỏ hiển thị trực quan dưới trường dữ liệu
+   ========================================================================== */
+
+/* 1. TOAST NOTIFICATION CONTAINER */
+.itm-toast-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+    max-width: 420px;
+    width: calc(100% - 48px);
+}
+
+/* Từng thẻ Toast */
+.itm-toast {
+    position: relative;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 14px 18px 14px 16px;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.45;
+    pointer-events: auto;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #3b82f6;
+    animation: itmToastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: all 0.25s ease;
+}
+
+.itm-toast.itm-toast-out {
+    animation: itmToastSlideOut 0.25s ease forwards;
+}
+
+@keyframes itmToastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes itmToastSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(40px) scale(0.92);
+    }
+}
+
+/* Các loại Toast */
+.itm-toast-success {
+    border-left-color: #10b981;
+}
+.itm-toast-success .itm-toast-icon {
+    color: #10b981;
+    background: #ecfdf5;
+}
+
+.itm-toast-error {
+    border-left-color: #ef4444;
+}
+.itm-toast-error .itm-toast-icon {
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+.itm-toast-warning {
+    border-left-color: #f59e0b;
+}
+.itm-toast-warning .itm-toast-icon {
+    color: #f59e0b;
+    background: #fffbeb;
+}
+
+.itm-toast-info {
+    border-left-color: #3b82f6;
+}
+.itm-toast-info .itm-toast-icon {
+    color: #3b82f6;
+    background: #eff6ff;
+}
+
+/* Icon tròn */
+.itm-toast-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Nội dung Toast */
+.itm-toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.itm-toast-title {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 14.5px;
+    margin-bottom: 2px;
+}
+
+.itm-toast-message {
+    color: #475569;
+    font-size: 13.5px;
+    word-break: break-word;
+}
+
+/* Nút đóng Toast */
+.itm-toast-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 2px;
+    line-height: 1;
+    margin-left: 4px;
+    transition: color 0.15s ease;
+}
+.itm-toast-close:hover {
+    color: #0f172a;
+}
+
+/* Thanh thời gian tự tắt */
+.itm-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+.itm-toast-progress-bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+}
+.itm-toast-success .itm-toast-progress-bar { background: #10b981; }
+.itm-toast-error .itm-toast-progress-bar { background: #ef4444; }
+.itm-toast-warning .itm-toast-progress-bar { background: #f59e0b; }
+.itm-toast-info .itm-toast-progress-bar { background: #3b82f6; }
+
+
+/* ==========================================================================
+   2. DIALOG CONFIRMATION & POPUP MODAL (THAY THẾ WINDOW.CONFIRM / ALERT)
+   ========================================================================== */
+.itm-dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: itmFadeIn 0.2s ease forwards;
+}
+
+.itm-dialog-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    animation: itmDialogScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes itmFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes itmDialogScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.itm-dialog-body {
+    padding: 28px 24px 20px;
+    text-align: center;
+}
+
+.itm-dialog-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.itm-dialog-danger .itm-dialog-icon {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.itm-dialog-warning .itm-dialog-icon {
+    background: #fffbeb;
+    color: #f59e0b;
+}
+
+.itm-dialog-info .itm-dialog-icon {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.itm-dialog-success .itm-dialog-icon {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.itm-dialog-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.itm-dialog-message {
+    font-size: 14.5px;
+    color: #475569;
+    line-height: 1.55;
+}
+
+.itm-dialog-footer {
+    padding: 16px 24px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.itm-dialog-btn {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    transition: all 0.15s ease;
+}
+
+.itm-dialog-btn-cancel {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+.itm-dialog-btn-cancel:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.itm-dialog-btn-confirm {
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.itm-dialog-danger .itm-dialog-btn-confirm {
+    background: #ef4444;
+}
+.itm-dialog-danger .itm-dialog-btn-confirm:hover {
+    background: #dc2626;
+}
+
+.itm-dialog-warning .itm-dialog-btn-confirm {
+    background: #f59e0b;
+}
+.itm-dialog-warning .itm-dialog-btn-confirm:hover {
+    background: #d97706;
+}
+
+.itm-dialog-info .itm-dialog-btn-confirm {
+    background: #ea2e2e;
+}
+.itm-dialog-info .itm-dialog-btn-confirm:hover {
+    background: #c81e1e;
+}
+
+.itm-dialog-success .itm-dialog-btn-confirm {
+    background: #10b981;
+}
+.itm-dialog-success .itm-dialog-btn-confirm:hover {
+    background: #059669;
+}
+
+
+/* ==========================================================================
+   3. FORM INLINE ERROR MESSAGE (HIỂN THỊ MÀU ĐỎ TRỰC QUAN NGAY DƯỚI INPUT)
+   ========================================================================== */
+
+/* Trạng thái lỗi cho input, select, textarea */
+.itm-input-error,
+input.itm-input-error,
+select.itm-input-error,
+textarea.itm-input-error {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+    animation: itmShake 0.35s ease-in-out;
+}
+
+@keyframes itmShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+/* Khối tin nhắn lỗi màu đỏ ngay dưới input */
+.itm-error-message {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-top: 6px;
+    line-height: 1.35;
+    animation: itmErrorFadeIn 0.2s ease forwards;
+}
+
+.itm-error-message i {
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+@keyframes itmErrorFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -35,12 +35,21 @@ function initHeaderState() {
             if (topBarAuth) {
                 topBarAuth.innerHTML = `<i class="fa-solid fa-right-from-bracket"></i> Đăng xuất (${user.fullName || user.phone})`;
                 topBarAuth.href = "#logout";
-                topBarAuth.onclick = (e) => {
+                topBarAuth.onclick = async (e) => {
                     e.preventDefault();
-                    if (confirm("Bạn có chắc chắn muốn đăng xuất?")) {
-                        localStorage.removeItem("itmart_user");
-                        window.location.reload();
-                    }
+                    const confirmed = await ITMDialog.confirm({
+                        title: "Đăng xuất tài khoản",
+                        message: "Bạn có chắc chắn muốn đăng xuất khỏi tài khoản IT Mart?",
+                        type: "danger",
+                        confirmText: "Đăng xuất",
+                        cancelText: "Hủy bỏ",
+                        icon: "fa-solid fa-arrow-right-from-bracket"
+                    });
+                    if (!confirmed) return;
+
+                    localStorage.removeItem("itmart_user");
+                    ITMToast.info("Đã đăng xuất thành công!");
+                    setTimeout(() => window.location.reload(), 400);
                 };
             }
             if (headerUserBtn) {
@@ -190,10 +199,28 @@ function initFeedbackForm() {
         const type = document.getElementById("fbType")?.value || "";
         const message = document.getElementById("fbMessage")?.value.trim() || "";
 
-        if (!name || !phone || !message) {
-            alert("Vui lòng nhập đầy đủ họ tên, số điện thoại và nội dung góp ý!");
-            return;
+        let hasError = false;
+        if (!name) {
+            ITMForm.showError("fbName", "Vui lòng nhập họ và tên của bạn!");
+            hasError = true;
         }
+        if (!phone) {
+            ITMForm.showError("fbPhone", "Vui lòng nhập số điện thoại liên hệ!");
+            hasError = true;
+        } else {
+            const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            if (!phoneRegex.test(phone) && phone.length < 9) {
+                ITMForm.showError("fbPhone", "Số điện thoại không đúng định dạng (Ví dụ: 098122445)!");
+                hasError = true;
+            }
+        }
+        if (!message) {
+            ITMForm.showError("fbMessage", "Vui lòng nhập nội dung góp ý chi tiết!");
+            hasError = true;
+        }
+        if (hasError) return;
+
+        ITMForm.clearAll();
 
         // Lưu góp ý vào localStorage để lưu trữ thực tế
         const feedbacks = JSON.parse(localStorage.getItem("itmart_feedbacks")) || [];
@@ -219,8 +246,7 @@ function initFeedbackForm() {
             setTimeout(() => {
                 successNotice.style.display = "none";
             }, 6000);
-        } else {
-            alert("Cảm ơn bạn đã gửi ý kiến đóng góp! IT Mart đã tiếp nhận và sẽ phản hồi trong vòng 24h làm việc.");
         }
+        ITMToast.success("Cảm ơn bạn đã gửi ý kiến đóng góp! IT Mart đã tiếp nhận và sẽ phản hồi trong vòng 24h.", "Đã gửi ý kiến");
     });
 }

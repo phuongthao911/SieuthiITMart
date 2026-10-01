@@ -179,15 +179,24 @@ window.saveUserAddress = function() {
     }
 };
 
-window.logoutUser = function() {
-    if (confirm("Bạn có muốn đăng xuất khỏi tài khoản không?")) {
-        // Dữ liệu tài khoản đã được bảo lưu an toàn theo số điện thoại (itmart_cart_<phone>, itmart_orders_<phone>)
-        localStorage.removeItem("itmart_user");
-        localStorage.removeItem("itmart_cart");
-        localStorage.removeItem("itmart_orders");
-        localStorage.removeItem("itmart_wishlist");
-        location.reload();
-    }
+window.logoutUser = async function() {
+    const confirmed = await ITMDialog.confirm({
+        title: "Đăng xuất tài khoản",
+        message: "Bạn có chắc chắn muốn đăng xuất khỏi tài khoản IT Mart?",
+        type: "danger",
+        confirmText: "Đăng xuất",
+        cancelText: "Hủy bỏ",
+        icon: "fa-solid fa-arrow-right-from-bracket"
+    });
+    if (!confirmed) return;
+
+    // Dữ liệu tài khoản đã được bảo lưu an toàn theo số điện thoại (itmart_cart_<phone>, itmart_orders_<phone>)
+    localStorage.removeItem("itmart_user");
+    localStorage.removeItem("itmart_cart");
+    localStorage.removeItem("itmart_orders");
+    localStorage.removeItem("itmart_wishlist");
+    ITMToast.info("Đã đăng xuất thành công!");
+    setTimeout(() => location.reload(), 400);
 };
 
 /**
@@ -564,14 +573,17 @@ window.applyCustomPrice = function() {
     const maxVal = maxEl && maxEl.value ? parseInt(maxEl.value) : null;
 
     if (minVal === null && maxVal === null) {
-        alert("Vui lòng nhập mức giá tối thiểu hoặc tối đa!");
+        ITMForm.showError("priceMinInput", "Vui lòng nhập mức giá tối thiểu hoặc tối đa!");
         return;
     }
 
     if (minVal !== null && maxVal !== null && minVal > maxVal) {
-        alert("Giá tối thiểu không được lớn hơn giá tối đa!");
+        ITMForm.showError("priceMaxInput", "Giá tối đa phải lớn hơn hoặc bằng giá tối thiểu!");
         return;
     }
+
+    ITMForm.clearError("priceMinInput");
+    ITMForm.clearError("priceMaxInput");
 
     AppState.customPriceMin = minVal;
     AppState.customPriceMax = maxVal;
@@ -939,29 +951,9 @@ function updateCartBadge() {
  * Hiển thị Toast thông báo
  */
 window.showToast = function(message, type = "success") {
-    let container = document.getElementById("toastContainer");
-    if (!container) {
-        container = document.createElement("div");
-        container.id = "toastContainer";
-        container.className = "toast-container";
-        document.body.appendChild(container);
+    if (window.ITMToast) {
+        window.ITMToast.show(message, type);
     }
-
-    const toast = document.createElement("div");
-    toast.className = `toast toast-${type}`;
-    toast.innerHTML = `
-        <i class="fa-solid fa-circle-check" style="color: var(--secondary); font-size: 18px;"></i>
-        <span>${message}</span>
-    `;
-
-    container.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateY(10px)";
-        toast.style.transition = "all 0.3s ease";
-        setTimeout(() => toast.remove(), 300);
-    }, 2500);
 };
 
 /**

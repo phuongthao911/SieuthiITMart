@@ -59,6 +59,16 @@ const AdminApp = {
         const username = userEl ? userEl.value.trim() : "";
         const password = passEl ? passEl.value : "";
 
+        if (!username) {
+            ITMForm.showError("adminUsername", "Vui lòng nhập tài khoản quản trị hoặc số điện thoại!");
+            return;
+        }
+
+        if (!password) {
+            ITMForm.showError("adminPassword", "Vui lòng nhập mật khẩu quản trị!");
+            return;
+        }
+
         // Cho phép các tài khoản quản trị hợp lệ
         const validUsers = [
             { user: "admin", pass: "admin123", name: "Quản Trị Viên (Super Admin)", role: "Super Admin", email: "admin@itmart.vn" },
@@ -69,6 +79,7 @@ const AdminApp = {
         const matched = validUsers.find(u => (u.user === username || u.email === username) && u.pass === password);
 
         if (matched) {
+            ITMForm.clearAll();
             const session = {
                 username: matched.user,
                 fullName: matched.name,
@@ -90,21 +101,31 @@ const AdminApp = {
             this.renderVouchersTable();
             this.renderFeedbackTable();
 
-            alert(`Đăng nhập thành công! Chào mừng ${session.fullName} đến với hệ thống quản trị IT Mart.`);
+            ITMToast.success(`Chào mừng ${session.fullName} đến với hệ thống quản trị IT Mart!`, "Đăng nhập thành công");
         } else {
-            alert("Tài khoản hoặc mật khẩu không chính xác! Vui lòng kiểm tra lại thông tin đăng nhập.");
+            ITMForm.showError("adminPassword", "Tài khoản hoặc mật khẩu không chính xác. Vui lòng kiểm tra lại!");
+            ITMToast.error("Đăng nhập thất bại. Thông tin không chính xác!");
         }
     },
 
-    logout() {
-        if (confirm("Bạn có chắc chắn muốn đăng xuất khỏi trang Quản trị viên?")) {
-            sessionStorage.removeItem("itmart_admin_user");
-            localStorage.removeItem("itmart_admin_user");
-            const overlay = document.getElementById("adminLoginOverlay");
-            if (overlay) overlay.style.display = "flex";
-            const passEl = document.getElementById("adminPassword");
-            if (passEl) passEl.value = "";
-        }
+    async logout() {
+        const confirmed = await ITMDialog.confirm({
+            title: "Đăng xuất Quản trị viên",
+            message: "Bạn có chắc chắn muốn đăng xuất khỏi trang Quản trị IT Mart?",
+            type: "danger",
+            confirmText: "Đăng xuất",
+            cancelText: "Ở lại",
+            icon: "fa-solid fa-arrow-right-from-bracket"
+        });
+        if (!confirmed) return;
+
+        sessionStorage.removeItem("itmart_admin_user");
+        localStorage.removeItem("itmart_admin_user");
+        const overlay = document.getElementById("adminLoginOverlay");
+        if (overlay) overlay.style.display = "flex";
+        const passEl = document.getElementById("adminPassword");
+        if (passEl) passEl.value = "";
+        ITMToast.info("Đã đăng xuất khỏi tài khoản quản trị.");
     },
 
     updateAdminHeader(admin) {
@@ -654,21 +675,27 @@ const AdminApp = {
         const flashSale = document.getElementById("prodFlashSale").checked;
         const description = document.getElementById("prodDescription").value.trim();
 
-        if (!name || !salePrice) {
-            alert("Vui lòng điền đầy đủ tên sản phẩm và giá bán!");
+        if (!name) {
+            ITMForm.showError("prodName", "Vui lòng nhập tên sản phẩm!");
             return;
         }
+        if (!salePrice || salePrice <= 0) {
+            ITMForm.showError("prodSalePrice", "Vui lòng nhập giá bán hợp lệ lớn hơn 0!");
+            return;
+        }
+
+        ITMForm.clearAll();
 
         if (id) {
             ProductDB.updateProduct(id, {
                 name, brand, category, originalPrice, salePrice, unit, stock, image, flashSale, description
             });
-            alert(`Đã cập nhật sản phẩm "${name}" thành công!`);
+            ITMToast.success(`Đã cập nhật sản phẩm "${name}" thành công!`);
         } else {
             ProductDB.addProduct({
                 name, brand, category, originalPrice, salePrice, unit, stock, image, flashSale, description
             });
-            alert(`Đã thêm mới sản phẩm "${name}" thành công!`);
+            ITMToast.success(`Đã thêm mới sản phẩm "${name}" vào CSDL!`);
         }
 
         this.closeProductModal();
@@ -676,25 +703,39 @@ const AdminApp = {
         this.renderDashboard();
     },
 
-    deleteProduct(id) {
+    async deleteProduct(id) {
         const p = ProductDB.findById(id);
         if (!p) return;
 
-        if (confirm(`Bạn có chắc chắn muốn xóa sản phẩm "${p.name}" (ID: ${p.id}) khỏi hệ thống?`)) {
-            ProductDB.deleteProduct(id);
-            alert("Đã xóa sản phẩm thành công!");
-            this.renderProductsTable();
-            this.renderDashboard();
-        }
+        const confirmed = await ITMDialog.confirm({
+            title: "Xóa sản phẩm",
+            message: `Bạn có chắc chắn muốn xóa vĩnh viễn sản phẩm "${p.name}" (ID: ${p.id}) khỏi hệ thống?`,
+            type: "danger",
+            confirmText: "Xóa sản phẩm",
+            cancelText: "Hủy bỏ"
+        });
+        if (!confirmed) return;
+
+        ProductDB.deleteProduct(id);
+        ITMToast.success("Đã xóa sản phẩm khỏi hệ thống!");
+        this.renderProductsTable();
+        this.renderDashboard();
     },
 
-    resetProductsDefault() {
-        if (confirm("Bạn có chắc muốn khôi phục danh sách sản phẩm về CSDL mặc định ban đầu?")) {
-            ProductDB.resetToDefault();
-            alert("Đã khôi phục CSDL sản phẩm thành công!");
-            this.renderProductsTable();
-            this.renderDashboard();
-        }
+    async resetProductsDefault() {
+        const confirmed = await ITMDialog.confirm({
+            title: "Khôi phục CSDL gốc",
+            message: "Bạn có chắc muốn khôi phục danh sách sản phẩm về CSDL mặc định ban đầu? Dữ liệu thêm mới sẽ bị xóa.",
+            type: "warning",
+            confirmText: "Khôi phục",
+            cancelText: "Hủy bỏ"
+        });
+        if (!confirmed) return;
+
+        ProductDB.resetToDefault();
+        ITMToast.success("Đã khôi phục CSDL sản phẩm thành công!");
+        this.renderProductsTable();
+        this.renderDashboard();
     },
 
     // 6. QUẢN LÝ ĐƠN HÀNG THẬT & IN HÓA ĐƠN
@@ -791,7 +832,7 @@ const AdminApp = {
             } catch (e) {}
 
             this.renderDashboard();
-            alert(`Đã cập nhật trạng thái đơn #${orderId} sang "${newStatus}"!`);
+            ITMToast.success(`Đã cập nhật trạng thái đơn #${orderId} sang "${newStatus}"!`);
         }
     },
 
@@ -923,32 +964,45 @@ const AdminApp = {
         const minOrder = Number(document.getElementById("couponMinOrder").value) || 0;
         const desc = document.getElementById("couponDesc").value.trim() || `Giảm giá mã ${code}`;
 
-        if (!code || !value) {
-            alert("Vui lòng điền mã code và giá trị giảm!");
+        if (!code) {
+            ITMForm.showError("couponCode", "Vui lòng điền mã giảm giá!");
+            return;
+        }
+        if (!value || value <= 0) {
+            ITMForm.showError("couponValue", "Vui lòng nhập giá trị giảm hợp lệ lớn hơn 0!");
             return;
         }
 
         const coupons = JSON.parse(localStorage.getItem("itmart_coupons")) || [];
         if (coupons.some(c => c.code === code)) {
-            alert("Mã giảm giá này đã tồn tại!");
+            ITMForm.showError("couponCode", "Mã giảm giá này đã tồn tại trên hệ thống!");
             return;
         }
 
+        ITMForm.clearAll();
         coupons.push({ code, type, value, minOrder, desc, count: 100 });
         localStorage.setItem("itmart_coupons", JSON.stringify(coupons));
-        alert(`Đã tạo thành công voucher "${code}"! Khách hàng có thể sử dụng ngay tại giỏ hàng.`);
+        ITMToast.success(`Đã kích hoạt thành công voucher "${code}"!`);
 
         this.closeCouponModal();
         this.renderVouchersTable();
     },
 
-    deleteCoupon(index) {
+    async deleteCoupon(index) {
         const coupons = JSON.parse(localStorage.getItem("itmart_coupons")) || [];
-        if (confirm(`Bạn có chắc muốn xóa mã giảm giá "${coupons[index].code}"?`)) {
-            coupons.splice(index, 1);
-            localStorage.setItem("itmart_coupons", JSON.stringify(coupons));
-            this.renderVouchersTable();
-        }
+        const confirmed = await ITMDialog.confirm({
+            title: "Xóa mã giảm giá",
+            message: `Bạn có chắc muốn xóa mã giảm giá "${coupons[index].code}"?`,
+            type: "danger",
+            confirmText: "Xóa",
+            cancelText: "Hủy bỏ"
+        });
+        if (!confirmed) return;
+
+        coupons.splice(index, 1);
+        localStorage.setItem("itmart_coupons", JSON.stringify(coupons));
+        ITMToast.success("Đã xóa mã giảm giá thành công!");
+        this.renderVouchersTable();
     },
 
     // 8. QUẢN LÝ Ý KIẾN ĐÓNG GÓP & KHIẾU NẠI THẬT
@@ -999,9 +1053,10 @@ const AdminApp = {
 
     resolveFeedback(index) {
         const feedbacks = JSON.parse(localStorage.getItem("itmart_feedbacks")) || [];
-        alert(`Đã liên hệ xử lý xong phản hồi của khách hàng "${feedbacks[index].name}"!`);
+        const fbName = feedbacks[index]?.name || "khách hàng";
         feedbacks.splice(index, 1);
         localStorage.setItem("itmart_feedbacks", JSON.stringify(feedbacks));
+        ITMToast.success(`Đã xử lý xong phản hồi của "${fbName}"!`);
         this.renderFeedbackTable();
     },
 
