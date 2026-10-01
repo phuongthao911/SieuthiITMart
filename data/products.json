@@ -1,0 +1,3254 @@
+{
+  "metadata": {
+    "database": "IT_MART_ECOMMERCE_DB",
+    "version": "2.0.0",
+    "updatedAt": "2026-10-01",
+    "totalProducts": 91,
+    "totalCategories": 15,
+    "totalBrands": 57
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "Tất cả sản phẩm",
+      "icon": "fa-border-all"
+    },
+    {
+      "id": "rau-cu",
+      "name": "Rau củ tươi sạch",
+      "icon": "fa-carrot"
+    },
+    {
+      "id": "trai-cay",
+      "name": "Trái cây tươi",
+      "icon": "fa-apple-whole"
+    },
+    {
+      "id": "thit-trung",
+      "name": "Thịt, Trứng & Hải sản",
+      "icon": "fa-drumstick-bite"
+    },
+    {
+      "id": "sua-tuoi",
+      "name": "Sữa tươi",
+      "icon": "fa-cow"
+    },
+    {
+      "id": "sua-hat",
+      "name": "Sữa hạt - Đậu",
+      "icon": "fa-seedling"
+    },
+    {
+      "id": "sua-chua",
+      "name": "Sữa chua - Váng sữa",
+      "icon": "fa-ice-cream"
+    },
+    {
+      "id": "banh-keo",
+      "name": "Bánh kẹo - Ăn vặt",
+      "icon": "fa-cookie-bite"
+    },
+    {
+      "id": "do-uong",
+      "name": "Nước giải khát",
+      "icon": "fa-bottle-water"
+    },
+    {
+      "id": "tra-ca-phe",
+      "name": "Trà & Cà phê",
+      "icon": "fa-mug-hot"
+    },
+    {
+      "id": "mi-an-lien",
+      "name": "Mì & Ăn liền",
+      "icon": "fa-bowl-food"
+    },
+    {
+      "id": "dong-lanh",
+      "name": "Đồ đông lạnh & Chế biến",
+      "icon": "fa-snowflake"
+    },
+    {
+      "id": "gia-vi",
+      "name": "Gia vị & Đồ hộp",
+      "icon": "fa-kitchen-set"
+    },
+    {
+      "id": "hoa-pham",
+      "name": "Hóa phẩm & Chăm sóc",
+      "icon": "fa-pump-soap"
+    },
+    {
+      "id": "gia-dung",
+      "name": "Đồ gia dụng & Bếp",
+      "icon": "fa-blender"
+    }
+  ],
+  "brands": [
+    "Tất cả thương hiệu",
+    "TH True Milk",
+    "Vinamilk",
+    "Cô Gái Hà Lan",
+    "Dalat Milk",
+    "YoMost",
+    "Kun",
+    "Monte",
+    "Sahmyook",
+    "Promess",
+    "Binggrae",
+    "VietGAP Đà Lạt",
+    "Đà Lạt Farm",
+    "Envy",
+    "Nông Sản Việt",
+    "MeatDeli",
+    "Ba Huân",
+    "PaciBeef",
+    "CP Foods",
+    "Leroy Seafood",
+    "Vissan",
+    "CJ Cầu Tre",
+    "G Kitchen",
+    "Thọ Phát",
+    "The Laughing Cow",
+    "Orion",
+    "Lay's",
+    "Kinh Đô",
+    "Glico",
+    "Haribo",
+    "Coca-Cola",
+    "Pepsi",
+    "Suntory Tea+",
+    "Number 1",
+    "LaVie",
+    "Trung Nguyên",
+    "Nescafé",
+    "Highlands",
+    "Cozy",
+    "Lipton",
+    "Acecook",
+    "Omachi",
+    "Indomie",
+    "Simply",
+    "Nam Ngư",
+    "Chinsu",
+    "Knorr",
+    "Seaspimex",
+    "137 Degrees",
+    "OMO",
+    "Sunlight",
+    "Sunsilk",
+    "Dove",
+    "P/S",
+    "Sunhouse",
+    "Lock&Lock",
+    "Inochi"
+  ],
+  "products": [
+    {
+      "id": "sp-01",
+      "name": "Sữa chua lên men tự nhiên Yomost cam hộp 1L",
+      "brand": "YoMost",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 40900,
+      "salePrice": 30800,
+      "unit": "Hộp 1L",
+      "image": "./images/photo.jpg",
+      "badge": "Flash Sale -25%",
+      "rating": 4.8,
+      "reviewsCount": 142,
+      "soldCount": 1420,
+      "flashSale": true,
+      "flashProgress": 85,
+      "description": "Sữa chua uống YoMost vị cam lên men tự nhiên từ nguồn sữa tươi thanh trùng chọn lọc, giàu dinh dưỡng, hỗ trợ tiêu hóa khỏe mạnh và tăng cường đề kháng.",
+      "stock": 45,
+      "specs": {
+        "origin": "Việt Nam (FrieslandCampina)",
+        "volume": "1000ml (1 Lít)",
+        "expiry": "8 tháng kể từ ngày sản xuất",
+        "storage": "Bảo quản nơi khô ráo, thoáng mát hoặc ngăn mát 4-8°C",
+        "ingredients": "Sữa bò lên men tự nhiên, nước ép cam nguyên chất, đường tinh luyện, Vitamin B3, B6, B12"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Thùy Linh",
+          "rating": 5,
+          "date": "15/09/2026",
+          "comment": "Vị cam chua ngọt thanh mát, date còn rất mới. Cả nhà mình đều thích uống lạnh!"
+        },
+        {
+          "name": "Trần Hoàng Quân",
+          "rating": 5,
+          "date": "02/09/2026",
+          "comment": "Giao hàng 2 giờ nhận đúng lúc đang cần, đóng gói cẩn thận trong thùng carton lót xốp."
+        }
+      ]
+    },
+    {
+      "id": "sp-02",
+      "name": "Sữa chua uống vị dâu Kun lốc 4 hộp x 180ml",
+      "brand": "Kun",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 30900,
+      "salePrice": 24700,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/sua-chua-uong-lif-kun-huong-kem-dau-hop-180ml-4-20230410013553-thumb-1.jpg",
+      "badge": "Bán chạy",
+      "rating": 4.9,
+      "reviewsCount": 210,
+      "soldCount": 2850,
+      "flashSale": true,
+      "flashProgress": 92,
+      "description": "Sữa chua uống hương kem dâu thơm ngon, bổ sung bộ ba vitamin K2, D3 và Canxi giúp phát triển chiều cao vượt trội cho trẻ em.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Lof Kun)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng kể từ NSX",
+        "storage": "Nhiệt độ phòng hoặc ướp lạnh trước khi uống",
+        "ingredients": "Sữa lên men tự nhiên, hương dâu tổng hợp, vitamin K2, vitamin D3, khoáng chất Canxi"
+      },
+      "reviews": [
+        {
+          "name": "Mẹ Bé Bông",
+          "rating": 5,
+          "date": "20/09/2026",
+          "comment": "Bé nhà mình chỉ chịu uống Kun dâu, mua lốc ở IT Mart rẻ hơn siêu thị gần nhà nhiều."
+        }
+      ]
+    },
+    {
+      "id": "sp-03",
+      "name": "Sữa chua ăn TH True Yogurt có đường hộp 100g",
+      "brand": "TH True Milk",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 7200,
+      "salePrice": 6000,
+      "unit": "Hộp 100g",
+      "image": "./images/th-milk-sua-chua-an-vi-tu-nhien-100g_5ceb2511-a809-405a-b334-12864c14e739-og-thumb-1.jpg",
+      "badge": "Bán chạy",
+      "rating": 5,
+      "reviewsCount": 350,
+      "soldCount": 4600,
+      "flashSale": false,
+      "flashProgress": 70,
+      "description": "Lên men tự nhiên từ sữa tươi sạch nguyên chất của trang trại TH, hoàn toàn không sử dụng chất bảo quản, giữ trọn vẹn hương vị tự nhiên và vi chất quý giá.",
+      "stock": 120,
+      "specs": {
+        "origin": "Việt Nam (TH True Milk Nghệ An)",
+        "volume": "100g / hộp",
+        "expiry": "45 ngày kể từ ngày sản xuất",
+        "storage": "Luôn bảo quản lạnh ở nhiệt độ 2°C – 8°C",
+        "ingredients": "100% Sữa tươi sạch nguyên chất, đường, men Streptococcus thermophilus và Lactobacillus bulgaricus"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Minh Tâm",
+          "rating": 5,
+          "date": "18/09/2026",
+          "comment": "Sữa chua sánh mịn, vị ngọt vừa vặn không bị gắt, ăn kèm ngũ cốc yến mạch buổi sáng rất ngon."
+        }
+      ]
+    },
+    {
+      "id": "sp-04",
+      "name": "Sữa chua uống SuSu hương cam túi 110ml",
+      "brand": "Vinamilk",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 5200,
+      "salePrice": 4900,
+      "unit": "Gói 110ml",
+      "image": "./images/10195011_08923664-7fbf-4c0a-949a-ef41e5a8e6f7-og-thumb-1.jpg",
+      "badge": "Hot",
+      "rating": 4.7,
+      "reviewsCount": 89,
+      "soldCount": 1100,
+      "flashSale": false,
+      "flashProgress": 60,
+      "description": "Bổ sung chất xơ hòa tan Prebiotic và Vitamin A giúp bé mắt sáng ngời, đường ruột khỏe mạnh và năng động suốt ngày dài.",
+      "stock": 95,
+      "specs": {
+        "origin": "Việt Nam (Vinamilk)",
+        "volume": "110ml",
+        "expiry": "6 tháng",
+        "storage": "Bảo quản nơi khô ráo thoáng mát",
+        "ingredients": "Sữa tươi tiệt trùng, nước, đường, chất xơ Prebiotic, Vitamin A, B6, B12"
+      },
+      "reviews": [
+        {
+          "name": "Lê Lan Anh",
+          "rating": 5,
+          "date": "12/09/2026",
+          "comment": "Túi nhỏ tiện bỏ cặp cho con đi học mầm non, bé rất thích hút."
+        }
+      ]
+    },
+    {
+      "id": "sp-05",
+      "name": "Lốc 4 hộp váng sữa uống hương sô cô la Zott Monte chai 95ml",
+      "brand": "Monte",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 58500,
+      "salePrice": 57200,
+      "unit": "Lốc 4 chai",
+      "image": "./images/VS1.jpg",
+      "badge": "Nhập khẩu Đức",
+      "rating": 4.9,
+      "reviewsCount": 165,
+      "soldCount": 1890,
+      "flashSale": true,
+      "flashProgress": 78,
+      "description": "Váng sữa Monte bổ dưỡng từ sữa tươi hảo hạng kết hợp hương vị sô cô la thơm ngon béo ngậy, giàu Canxi và Vitamin A cho sự phát triển của bé.",
+      "stock": 60,
+      "specs": {
+        "origin": "Cộng Hòa Liên Bang Đức (Zott SE & Co. KG)",
+        "volume": "4 x 95ml",
+        "expiry": "180 ngày",
+        "storage": "Bảo quản lạnh 4°C – 8°C",
+        "ingredients": "Sữa nguyên kem (49%), kem, hạt phỉ, sô cô la bột, Canxi, Vitamin A"
+      },
+      "reviews": [
+        {
+          "name": "Hoàng Yến",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Monte socola hàng chuẩn Đức, vị ngậy béo rất đỉnh. Con mình ăn tăng cân đều."
+        }
+      ]
+    },
+    {
+      "id": "sp-06",
+      "name": "Lốc 4 hộp váng sữa uống hương vani Zott Monte chai 95ml",
+      "brand": "Monte",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 58500,
+      "salePrice": 57200,
+      "unit": "Lốc 4 chai",
+      "image": "./images/VS2.jpg",
+      "badge": "Nhập khẩu Đức",
+      "rating": 4.8,
+      "reviewsCount": 134,
+      "soldCount": 1560,
+      "flashSale": false,
+      "flashProgress": 65,
+      "description": "Váng sữa hương vani truyền thống thơm lừng, cung cấp năng lượng dồi dào và hàm lượng chất béo tốt cho thể trạng bé.",
+      "stock": 55,
+      "specs": {
+        "origin": "Đức (Zott GmbH)",
+        "volume": "4 x 95ml",
+        "expiry": "6 tháng",
+        "storage": "Bảo quản ngăn mát tủ lạnh",
+        "ingredients": "Sữa nguyên kem, kem, đường, tinh bột biến tính, hương vani tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Đỗ Mai Trang",
+          "rating": 5,
+          "date": "10/09/2026",
+          "comment": "Vị vani thơm ngọt dịu, dễ uống hơn vị socola đối với bé nhỏ."
+        }
+      ]
+    },
+    {
+      "id": "sp-07",
+      "name": "Sữa chua uống hương cam Kun lốc 4 hộp x 180ml",
+      "brand": "Kun",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 30900,
+      "salePrice": 24700,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/kun-sua-chua-uong-huong-cam-180ml_4-goi-4-20230410013450.png",
+      "badge": "Giảm 20%",
+      "rating": 4.8,
+      "reviewsCount": 180,
+      "soldCount": 2200,
+      "flashSale": false,
+      "flashProgress": 75,
+      "description": "Vị cam chua ngọt sảng khoái, nguồn dinh dưỡng tối ưu từ sữa tươi và công thức phát triển chiều cao toàn diện của Lof Kun.",
+      "stock": 75,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 180ml",
+        "expiry": "8 tháng",
+        "storage": "Nhiệt độ phòng hoặc ngăn mát",
+        "ingredients": "Sữa lên men tự nhiên, nước ép cam, đường, Vitamin K2, D3, A"
+      },
+      "reviews": [
+        {
+          "name": "Bùi Quốc Anh",
+          "rating": 5,
+          "date": "14/09/2026",
+          "comment": "Giá lốc 4 hộp 24k quá rẻ, date xa."
+        }
+      ]
+    },
+    {
+      "id": "sp-08",
+      "name": "Thức uống từ sữa chua vị lựu YoMost lốc 4 hộp x 170ml",
+      "brand": "YoMost",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 38900,
+      "salePrice": 34800,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/SC1.png",
+      "badge": "Vị mới",
+      "rating": 4.7,
+      "reviewsCount": 92,
+      "soldCount": 980,
+      "flashSale": false,
+      "flashProgress": 55,
+      "description": "Sự hòa quyện độc đáo giữa sữa chua thanh mát và nước ép quả lựu đỏ rực rỡ, giàu chất chống oxy hóa và vitamin C.",
+      "stock": 50,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 170ml",
+        "expiry": "8 tháng",
+        "storage": "Nơi thoáng mát",
+        "ingredients": "Sữa chua lên men, nước ép lựu đỏ, vitamin C, kẽm"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Khánh Linh",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Vị lựu uống lạ miệng và rất cuốn, giải nhiệt buổi trưa rất tốt."
+        }
+      ]
+    },
+    {
+      "id": "sp-09",
+      "name": "Thức uống từ sữa chua vị cam YoMost lốc 4 hộp x 170ml",
+      "brand": "YoMost",
+      "category": "sua-chua",
+      "categoryName": "Sữa chua - Váng sữa",
+      "originalPrice": 38900,
+      "salePrice": 34800,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/SC2.png",
+      "badge": "Ưa chuộng",
+      "rating": 4.9,
+      "reviewsCount": 115,
+      "soldCount": 1750,
+      "flashSale": false,
+      "flashProgress": 80,
+      "description": "Vị cam tươi mới bùng nổ năng lượng, thơm ngon uống lạnh cực đã, phù hợp cho mọi thành viên trong gia đình.",
+      "stock": 65,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 170ml",
+        "expiry": "8 tháng",
+        "storage": "Tránh ánh nắng trực tiếp",
+        "ingredients": "Sữa chua lên men, nước cam ép, vitamin nhóm B"
+      },
+      "reviews": [
+        {
+          "name": "Đặng Thị Hằng",
+          "rating": 5,
+          "date": "16/09/2026",
+          "comment": "Hàng giao nhanh, lốc sữa nguyên vẹn không bị móp méo."
+        }
+      ]
+    },
+    {
+      "id": "sp-10",
+      "name": "Sữa đậu đen, óc chó Sahmyook Hàn Quốc túi 195ml",
+      "brand": "Sahmyook",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 25500,
+      "salePrice": 19200,
+      "unit": "Túi 195ml",
+      "image": "./images/1.jpeg",
+      "badge": "Hàn Quốc",
+      "rating": 4.9,
+      "reviewsCount": 310,
+      "soldCount": 5200,
+      "flashSale": true,
+      "flashProgress": 88,
+      "description": "Sữa hạt dinh dưỡng nổi tiếng từ Sahmyook Hàn Quốc kết hợp hạt óc chó và đậu đen, bổ não, đẹp da và tốt cho tim mạch.",
+      "stock": 110,
+      "specs": {
+        "origin": "Hàn Quốc (Sahmyook Foods)",
+        "volume": "195ml / túi",
+        "expiry": "12 tháng kể từ NSX",
+        "storage": "Bảo quản nhiệt độ phòng, ngon hơn khi uống lạnh",
+        "ingredients": "Dịch chiết đậu đen (47%), hạt óc chó nghiền, hạnh nhân, đậu phộng, muối tinh"
+      },
+      "reviews": [
+        {
+          "name": "Trịnh Thảo",
+          "rating": 5,
+          "date": "05/09/2026",
+          "comment": "Sữa óc chó đậu đen Sahmyook thì nổi tiếng rồi, thơm bùi ngọt dịu cực kỳ."
+        }
+      ]
+    },
+    {
+      "id": "sp-11",
+      "name": "Sữa đậu nành hạnh nhân Vinamilk 4 hộp x 180ml",
+      "brand": "Vinamilk",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 35200,
+      "salePrice": 33000,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/SDN-HN.jpg",
+      "badge": "Tốt tim mạch",
+      "rating": 4.8,
+      "reviewsCount": 120,
+      "soldCount": 1350,
+      "flashSale": false,
+      "flashProgress": 60,
+      "description": "Từ 100% hạt đậu nành không biến đổi gen chọn lọc kết hợp hạt hạnh nhân Mỹ thơm lừng, bổ sung Omega 3-6-9 và vitamin E dồi dào.",
+      "stock": 85,
+      "specs": {
+        "origin": "Việt Nam (Vinamilk)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Dịch trích đậu nành, hạnh nhân nghiền nhuyễn, Omega 3, Vitamin E, B1"
+      },
+      "reviews": [
+        {
+          "name": "Cao Thanh Thủy",
+          "rating": 5,
+          "date": "09/09/2026",
+          "comment": "Vị hạnh nhân thơm nhẹ, không bị ngọt quá, mình ăn kiêng uống rất yên tâm."
+        }
+      ]
+    },
+    {
+      "id": "sp-12",
+      "name": "Sữa đậu nành đậu đỏ Vinamilk lốc 4 hộp x 180ml",
+      "brand": "Vinamilk",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 35200,
+      "salePrice": 33000,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/SDN-daudo.jpg",
+      "badge": "Thơm ngon",
+      "rating": 4.6,
+      "reviewsCount": 78,
+      "soldCount": 820,
+      "flashSale": false,
+      "flashProgress": 50,
+      "description": "Đậu nành thanh đạm hòa quyện cùng đậu đỏ bổ huyết, thanh nhiệt cơ thể, ít ngọt phù hợp cho người ăn uống lành mạnh.",
+      "stock": 60,
+      "specs": {
+        "origin": "Việt Nam (Vinamilk)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Đậu nành không biến đổi gen, đậu đỏ cao cấp, đường phèn thanh khiết"
+      },
+      "reviews": [
+        {
+          "name": "Phan Văn Nam",
+          "rating": 4,
+          "date": "11/09/2026",
+          "comment": "Vị đậu đỏ thơm đậm, uống lạnh buổi xế chiều rất đã khát."
+        }
+      ]
+    },
+    {
+      "id": "sp-13",
+      "name": "Sữa đậu đen, óc chó Sahmyook lốc 3 hộp 140ml",
+      "brand": "Sahmyook",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 50000,
+      "salePrice": 42700,
+      "unit": "Lốc 3 hộp",
+      "image": "./images/Suadauden-occho.jpeg",
+      "badge": "Cao cấp",
+      "rating": 4.9,
+      "reviewsCount": 94,
+      "soldCount": 1100,
+      "flashSale": false,
+      "flashProgress": 72,
+      "description": "Dòng sản phẩm cao cấp đóng hộp tiện lợi, dồi dào axit béo thiết yếu, hỗ trợ tăng cường trí nhớ cho người lớn và trẻ nhỏ.",
+      "stock": 40,
+      "specs": {
+        "origin": "Hàn Quốc",
+        "volume": "3 x 140ml",
+        "expiry": "1 năm",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Đậu đen tự nhiên, óc chó Mỹ, Canxi sinh học"
+      },
+      "reviews": [
+        {
+          "name": "Bảo Ngọc",
+          "rating": 5,
+          "date": "17/09/2026",
+          "comment": "Đóng hộp vuông vắn đẹp mắt, dùng làm quà biếu cũng rất sang trọng."
+        }
+      ]
+    },
+    {
+      "id": "sp-14",
+      "name": "Lốc 4 hộp sữa tươi tiệt trùng không đường Vinamilk Green Farm 180ml",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 38500,
+      "salePrice": 37200,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/1.jpg",
+      "badge": "Green Farm",
+      "rating": 4.9,
+      "reviewsCount": 240,
+      "soldCount": 3400,
+      "flashSale": false,
+      "flashProgress": 82,
+      "description": "Sữa tươi thuần khiết từ trang trại sinh thái Vinamilk Green Farm, thanh nhẹ tự nhiên, hoàn toàn không đường, tốt cho vóc dáng.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Vinamilk Green Farm Tây Ninh)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng kể từ NSX",
+        "storage": "Nơi khô ráo hoặc ướp lạnh",
+        "ingredients": "100% Sữa bò tươi nguyên chất từ trang trại sinh thái chuẩn quốc tế"
+      },
+      "reviews": [
+        {
+          "name": "Chị Thảo Hà Nội",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Sữa Green Farm vị thanh béo tự nhiên, không đường nhưng uống không hề tanh, rất ngon!"
+        }
+      ]
+    },
+    {
+      "id": "sp-15",
+      "name": "Sữa dinh dưỡng Có Đường Vinamilk ADM - Lốc 4 Hộp 110ml",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 22900,
+      "salePrice": 20000,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/ADM_110.jpg",
+      "badge": "Bổ sung Omega",
+      "rating": 4.8,
+      "reviewsCount": 195,
+      "soldCount": 2900,
+      "flashSale": true,
+      "flashProgress": 90,
+      "description": "Giàu Omega 3, Vitamin A và Canxi giúp phát triển trí não toàn diện và thể chất dẻo dai cho lứa tuổi học đường.",
+      "stock": 100,
+      "specs": {
+        "origin": "Việt Nam (Vinamilk)",
+        "volume": "4 x 110ml",
+        "expiry": "6 tháng",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Sữa tươi, đường, Omega-3 từ dầu cá tinh khiết, Canxi, Vitamin A, D3"
+      },
+      "reviews": [
+        {
+          "name": "Lương Tuấn",
+          "rating": 5,
+          "date": "19/09/2026",
+          "comment": "Mua cho 2 đứa nhỏ uống kèm bữa phụ đi học, giá rẻ hơn tạp hóa gần 5 ngàn 1 lốc."
+        }
+      ]
+    },
+    {
+      "id": "sp-16",
+      "name": "Lốc 4 hộp sữa tươi tiệt trùng ít đường Vinamilk Green Farm 110ml",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 28900,
+      "salePrice": 24800,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/Lốc 4 hộp sữa tươi tiệt trùng ít đường Vinamilk Green Farm 110ml.jpg",
+      "badge": "Tiết kiệm",
+      "rating": 4.9,
+      "reviewsCount": 160,
+      "soldCount": 1950,
+      "flashSale": false,
+      "flashProgress": 68,
+      "description": "Dung tích 110ml tiện lợi mang theo đi học, vị ít đường thanh mát ngọt dịu kích thích vị giác của trẻ.",
+      "stock": 85,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 110ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Sữa tươi 97%, đường tinh luyện 2.8%, chất ổn định tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Hồ Quỳnh Anh",
+          "rating": 5,
+          "date": "13/09/2026",
+          "comment": "Vị ít đường rất hợp khẩu vị trẻ em ngày nay, không sợ béo phì."
+        }
+      ]
+    },
+    {
+      "id": "sp-17",
+      "name": "Sữa tươi tiệt trùng Promess nguyên chất Organic 1L",
+      "brand": "Promess",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 70000,
+      "salePrice": 62700,
+      "unit": "Hộp 1L",
+      "image": "./images/Promess-62.700.jpg",
+      "badge": "Pháp 100%",
+      "rating": 5,
+      "reviewsCount": 88,
+      "soldCount": 920,
+      "flashSale": true,
+      "flashProgress": 74,
+      "description": "Sữa tươi Organic nhập khẩu trực tiếp từ Pháp, đạt chuẩn hữu cơ châu Âu nghiêm ngặt, giàu đạm và canxi tự nhiên.",
+      "stock": 35,
+      "specs": {
+        "origin": "Pháp (Lactinov - BBA Group)",
+        "volume": "1000ml (1 Lít)",
+        "expiry": "12 tháng",
+        "storage": "Nơi thoáng mát, mở nắp bảo quản tủ lạnh dùng trong 3 ngày",
+        "ingredients": "100% Sữa bò tươi hữu cơ nguyên chất chuẩn châu Âu"
+      },
+      "reviews": [
+        {
+          "name": "Bác Sĩ Thu Trang",
+          "rating": 5,
+          "date": "08/09/2026",
+          "comment": "Sữa Organic của Pháp pha cà phê latte hoặc làm bánh béo ngậy thơm nức mũi, chuẩn 5 sao."
+        }
+      ]
+    },
+    {
+      "id": "sp-18",
+      "name": "Thùng 48 hộp sữa tươi tiệt trùng TH True Milk ít đường 180ml",
+      "brand": "TH True Milk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 450000,
+      "salePrice": 428400,
+      "unit": "Thùng 48 hộp",
+      "image": "./images/Thùng 48 hộp sữ tươi tiwwtj trùng TH Tr.jpg",
+      "badge": "Giá sỉ tốt",
+      "rating": 5,
+      "reviewsCount": 420,
+      "soldCount": 6800,
+      "flashSale": true,
+      "flashProgress": 95,
+      "description": "Thùng 48 hộp tiết kiệm cho cả gia đình, cam kết 100% sữa tươi sạch từ cụm trang trại bò sữa tập trung ứng dụng công nghệ cao TH.",
+      "stock": 25,
+      "specs": {
+        "origin": "Việt Nam (Trang trại TH Nghệ An)",
+        "volume": "48 hộp x 180ml",
+        "expiry": "6 tháng kể từ NSX",
+        "storage": "Để nơi khô ráo, tránh ánh nắng",
+        "ingredients": "Hoàn toàn từ sữa bò tươi sạch nguyên chất của trang trại TH (96%), đường (3.8%)"
+      },
+      "reviews": [
+        {
+          "name": "Ngô Quốc Bảo",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Mua nguyên thùng ship tận cửa trong 2 tiếng, shipper nhiệt tình bê tận lên tầng 3 chung cư!"
+        }
+      ]
+    },
+    {
+      "id": "sp-19",
+      "name": "Sữa tươi tiệt trùng Vinamilk 100% không đường hộp 1L",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 37000,
+      "salePrice": 35900,
+      "unit": "Hộp 1L",
+      "image": "./images/vinamilk-kd-1L.jpg",
+      "badge": "Chuẩn Quốc Gia",
+      "rating": 4.8,
+      "reviewsCount": 280,
+      "soldCount": 4900,
+      "flashSale": false,
+      "flashProgress": 80,
+      "description": "Dòng sữa tươi truyền thống quốc dân từ Vinamilk, lý tưởng để uống trực tiếp, pha chế cà phê, làm bánh và nấu ăn.",
+      "stock": 150,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "1000ml",
+        "expiry": "6 tháng",
+        "storage": "Sau khi mở nắp giữ lạnh và dùng trong 3 ngày",
+        "ingredients": "100% Sữa bò tươi nguyên chất"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Hải Đăng",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Sữa không đường pha cà phê sáng mỗi ngày là thói quen của mình, giá tại IT Mart rất cạnh tranh."
+        }
+      ]
+    },
+    {
+      "id": "sp-20",
+      "name": "Sữa tiệt trùng Vinamilk Flex không đường tách béo hộp 1L",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 34600,
+      "salePrice": 32000,
+      "unit": "Hộp 1L",
+      "image": "./images/Sữa tiệt trùng Vinamilk Flex không đường hộp 1L.jpg",
+      "badge": "Tách béo",
+      "rating": 4.7,
+      "reviewsCount": 110,
+      "soldCount": 1450,
+      "flashSale": false,
+      "flashProgress": 62,
+      "description": "Gấp đôi Canxi và giảm 50% chất béo, lựa chọn số 1 cho người đang ăn kiêng, tập luyện thể thao giữ dáng và bảo vệ hệ xương khớp.",
+      "stock": 70,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "1L",
+        "expiry": "6 tháng",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Sữa bò tươi tách béo 50%, Canxi hữu cơ tăng cường, Vitamin D"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Thúy Hằng",
+          "rating": 5,
+          "date": "15/09/2026",
+          "comment": "Gymmer chân ái đây rồi, tách béo uống không lo mỡ thừa."
+        }
+      ]
+    },
+    {
+      "id": "sp-21",
+      "name": "Sữa tươi tiệt trùng hương dâu TH True Milk lốc 4 hộp x 180ml",
+      "brand": "TH True Milk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 38500,
+      "salePrice": 36200,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/TH-dau.jpeg",
+      "badge": "Vị dâu tây",
+      "rating": 4.8,
+      "reviewsCount": 130,
+      "soldCount": 1680,
+      "flashSale": false,
+      "flashProgress": 69,
+      "description": "Hương dâu tây ngọt ngào quyện cùng sữa tươi sạch TH nguyên chất mang đến cảm giác thích thú cho các bé khi thưởng thức.",
+      "stock": 75,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi râm mát",
+        "ingredients": "Sữa tươi sạch TH 93%, đường, hương dâu tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Kim Ngân",
+          "rating": 5,
+          "date": "07/09/2026",
+          "comment": "TH vị dâu thơm tự nhiên không bị nồng mùi hương liệu như các hãng khác."
+        }
+      ]
+    },
+    {
+      "id": "sp-22",
+      "name": "Sữa tiệt trùng sô cô la Active Cô Gái Hà Lan lốc 4 hộp x 180ml",
+      "brand": "Cô Gái Hà Lan",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 37900,
+      "salePrice": 35000,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/CGHL-scl.png",
+      "badge": "Năng lượng",
+      "rating": 4.8,
+      "reviewsCount": 175,
+      "soldCount": 2300,
+      "flashSale": false,
+      "flashProgress": 77,
+      "description": "Công thức Active 20+ kết hợp sô cô la đậm đà giải phóng năng lượng bền bỉ cho ngày dài học tập và vận động.",
+      "stock": 68,
+      "specs": {
+        "origin": "Việt Nam (Dutch Lady)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi thoáng mát",
+        "ingredients": "Sữa tươi, bột cacao nguyên chất, Canxi, Magie, Vitamin nhóm B"
+      },
+      "reviews": [
+        {
+          "name": "Trần Đức Trọng",
+          "rating": 5,
+          "date": "16/09/2026",
+          "comment": "Vị cacao đậm đà uống lạnh sau khi đá bóng hồi sức cực nhanh."
+        }
+      ]
+    },
+    {
+      "id": "sp-23",
+      "name": "Lốc 4 hộp sữa tươi thanh trùng Vinamilk chứa tổ yến 180ml",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 60000,
+      "salePrice": 52700,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/VNM-toyen.jpg",
+      "badge": "Tổ yến quý",
+      "rating": 5,
+      "reviewsCount": 96,
+      "soldCount": 1250,
+      "flashSale": true,
+      "flashProgress": 86,
+      "description": "Sữa tươi bổ sung tinh chất tổ yến thượng hạng, tăng cường sức đề kháng và bồi bổ thể lực nhanh chóng cho cả gia đình.",
+      "stock": 45,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi mát mẻ",
+        "ingredients": "Sữa tươi sạch, tinh chất tổ yến thiên nhiên, Canxi, Vitamin D3"
+      },
+      "reviews": [
+        {
+          "name": "Bác Hòa Cầu Giấy",
+          "rating": 5,
+          "date": "11/09/2026",
+          "comment": "Bồi bổ cho người lớn tuổi rất tốt, thơm dịu dễ uống."
+        }
+      ]
+    },
+    {
+      "id": "sp-24",
+      "name": "Sữa tươi tiệt trùng TH True Milk Organic 500ml",
+      "brand": "TH True Milk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 34600,
+      "salePrice": 32000,
+      "unit": "Hộp 500ml",
+      "image": "./images/Th-organic.jpg",
+      "badge": "Chuẩn Hữu Cơ",
+      "rating": 4.9,
+      "reviewsCount": 65,
+      "soldCount": 780,
+      "flashSale": false,
+      "flashProgress": 58,
+      "description": "Được sản xuất từ đàn bò chăn thả tự nhiên trên đồng cỏ hữu cơ đạt chuẩn quốc tế EC 834/2007 và USDA-NOP.",
+      "stock": 30,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "500ml",
+        "expiry": "6 tháng",
+        "storage": "Tránh nhiệt độ cao",
+        "ingredients": "100% Sữa tươi hữu cơ đạt chuẩn châu Âu và Mỹ"
+      },
+      "reviews": [
+        {
+          "name": "Phan Ánh Dương",
+          "rating": 5,
+          "date": "20/09/2026",
+          "comment": "Chất lượng Organic chuẩn chỉnh, vị ngọt hậu thanh tao."
+        }
+      ]
+    },
+    {
+      "id": "sp-25",
+      "name": "Lốc 4 hộp sữa tươi ít đường vị đường đen Dalat Milk 180ml",
+      "brand": "Dalat Milk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 30900,
+      "salePrice": 29700,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/viduongden.jpg",
+      "badge": "Đường đen",
+      "rating": 4.8,
+      "reviewsCount": 145,
+      "soldCount": 1650,
+      "flashSale": false,
+      "flashProgress": 71,
+      "description": "Vị sữa tươi béo ngậy phối cùng hương đường đen trứ danh, mang đến trải nghiệm đồ uống chuẩn quán trà sữa ngay tại nhà.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Dalat Milk Lâm Đồng)",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Sữa tươi cao nguyên Lâm Đồng, siro đường đen tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Trương Mỹ Duyên",
+          "rating": 5,
+          "date": "14/09/2026",
+          "comment": "Vị đường đen siêu thơm, thêm trân châu trắng vào uống y như Gong Cha luôn!"
+        }
+      ]
+    },
+    {
+      "id": "sp-26",
+      "name": "Sữa tiệt trùng sô cô la Vinamilk bịch giấy 220ml",
+      "brand": "Vinamilk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 10900,
+      "salePrice": 7700,
+      "unit": "Gói 220ml",
+      "image": "./images/SCL -Vinamilk-goi-220.jpg",
+      "badge": "Giá siêu rẻ",
+      "rating": 4.7,
+      "reviewsCount": 310,
+      "soldCount": 6100,
+      "flashSale": false,
+      "flashProgress": 84,
+      "description": "Dạng bịch tiện lợi và tiết kiệm, vị socola thơm ngọt bùi được đông đảo học sinh sinh viên yêu thích.",
+      "stock": 200,
+      "specs": {
+        "origin": "Việt Nam",
+        "volume": "220ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Sữa tươi tiệt trùng, bột ca cao, đường"
+      },
+      "reviews": [
+        {
+          "name": "Sinh viên Bách Khoa",
+          "rating": 5,
+          "date": "02/09/2026",
+          "comment": "Bịch 220ml to đùng mà chưa tới 8k, cứu đói mỗi kỳ ôn thi."
+        }
+      ]
+    },
+    {
+      "id": "sp-27",
+      "name": "Lốc 4 hộp sữa tươi tiệt trùng Dalat Milk không đường 180ml",
+      "brand": "Dalat Milk",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 40900,
+      "salePrice": 34700,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/Dalat-milk.jpg",
+      "badge": "Cao nguyên",
+      "rating": 5,
+      "reviewsCount": 190,
+      "soldCount": 2400,
+      "flashSale": false,
+      "flashProgress": 76,
+      "description": "Từ cao nguyên Lâm Đồng với khí hậu mát mẻ quanh năm, sữa tươi Dalat Milk giữ trọn vị thơm ngậy đặc trưng khó quên.",
+      "stock": 65,
+      "specs": {
+        "origin": "Lâm Đồng, Việt Nam",
+        "volume": "4 x 180ml",
+        "expiry": "6 tháng",
+        "storage": "Nơi mát mẻ",
+        "ingredients": "100% Sữa tươi cao nguyên nguyên chất"
+      },
+      "reviews": [
+        {
+          "name": "Hoàng Minh",
+          "rating": 5,
+          "date": "18/09/2026",
+          "comment": "Dalat Milk không đường có độ béo ngậy tự nhiên rất khác biệt so với các hãng khác, cực kỳ ngon."
+        }
+      ]
+    },
+    {
+      "id": "sp-28",
+      "name": "Lốc 6 hộp sữa tươi tiệt trùng Binggrae Hương dưa lưới 200ml",
+      "brand": "Binggrae",
+      "category": "sua-tuoi",
+      "categoryName": "Sữa tươi",
+      "originalPrice": 120900,
+      "salePrice": 111700,
+      "unit": "Lốc 6 hộp",
+      "image": "./images/Bringrae.jpg",
+      "badge": "Binggrae Hàn",
+      "rating": 4.9,
+      "reviewsCount": 110,
+      "soldCount": 1300,
+      "flashSale": true,
+      "flashProgress": 82,
+      "description": "Thương hiệu sữa hoa quả quốc dân Hàn Quốc, hương thơm dưa lưới tươi mát kích thích vị giác ngay từ ngụm đầu tiên.",
+      "stock": 40,
+      "specs": {
+        "origin": "Hàn Quốc (Binggrae Co., Ltd)",
+        "volume": "6 x 200ml",
+        "expiry": "8 tháng",
+        "storage": "Uống ngon hơn khi để tủ lạnh thật lạnh",
+        "ingredients": "Sữa tươi thanh trùng Hàn Quốc, nước ép dưa lưới cô đặc, đường"
+      },
+      "reviews": [
+        {
+          "name": "Phan Thùy Chi",
+          "rating": 5,
+          "date": "23/09/2026",
+          "comment": "Sữa dưa lưới Binggrae uống mê mẩn, mở tủ lạnh ra là thơm nức cả phòng!"
+        }
+      ]
+    },
+    {
+      "id": "sp-29",
+      "name": "Bánh ChocoPie Orion vị truyền thống hộp 12 cái 396g",
+      "brand": "Orion",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 62000,
+      "salePrice": 54500,
+      "unit": "Hộp 12 cái",
+      "image": "./images/products/sp-29.jpg",
+      "badge": "Bán chạy #1",
+      "rating": 4.9,
+      "reviewsCount": 380,
+      "soldCount": 5400,
+      "flashSale": true,
+      "flashProgress": 88,
+      "description": "Bánh ChocoPie Orion trứ danh với lớp vỏ bánh xốp mềm thơm mùi cacao đậm đà, kẹp giữa là lớp kem dẻo marshmallow dai ngọt béo ngậy độc quyền.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn Orion)",
+        "volume": "396g (12 gói x 33g)",
+        "expiry": "12 tháng kể từ NSX",
+        "storage": "Nơi khô ráo, thoáng mát dưới 28°C",
+        "ingredients": "Bột mì, đường, siro ngô, chất béo thực vật, bột cacao, sữa bột nguyên kem, gelatin, hương vani"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Hải Đăng",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "ChocoPie Orion hộp 12 cái ăn hoài không ngán, date mới tinh, bao bì nguyên vẹn."
+        },
+        {
+          "name": "Trần Mai Trang",
+          "rating": 5,
+          "date": "18/09/2026",
+          "comment": "Bánh mềm ngọt bùi vừa vặn, bọn trẻ con nhà mình thích mê."
+        }
+      ]
+    },
+    {
+      "id": "sp-30",
+      "name": "Snack khoai tây chiên giòn Lay's Stax vị tự nhiên lon 105g",
+      "brand": "Lay's",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 39000,
+      "salePrice": 34000,
+      "unit": "Lon 105g",
+      "image": "./images/products/sp-30.jpg",
+      "badge": "Giòn rụm",
+      "rating": 4.8,
+      "reviewsCount": 215,
+      "soldCount": 3100,
+      "flashSale": false,
+      "flashProgress": 72,
+      "description": "Từng lát khoai tây giòn tan mỏng mịn, giữ nguyên vị ngọt bùi tự nhiên của khoai tây tươi, đóng dạng lon tiện lợi không lo vỡ vụn khi mang đi dã ngoại.",
+      "stock": 85,
+      "specs": {
+        "origin": "Việt Nam (PepsiCo)",
+        "volume": "105g",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô ráo, đậy kín nắp sau khi mở",
+        "ingredients": "Khoai tây tươi (52%), dầu thực vật tinh luyện, bột gia vị tự nhiên, muối ăn"
+      },
+      "reviews": [
+        {
+          "name": "Lê Hoàng Yến",
+          "rating": 5,
+          "date": "20/09/2026",
+          "comment": "Lon Stax vị tự nhiên giòn rụm, nhâm nhi khi cày phim cực đã."
+        }
+      ]
+    },
+    {
+      "id": "sp-31",
+      "name": "Bánh quy sữa Cosy Marie Kinh Đô gói lớn 336g",
+      "brand": "Kinh Đô",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 38000,
+      "salePrice": 32500,
+      "unit": "Gói 336g",
+      "image": "./images/products/sp-31.jpg",
+      "badge": "Thơm bơ sữa",
+      "rating": 4.8,
+      "reviewsCount": 190,
+      "soldCount": 2950,
+      "flashSale": false,
+      "flashProgress": 65,
+      "description": "Bánh quy Cosy Marie bổ sung Canxi và DHA, thơm lừng vị bơ sữa hảo hạng, rất thích hợp chấm sữa tươi hoặc dùng cho bữa xế của cả gia đình.",
+      "stock": 75,
+      "specs": {
+        "origin": "Việt Nam (Mondelez Kinh Đô)",
+        "volume": "336g",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô ráo, thoáng mát",
+        "ingredients": "Bột mì, dầu cọ, đường, bơ, sữa đặc có đường, Canxi carbonat, DHA"
+      },
+      "reviews": [
+        {
+          "name": "Trần Mai Anh",
+          "rating": 5,
+          "date": "18/09/2026",
+          "comment": "Bánh thơm bơ sữa ngọt thanh, chấm vào sữa tươi không đường ăn siêu ngon."
+        }
+      ]
+    },
+    {
+      "id": "sp-32",
+      "name": "Bánh que Pocky Glico hương dâu giòn tan hộp 38g",
+      "brand": "Glico",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 16500,
+      "salePrice": 14500,
+      "unit": "Hộp 38g",
+      "image": "./images/products/sp-32.jpg",
+      "badge": "Nhật Bản",
+      "rating": 4.9,
+      "reviewsCount": 310,
+      "soldCount": 4200,
+      "flashSale": true,
+      "flashProgress": 82,
+      "description": "Bánh que giòn tan phủ trọn lớp kem dâu tây ngọt thơm hấp dẫn, thiết kế phần tay cầm sạch sẽ không dính tay, món ăn vặt yêu thích của giới trẻ.",
+      "stock": 120,
+      "specs": {
+        "origin": "Thái Lan (Tập đoàn Ezaki Glico Nhật Bản)",
+        "volume": "38g / hộp",
+        "expiry": "12 tháng",
+        "storage": "Nhiệt độ dưới 28°C",
+        "ingredients": "Bột mì, đường tinh luyện, dầu thực vật, bột sữa nguyên chất, bột dâu tây tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Quỳnh Trang",
+          "rating": 5,
+          "date": "15/09/2026",
+          "comment": "Pocky vị dâu ăn giòn thơm, ngọt vừa phải, bé nhà mình rất mê."
+        }
+      ]
+    },
+    {
+      "id": "sp-33",
+      "name": "Bánh dinh dưỡng AFC lúa mì mè cải hộp 172g",
+      "brand": "Kinh Đô",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 33000,
+      "salePrice": 28500,
+      "unit": "Hộp 172g",
+      "image": "./images/products/sp-33.jpg",
+      "badge": "Ít calo",
+      "rating": 4.7,
+      "reviewsCount": 160,
+      "soldCount": 2400,
+      "flashSale": false,
+      "flashProgress": 68,
+      "description": "Bánh cracker giòn rụm bổ sung chất xơ tự nhiên từ rau củ tươi, Canxi và Vitamin D, món ăn nhẹ lý tưởng cho dân văn phòng và người ăn kiêng.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Mondelez Kinh Đô)",
+        "volume": "172g (8 gói nhỏ x 21.5g)",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Bột mì, dầu cọ thực vật, rau cải sấy khô, men tự nhiên, Canxi hữu cơ"
+      },
+      "reviews": [
+        {
+          "name": "Đỗ Bích Thảo",
+          "rating": 5,
+          "date": "19/09/2026",
+          "comment": "Bánh giòn mằn mặn thơm vị rau củ, ăn xế chiều không lo tăng cân."
+        }
+      ]
+    },
+    {
+      "id": "sp-34",
+      "name": "Kẹo dẻo gấu Haribo Goldbears nhập khẩu Đức gói 80g",
+      "brand": "Haribo",
+      "category": "banh-keo",
+      "categoryName": "Bánh kẹo - Ăn vặt",
+      "originalPrice": 27000,
+      "salePrice": 23500,
+      "unit": "Gói 80g",
+      "image": "./images/products/sp-34.jpg",
+      "badge": "Nhập khẩu Đức",
+      "rating": 4.9,
+      "reviewsCount": 290,
+      "soldCount": 4100,
+      "flashSale": false,
+      "flashProgress": 75,
+      "description": "Kẹo dẻo hình gấu biểu tượng của Haribo với 6 vị trái cây tự nhiên: táo, dâu tây, mâm xôi, cam, chanh và dứa, dẻo dai sảng khoái không phẩm màu nhân tạo.",
+      "stock": 95,
+      "specs": {
+        "origin": "Cộng Hòa Liên Bang Đức (Haribo GmbH)",
+        "volume": "80g",
+        "expiry": "18 tháng",
+        "storage": "Nhiệt độ phòng mát",
+        "ingredients": "Siro glucose, đường, nước ép hoa quả nguyên chất cô đặc, gelatin, sáp ong"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Gia Huy",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Haribo chuẩn Đức ăn dai giòn sần sật, vị hoa quả đậm đà tự nhiên."
+        }
+      ]
+    },
+    {
+      "id": "sp-35",
+      "name": "Thùng 24 lon Nước ngọt Coca-Cola Sleek nguyên bản 320ml",
+      "brand": "Coca-Cola",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 245000,
+      "salePrice": 225000,
+      "unit": "Thùng 24 lon",
+      "image": "./images/products/sp-35.jpg",
+      "badge": "Giá sỉ siêu rẻ",
+      "rating": 5,
+      "reviewsCount": 520,
+      "soldCount": 7800,
+      "flashSale": true,
+      "flashProgress": 95,
+      "description": "Nước giải khát có ga Coca-Cola hương vị nguyên bản sảng khoái bùng nổ, thiết kế lon Sleek thon gọn sang trọng, món đồ uống không thể thiếu trong các bữa tiệc.",
+      "stock": 45,
+      "specs": {
+        "origin": "Việt Nam (Coca-Cola Beverages)",
+        "volume": "24 lon x 320ml",
+        "expiry": "12 tháng kể từ NSX",
+        "storage": "Nơi khô mát, ngon hơn khi ướp lạnh",
+        "ingredients": "Nước bão hòa CO2, đường HFCS, màu caramen tự nhiên, hương tự nhiên, caffeine"
+      },
+      "reviews": [
+        {
+          "name": "Lê Tấn Phát",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Mua cả thùng giá hời hơn tạp hóa, ship giao tới tận phòng rất nhanh."
+        }
+      ]
+    },
+    {
+      "id": "sp-36",
+      "name": "Lốc 6 lon Nước ngọt Pepsi Không Calo 320ml",
+      "brand": "Pepsi",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 62000,
+      "salePrice": 54000,
+      "unit": "Lốc 6 lon",
+      "image": "./images/products/sp-36.jpg",
+      "badge": "0 Calo",
+      "rating": 4.8,
+      "reviewsCount": 340,
+      "soldCount": 4600,
+      "flashSale": false,
+      "flashProgress": 80,
+      "description": "Vị sảng khoái cực đỉnh của Pepsi với công thức 0 calo, 0 đường, thỏa mãn cơn khát mà không lo ngại vấn đề cân nặng hay đường huyết.",
+      "stock": 70,
+      "specs": {
+        "origin": "Việt Nam (Suntory PepsiCo)",
+        "volume": "6 lon x 320ml",
+        "expiry": "12 tháng",
+        "storage": "Nơi thoáng mát",
+        "ingredients": "Nước bão hòa CO2, chất điều chỉnh độ acid, chất tạo ngọt tổng hợp (Aspartame, Sucralose)"
+      },
+      "reviews": [
+        {
+          "name": "Ngô Trí Kiên",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Pepsi Black không calo uống lạnh cực đã, ăn đồ chiên rán kèm lon này bao nhẹ bụng."
+        }
+      ]
+    },
+    {
+      "id": "sp-37",
+      "name": "Trà Ô long Tea+ Plus vị thanh mát chai 455ml",
+      "brand": "Suntory Tea+",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 12000,
+      "salePrice": 10500,
+      "unit": "Chai 455ml",
+      "image": "./images/products/sp-37.jpg",
+      "badge": "Chứa OTPP",
+      "rating": 4.9,
+      "reviewsCount": 280,
+      "soldCount": 4900,
+      "flashSale": false,
+      "flashProgress": 85,
+      "description": "Trích ly từ những lá trà ô long thượng hạng với công nghệ Nhật Bản, chứa chất OTPP tự nhiên giúp hạn chế hấp thu chất béo sau bữa ăn.",
+      "stock": 110,
+      "specs": {
+        "origin": "Việt Nam (Suntory PepsiCo)",
+        "volume": "455ml",
+        "expiry": "12 tháng",
+        "storage": "Nơi râm mát",
+        "ingredients": "Nước tinh khiết, lá trà ô long, đường tinh luyện, hoạt chất OTPP tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Đinh Thu Hương",
+          "rating": 5,
+          "date": "16/09/2026",
+          "comment": "Trà Tea Plus thanh mát nhẹ nhàng, ăn lẩu nướng xong uống rất dễ tiêu."
+        }
+      ]
+    },
+    {
+      "id": "sp-38",
+      "name": "Trà xanh Không Độ thanh lọc giải nhiệt chai 455ml",
+      "brand": "Number 1",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 11500,
+      "salePrice": 9900,
+      "unit": "Chai 455ml",
+      "image": "./images/products/sp-38.jpg",
+      "badge": "EGCG cao",
+      "rating": 4.8,
+      "reviewsCount": 220,
+      "soldCount": 3800,
+      "flashSale": false,
+      "flashProgress": 75,
+      "description": "Chiết xuất từ đọt trà non Thái Nguyên tươi mới, giàu hoạt chất chống oxy hóa EGCG và Vitamin C giúp giải nhiệt cuộc sống và xua tan căng thẳng mệt mỏi.",
+      "stock": 85,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn Tân Hiệp Phát)",
+        "volume": "455ml",
+        "expiry": "12 tháng",
+        "storage": "Nhiệt độ phòng hoặc ngăn mát",
+        "ingredients": "Nước tinh khiết, trà xanh Thái Nguyên, đường fructose, vitamin C"
+      },
+      "reviews": [
+        {
+          "name": "Hoàng Đức Nam",
+          "rating": 5,
+          "date": "17/09/2026",
+          "comment": "Uống giải khát ngày hè thì Không Độ vẫn là số 1, vị chát nhẹ ngọt hậu."
+        }
+      ]
+    },
+    {
+      "id": "sp-39",
+      "name": "Nước ép cam có tép Minute Maid Teppy chai 327ml",
+      "brand": "Coca-Cola",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 13000,
+      "salePrice": 11000,
+      "unit": "Chai 327ml",
+      "image": "./images/products/sp-39.jpg",
+      "badge": "Tép cam tươi",
+      "rating": 4.9,
+      "reviewsCount": 195,
+      "soldCount": 2800,
+      "flashSale": true,
+      "flashProgress": 78,
+      "description": "Nước ép cam Teppy mọng nước hòa quyện cùng những tép cam thật giòn tan vui miệng, bổ sung Vitamin C dồi dào tăng cường đề kháng.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Coca-Cola)",
+        "volume": "327ml",
+        "expiry": "9 tháng",
+        "storage": "Bảo quản nơi thoáng mát",
+        "ingredients": "Nước, nước ép cam cô đặc, tép cam tươi tự nhiên, đường, Vitamin C"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Minh Phương",
+          "rating": 5,
+          "date": "14/09/2026",
+          "comment": "Tép cam nhai sựt sựt rất sướng miệng, con nít người lớn đều thích."
+        }
+      ]
+    },
+    {
+      "id": "sp-40",
+      "name": "Thùng 24 chai Nước khoáng thiên nhiên LaVie 500ml",
+      "brand": "LaVie",
+      "category": "do-uong",
+      "categoryName": "Nước giải khát",
+      "originalPrice": 115000,
+      "salePrice": 102000,
+      "unit": "Thùng 24 chai",
+      "image": "./images/products/sp-40.jpg",
+      "badge": "Khoáng tự nhiên",
+      "rating": 5,
+      "reviewsCount": 460,
+      "soldCount": 8200,
+      "flashSale": false,
+      "flashProgress": 90,
+      "description": "Nước khoáng thiên nhiên LaVie chắt lọc qua nhiều tầng địa chất sâu, chứa 6 khoáng chất thiết yếu (K, Mg, Na, Ca, Fl, HCO3) tốt cho sức khỏe mỗi ngày.",
+      "stock": 50,
+      "specs": {
+        "origin": "Việt Nam (Nestlé Waters)",
+        "volume": "24 chai x 500ml",
+        "expiry": "24 tháng",
+        "storage": "Nơi sạch sẽ, tránh ánh nắng trực tiếp",
+        "ingredients": "100% Nước khoáng thiên nhiên ngầm sâu nguồn Long An"
+      },
+      "reviews": [
+        {
+          "name": "Trịnh Thùy Dung",
+          "rating": 5,
+          "date": "23/09/2026",
+          "comment": "Giao thùng nước 24 chai nặng trịch lên tận căn hộ, nước uống vị khoáng thanh nhẹ."
+        }
+      ]
+    },
+    {
+      "id": "sp-41",
+      "name": "Cà phê hòa tan G7 3in1 Trung Nguyên hộp 18 gói x 16g",
+      "brand": "Trung Nguyên",
+      "category": "tra-ca-phe",
+      "categoryName": "Trà & Cà phê",
+      "originalPrice": 68000,
+      "salePrice": 59000,
+      "unit": "Hộp 18 gói",
+      "image": "./images/products/sp-41.jpg",
+      "badge": "Huyền thoại G7",
+      "rating": 5,
+      "reviewsCount": 650,
+      "soldCount": 9800,
+      "flashSale": true,
+      "flashProgress": 96,
+      "description": "Cà phê G7 3in1 trứ danh thế giới với hương thơm nồng nàn quyến rũ và vị đậm đà khác biệt từ nguồn hạt cà phê Robusta Buôn Ma Thuột số 1.",
+      "stock": 130,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn Trung Nguyên Legend)",
+        "volume": "18 gói x 16g (288g)",
+        "expiry": "24 tháng kể từ NSX",
+        "storage": "Nơi khô ráo, tránh ẩm ướt",
+        "ingredients": "Cà phê hòa tan nguyên chất, đường tinh luyện, bột kem không sữa"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Văn Hùng",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Sáng nào cũng làm một ly G7 tỉnh táo làm việc cả ngày, hương thơm nức mũi."
+        }
+      ]
+    },
+    {
+      "id": "sp-42",
+      "name": "Cà phê sữa đá Nescafé 3in1 Đậm Đà Hài Hòa hộp 20 gói",
+      "brand": "Nescafé",
+      "category": "tra-ca-phe",
+      "categoryName": "Trà & Cà phê",
+      "originalPrice": 72000,
+      "salePrice": 63500,
+      "unit": "Hộp 20 gói",
+      "image": "./images/products/sp-42.jpg",
+      "badge": "Vị sữa đá chuẩn",
+      "rating": 4.8,
+      "reviewsCount": 310,
+      "soldCount": 4500,
+      "flashSale": false,
+      "flashProgress": 76,
+      "description": "Nescafé 3in1 vị cà phê sữa đá đậm đà béo ngậy hòa quyện hài hòa cùng vị đắng thanh tao, mang trọn hương vị quán xá vào từng ngụm cà phê sáng.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Nestlé)",
+        "volume": "20 gói x 17g (340g)",
+        "expiry": "12 tháng",
+        "storage": "Bảo quản nơi khô mát",
+        "ingredients": "Đường, bột kem pha cà phê, cà phê hòa tan 11.5%, hương tổng hợp"
+      },
+      "reviews": [
+        {
+          "name": "Lê Ngọc Bích",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Pha 2 gói thêm đá là ra đúng ly cà phê sữa đá lề đường thơm lừng béo ngậy."
+        }
+      ]
+    },
+    {
+      "id": "sp-43",
+      "name": "Lon Cà phê sữa Highlands Coffee 185ml thơm béo",
+      "brand": "Highlands",
+      "category": "tra-ca-phe",
+      "categoryName": "Trà & Cà phê",
+      "originalPrice": 17500,
+      "salePrice": 15000,
+      "unit": "Lon 185ml",
+      "image": "./images/products/sp-43.jpg",
+      "badge": "Highlands Chuẩn",
+      "rating": 4.9,
+      "reviewsCount": 390,
+      "soldCount": 6200,
+      "flashSale": false,
+      "flashProgress": 88,
+      "description": "Sự kết hợp hoàn hảo giữa những hạt cà phê Robusta và Arabica thượng hạng rang xay tỉ mỉ cùng sữa thơm béo đặc trưng của Highlands Coffee.",
+      "stock": 100,
+      "specs": {
+        "origin": "Việt Nam (Highlands Coffee)",
+        "volume": "185ml",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô ráo, uống lạnh cực ngon",
+        "ingredients": "Nước cốt cà phê đậm đặc, sữa tươi, đường, chất điều chỉnh độ acid"
+      },
+      "reviews": [
+        {
+          "name": "Trương Tuấn Anh",
+          "rating": 5,
+          "date": "20/09/2026",
+          "comment": "Lon tiện lợi mang đi làm, vị chuẩn như mua tại quầy Highlands mà giá mềm hơn nhiều."
+        }
+      ]
+    },
+    {
+      "id": "sp-44",
+      "name": "Trà túi lọc Cozy hương đào thơm lừng hộp 20 túi x 2g",
+      "brand": "Cozy",
+      "category": "tra-ca-phe",
+      "categoryName": "Trà & Cà phê",
+      "originalPrice": 34000,
+      "salePrice": 29500,
+      "unit": "Hộp 20 túi",
+      "image": "./images/products/sp-44.jpg",
+      "badge": "Pha trà đào hot",
+      "rating": 4.8,
+      "reviewsCount": 240,
+      "soldCount": 3700,
+      "flashSale": false,
+      "flashProgress": 70,
+      "description": "Hương đào ngọt ngào quyến rũ hòa cùng búp trà đen tự nhiên nguyên chất, bí quyết tự tay pha chế món trà đào cam sả thanh nhiệt nức tiếng.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Công ty CP Sản phẩm Sinh thái)",
+        "volume": "20 túi lọc x 2g (40g)",
+        "expiry": "24 tháng",
+        "storage": "Nơi khô thoáng",
+        "ingredients": "Trà đen búp non chọn lọc, hương đào tổng hợp"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Khánh Huyền",
+          "rating": 5,
+          "date": "12/09/2026",
+          "comment": "Dùng gói trà Cozy đào này ủ rồi thêm đào ngâm Kronos là thành trà đào Phúc Long ngay!"
+        }
+      ]
+    },
+    {
+      "id": "sp-45",
+      "name": "Trà túi lọc Lipton Nhãn Vàng Yellow Label hộp 25 túi x 2g",
+      "brand": "Lipton",
+      "category": "tra-ca-phe",
+      "categoryName": "Trà & Cà phê",
+      "originalPrice": 42000,
+      "salePrice": 36000,
+      "unit": "Hộp 25 túi",
+      "image": "./images/products/sp-45.jpg",
+      "badge": "Anh Quốc",
+      "rating": 4.9,
+      "reviewsCount": 280,
+      "soldCount": 4400,
+      "flashSale": false,
+      "flashProgress": 82,
+      "description": "Trà Lipton Yellow Label với búp trà đen tinh túy sấy khô giữ trọn hương vị đậm sâu, bổ sung năng lượng tỉnh táo và thư thái tâm hồn.",
+      "stock": 85,
+      "specs": {
+        "origin": "Indonesia (Unilever Lipton)",
+        "volume": "25 túi x 2g (50g)",
+        "expiry": "24 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "100% Búp trà đen nguyên chất"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Hải Yến",
+          "rating": 5,
+          "date": "19/09/2026",
+          "comment": "Trà Lipton truyền thống pha với chút chanh và mật ong buổi sáng rất ấm bụng."
+        }
+      ]
+    },
+    {
+      "id": "sp-46",
+      "name": "Thùng 30 gói Mì Hảo Hảo tôm chua cay 75g",
+      "brand": "Acecook",
+      "category": "mi-an-lien",
+      "categoryName": "Mì & Ăn liền",
+      "originalPrice": 135000,
+      "salePrice": 122000,
+      "unit": "Thùng 30 gói",
+      "image": "./images/products/sp-46.jpg",
+      "badge": "Mì quốc dân",
+      "rating": 5,
+      "reviewsCount": 890,
+      "soldCount": 15400,
+      "flashSale": true,
+      "flashProgress": 98,
+      "description": "Món mì ăn liền huyền thoại số 1 Việt Nam với sợi mì vàng dai trứ danh và gói súp tôm chua cay đậm đà khó cưỡng của Acecook.",
+      "stock": 60,
+      "specs": {
+        "origin": "Việt Nam (Acecook Việt Nam)",
+        "volume": "30 gói x 75g (2.25kg)",
+        "expiry": "5 tháng kể từ NSX",
+        "storage": "Nơi khô ráo, tránh ánh nắng",
+        "ingredients": "Bột mì, dầu cọ, muối, đường, nước mắm, tôm khô, ớt, chất điều vị"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Văn Long",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Mua cả thùng mì Hảo Hảo trữ trong nhà lúc đói nấu thêm quả trứng và hành lá là hết sảy!"
+        }
+      ]
+    },
+    {
+      "id": "sp-47",
+      "name": "Thùng 30 gói Mì khoai tây Omachi sốt bò hầm 80g",
+      "brand": "Omachi",
+      "category": "mi-an-lien",
+      "categoryName": "Mì & Ăn liền",
+      "originalPrice": 265000,
+      "salePrice": 242000,
+      "unit": "Thùng 30 gói",
+      "image": "./images/products/sp-47.jpg",
+      "badge": "Không lo nóng",
+      "rating": 4.9,
+      "reviewsCount": 430,
+      "soldCount": 6200,
+      "flashSale": false,
+      "flashProgress": 84,
+      "description": "Sợi mì làm từ tinh chất khoai tây tươi dai mướt kết hợp gói xốt bò hầm rau củ quả thơm lừng sánh mịn, ăn ngon mà hoàn toàn không lo bị nóng trong.",
+      "stock": 40,
+      "specs": {
+        "origin": "Việt Nam (Masan Consumer)",
+        "volume": "30 gói x 80g",
+        "expiry": "6 tháng",
+        "storage": "Nơi thoáng mát",
+        "ingredients": "Bột mì, tinh bột khoai tây, thịt bò cô đặc, rau củ quả tươi sấy (cà rốt, ngò gai)"
+      },
+      "reviews": [
+        {
+          "name": "Đào Phương Linh",
+          "rating": 5,
+          "date": "17/09/2026",
+          "comment": "Sợi Omachi dai ngon đỉnh chóp, nước dùng ngọt thanh từ xương bò hầm."
+        }
+      ]
+    },
+    {
+      "id": "sp-48",
+      "name": "Mì xào khô Indomie Mi Goreng vị đặc biệt lốc 5 gói x 85g",
+      "brand": "Indomie",
+      "category": "mi-an-lien",
+      "categoryName": "Mì & Ăn liền",
+      "originalPrice": 35000,
+      "salePrice": 29900,
+      "unit": "Lốc 5 gói",
+      "image": "./images/products/sp-48.jpg",
+      "badge": "Mì xào số 1",
+      "rating": 4.9,
+      "reviewsCount": 510,
+      "soldCount": 8800,
+      "flashSale": true,
+      "flashProgress": 92,
+      "description": "Mì xào khô nổi tiếng toàn cầu từ Indonesia với trọn bộ 5 gói gia vị độc đáo: dầu hành phi, sốt ớt ngọt, hành phi giòn rụm và tương ngọt béo ngậy.",
+      "stock": 120,
+      "specs": {
+        "origin": "Indonesia (Indofood CBP)",
+        "volume": "5 gói x 85g",
+        "expiry": "8 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Bột mì, dầu cọ tinh luyện, hành phi giòn, tương ngọt kecap manis, ớt bột"
+      },
+      "reviews": [
+        {
+          "name": "Bùi Thế Bảo",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Mì xào Indomie chiên thêm quả trứng ốp la lòng đào rưới tương ớt ăn ngon quên sầu."
+        }
+      ]
+    },
+    {
+      "id": "sp-49",
+      "name": "Phở bò Cung Đình Hà Nội nước cốt hầm xương gói 68g",
+      "brand": "Acecook",
+      "category": "mi-an-lien",
+      "categoryName": "Mì & Ăn liền",
+      "originalPrice": 11500,
+      "salePrice": 9800,
+      "unit": "Gói 68g",
+      "image": "./images/products/sp-49.jpg",
+      "badge": "Nước cốt hầm",
+      "rating": 4.8,
+      "reviewsCount": 220,
+      "soldCount": 3100,
+      "flashSale": false,
+      "flashProgress": 69,
+      "description": "Sợi phở dai mềm từ hạt gạo dẻo thơm kết hợp gói nước cốt hầm xương bò cô đặc cùng hoa hồi, thảo quả chuẩn phong vị phở gia truyền Hà Nội.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Micoem)",
+        "volume": "68g",
+        "expiry": "8 tháng",
+        "storage": "Nơi sạch sẽ khô mát",
+        "ingredients": "Gạo tẻ nguyên chất, tinh chất xương bò hầm, quế, hồi, gừng nướng"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Thu Hà",
+          "rating": 5,
+          "date": "15/09/2026",
+          "comment": "Nước cốt phở bò thơm mùi quế hồi rất thật, sợi phở mềm mướt."
+        }
+      ]
+    },
+    {
+      "id": "sp-50",
+      "name": "Miến sườn heo Phú Hương Acecook gói 58g",
+      "brand": "Acecook",
+      "category": "mi-an-lien",
+      "categoryName": "Mì & Ăn liền",
+      "originalPrice": 13500,
+      "salePrice": 11500,
+      "unit": "Gói 58g",
+      "image": "./images/products/sp-50.jpg",
+      "badge": "Thanh đạm",
+      "rating": 4.7,
+      "reviewsCount": 175,
+      "soldCount": 2500,
+      "flashSale": false,
+      "flashProgress": 66,
+      "description": "Sợi miến trong suốt làm từ tinh bột đậu xanh thanh mát, nước súp sườn heo ngọt lịm đậm đà, ít tinh bột xấu phù hợp cho người giữ vóc dáng.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Acecook)",
+        "volume": "58g",
+        "expiry": "8 tháng",
+        "storage": "Nơi khô ráo",
+        "ingredients": "Tinh bột đậu xanh, tinh bột khoai tây, chiết xuất sườn heo, nấm mèo sấy"
+      },
+      "reviews": [
+        {
+          "name": "Trần Mai Phương",
+          "rating": 5,
+          "date": "18/09/2026",
+          "comment": "Miến Phú Hương ăn thanh nhẹ, sợi miến dai dai nấu ăn sáng cực hợp."
+        }
+      ]
+    },
+    {
+      "id": "sp-51",
+      "name": "Dầu thực vật tinh luyện Simply Đậu Nành can 1 Lít",
+      "brand": "Simply",
+      "category": "gia-vi",
+      "categoryName": "Gia vị & Đồ hộp",
+      "originalPrice": 69000,
+      "salePrice": 61000,
+      "unit": "Chai 1L",
+      "image": "./images/products/sp-51.jpg",
+      "badge": "Tốt cho tim",
+      "rating": 5,
+      "reviewsCount": 390,
+      "soldCount": 6500,
+      "flashSale": false,
+      "flashProgress": 88,
+      "description": "Chiết xuất 100% từ hạt đậu nành chọn lọc, giàu Omega 3-6-9 và Phytosterol tự nhiên được Hội Tim Mạch Học Việt Nam khuyên dùng bảo vệ sức khỏe trái tim.",
+      "stock": 100,
+      "specs": {
+        "origin": "Việt Nam (Calyxo - Simply)",
+        "volume": "1000ml (1 Lít)",
+        "expiry": "24 tháng kể từ NSX",
+        "storage": "Nơi khô ráo, tránh ánh sáng mạnh",
+        "ingredients": "100% Dầu đậu nành nguyên chất tinh luyện, Vitamin A palmitat"
+      },
+      "reviews": [
+        {
+          "name": "Cô Nguyễn Lan",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Nhà tôi chỉ dùng dầu Simply chiên xào, dầu trong veo không bị khét hay ám mùi."
+        }
+      ]
+    },
+    {
+      "id": "sp-52",
+      "name": "Nước mắm cá cơm Nam Ngư Đệ Nhị chai lớn 900ml",
+      "brand": "Nam Ngư",
+      "category": "gia-vi",
+      "categoryName": "Gia vị & Đồ hộp",
+      "originalPrice": 38000,
+      "salePrice": 33000,
+      "unit": "Chai 900ml",
+      "image": "./images/products/sp-52.jpg",
+      "badge": "Chuẩn vị nhà",
+      "rating": 4.8,
+      "reviewsCount": 480,
+      "soldCount": 8900,
+      "flashSale": false,
+      "flashProgress": 91,
+      "description": "Nước mắm Nam Ngư Đệ Nhị từ nguồn cá cơm tươi ngon Phú Quốc ủ chượp theo phương pháp truyền thống, vị mặn dịu ngọt hậu đặc trưng cho món ăn Việt.",
+      "stock": 120,
+      "specs": {
+        "origin": "Việt Nam (Masan Consumer)",
+        "volume": "900ml",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô ráo, đậy kín nắp sau khi dùng",
+        "ingredients": "Nước mắm cốt cá cơm, nước, muối tinh, đường, chất điều vị"
+      },
+      "reviews": [
+        {
+          "name": "Trần Văn Cường",
+          "rating": 5,
+          "date": "19/09/2026",
+          "comment": "Chai lớn 900ml dùng cả tháng, chấm thịt luộc hay kho cá đều rất ngon."
+        }
+      ]
+    },
+    {
+      "id": "sp-53",
+      "name": "Tương ớt Chinsu vị cay nồng hảo hạng chai 250g",
+      "brand": "Chinsu",
+      "category": "gia-vi",
+      "categoryName": "Gia vị & Đồ hộp",
+      "originalPrice": 16000,
+      "salePrice": 13500,
+      "unit": "Chai 250g",
+      "image": "./images/products/sp-53.jpg",
+      "badge": "Vạn món ngon",
+      "rating": 4.9,
+      "reviewsCount": 620,
+      "soldCount": 11200,
+      "flashSale": true,
+      "flashProgress": 94,
+      "description": "Được làm từ những trái ớt đỏ chín mọng tự nhiên kết hợp tỏi thơm và muối hạt tinh khiết lên men tự nhiên, tạo độ sánh mịn và vị cay kích thích bùng nổ vị giác.",
+      "stock": 150,
+      "specs": {
+        "origin": "Việt Nam (Masan Consumer)",
+        "volume": "250g",
+        "expiry": "9 tháng",
+        "storage": "Nơi râm mát",
+        "ingredients": "Nước, ớt tươi chọn lọc 21%, đường, tỏi, muối, cà chua cô đặc"
+      },
+      "reviews": [
+        {
+          "name": "Hoàng Minh Trí",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Ăn phở, ăn mì hay chấm mực nướng mà thiếu tương ớt Chinsu là mất nửa độ ngon!"
+        }
+      ]
+    },
+    {
+      "id": "sp-54",
+      "name": "Hạt nêm từ thịt Knorr Thịt Thăn & Xương Ống gói 400g",
+      "brand": "Knorr",
+      "category": "gia-vi",
+      "categoryName": "Gia vị & Đồ hộp",
+      "originalPrice": 42000,
+      "salePrice": 36500,
+      "unit": "Gói 400g",
+      "image": "./images/products/sp-54.jpg",
+      "badge": "Ngọt từ thịt",
+      "rating": 4.9,
+      "reviewsCount": 350,
+      "soldCount": 5700,
+      "flashSale": false,
+      "flashProgress": 82,
+      "description": "Chiết xuất từ thịt thăn, tủy và xương ống hầm trong nhiều giờ chuẩn VIETGAP, mang đến vị ngọt sâu lắng và hương thơm tự nhiên cho mọi món canh xào.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "400g",
+        "expiry": "15 tháng",
+        "storage": "Để nơi khô ráo, tránh ánh sáng trực tiếp",
+        "ingredients": "Muối, đường, dầu cọ, bột sắn, nước cốt hầm thịt thăn và xương ống"
+      },
+      "reviews": [
+        {
+          "name": "Bác Thanh Mai",
+          "rating": 5,
+          "date": "16/09/2026",
+          "comment": "Hạt nêm Knorr nêm canh rau ngót hay xào thịt vị ngọt thanh không bị lợ cổ."
+        }
+      ]
+    },
+    {
+      "id": "sp-55",
+      "name": "Cá ngừ ngâm dầu sốt cà chua Seaspimex lon 185g",
+      "brand": "Seaspimex",
+      "category": "gia-vi",
+      "categoryName": "Gia vị & Đồ hộp",
+      "originalPrice": 35000,
+      "salePrice": 29500,
+      "unit": "Lon 185g",
+      "image": "./images/products/sp-55.jpg",
+      "badge": "Mở nắp ăn liền",
+      "rating": 4.8,
+      "reviewsCount": 160,
+      "soldCount": 2200,
+      "flashSale": false,
+      "flashProgress": 70,
+      "description": "Thịt cá ngừ đại dương tươi ngon nạc mềm kết hợp sốt cà chua đậm đà và dầu nành nguyên chất, giàu đạm và Omega-3, ăn kèm bánh mì hoặc cơm nóng siêu tiện.",
+      "stock": 75,
+      "specs": {
+        "origin": "Việt Nam (Seaspimex Việt Nam)",
+        "volume": "185g",
+        "expiry": "3 năm",
+        "storage": "Nhiệt độ phòng",
+        "ingredients": "Cá ngừ (55%), sốt cà chua, dầu đậu nành, muối, tiêu gia vị"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Tuấn Linh",
+          "rating": 5,
+          "date": "14/09/2026",
+          "comment": "Cá ngừ thịt chắc không bị tanh, sốt cà chua kẹp bánh mì ăn sáng siêu đỉnh."
+        }
+      ]
+    },
+    {
+      "id": "sp-56",
+      "name": "Sữa hạt sen & hạt óc chó TH True Nut lốc 4 hộp x 180ml",
+      "brand": "TH True Milk",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 52000,
+      "salePrice": 46500,
+      "unit": "Lốc 4 hộp",
+      "image": "./images/products/sp-56.jpg",
+      "badge": "Vị ngọt chà là",
+      "rating": 4.9,
+      "reviewsCount": 185,
+      "soldCount": 2600,
+      "flashSale": true,
+      "flashProgress": 85,
+      "description": "Sự hòa quyện thanh mát giữa hạt sen đồng quê và hạt óc chó giàu dưỡng chất, hoàn toàn không bổ sung đường tinh luyện mà sử dụng vị ngọt tự nhiên từ quả chà là quý giá.",
+      "stock": 65,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn TH)",
+        "volume": "4 hộp x 180ml",
+        "expiry": "6 tháng kể từ NSX",
+        "storage": "Nơi khô ráo hoặc ngăn mát",
+        "ingredients": "Dịch hạt sen, hạt óc chó nghiền nhuyễn, sữa tươi sạch TH, quả chà là"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Thúy Hường",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Vị ngọt nhẹ từ chà là rất tự nhiên, hạt sen thơm bùi giúp dễ ngủ hơn hẳn."
+        }
+      ]
+    },
+    {
+      "id": "sp-57",
+      "name": "Sữa hạt hạnh nhân nguyên chất 137 Degrees Thái Lan hộp 180ml",
+      "brand": "137 Degrees",
+      "category": "sua-hat",
+      "categoryName": "Sữa hạt - Sữa đậu",
+      "originalPrice": 33000,
+      "salePrice": 28000,
+      "unit": "Hộp 180ml",
+      "image": "./images/products/sp-57.jpg",
+      "badge": "Nhập khẩu Thái",
+      "rating": 5,
+      "reviewsCount": 140,
+      "soldCount": 1900,
+      "flashSale": false,
+      "flashProgress": 77,
+      "description": "Chế biến từ 94% hạt hạnh nhân tươi nguyên chất thu hoạch từ California, không chất bảo quản, không đường mía, giàu canxi và axit folic cho mẹ bầu và người ăn thuần chay.",
+      "stock": 55,
+      "specs": {
+        "origin": "Thái Lan (Simple Foods Co., Ltd)",
+        "volume": "180ml",
+        "expiry": "12 tháng",
+        "storage": "Nơi khô thoáng",
+        "ingredients": "Sữa hạt hạnh nhân 94%, mật hoa dừa hữu cơ 5%, hạt hướng dương 1%"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Khánh Ly",
+          "rating": 5,
+          "date": "17/09/2026",
+          "comment": "Sữa hạt hạnh nhân đỉnh cao của Thái Lan, vị béo thơm thuần khiết không bị ngấy."
+        }
+      ]
+    },
+    {
+      "id": "sp-58",
+      "name": "Cà chua bi Ruby Đà Lạt chuẩn VietGAP hộp 500g",
+      "brand": "VietGAP Đà Lạt",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 32000,
+      "salePrice": 26500,
+      "unit": "Hộp 500g",
+      "image": "./images/products/sp-58.jpg",
+      "badge": "VietGAP",
+      "rating": 4.9,
+      "reviewsCount": 210,
+      "soldCount": 3800,
+      "flashSale": true,
+      "flashProgress": 90,
+      "description": "Cà chua bi Ruby quả mọng nước, đỏ tươi, vị chua ngọt hài hòa tự nhiên, giàu vitamin C và Lycopene chống oxy hóa, ăn sống hay làm salad đều tuyệt ngon.",
+      "stock": 65,
+      "specs": {
+        "origin": "Đà Lạt, Lâm Đồng (Nông trại VietGAP)",
+        "volume": "500g / hộp",
+        "expiry": "Dùng ngon nhất trong 5-7 ngày",
+        "storage": "Bảo quản ngăn mát tủ lạnh 8-12°C",
+        "ingredients": "100% Cà chua bi Ruby tươi sạch tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Thu Hà",
+          "rating": 5,
+          "date": "28/09/2026",
+          "comment": "Cà chua bi giòn ngọt, vỏ mỏng không bị chua gắt, bé nhà mình ăn sống như hoa quả."
+        }
+      ]
+    },
+    {
+      "id": "sp-59",
+      "name": "Bông cải xanh (Súp lơ) Đà Lạt tươi sạch cây 500g",
+      "brand": "VietGAP Đà Lạt",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 38000,
+      "salePrice": 31000,
+      "unit": "Cây 500g",
+      "image": "./images/products/sp-59.jpg",
+      "badge": "Tươi trong ngày",
+      "rating": 4.8,
+      "reviewsCount": 165,
+      "soldCount": 2900,
+      "flashSale": false,
+      "flashProgress": 75,
+      "description": "Bông cải xanh búp cuộn chặt, búp xanh mướt giàu sulforaphane, canxi và chất xơ, thích hợp luộc chấm kho quẹt hoặc xào thịt bò bổ dưỡng.",
+      "stock": 45,
+      "specs": {
+        "origin": "Đà Lạt, Lâm Đồng",
+        "volume": "Cây ~500g",
+        "expiry": "5 ngày trong ngăn mát",
+        "storage": "Bọc màng bọc thực phẩm giữ lạnh",
+        "ingredients": "100% Búp bông cải xanh tươi Đà Lạt"
+      },
+      "reviews": [
+        {
+          "name": "Chị Bích Hạnh",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Súp lơ xanh mướt, luộc lên nước ngọt thanh, cuống giòn ngọt."
+        }
+      ]
+    },
+    {
+      "id": "sp-60",
+      "name": "Rau xà lách mỡ thủy canh sạch giòn ngọt túi 300g",
+      "brand": "Đà Lạt Farm",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 25000,
+      "salePrice": 19500,
+      "unit": "Túi 300g",
+      "image": "./images/products/sp-60.jpg",
+      "badge": "Thủy canh",
+      "rating": 4.9,
+      "reviewsCount": 195,
+      "soldCount": 3400,
+      "flashSale": false,
+      "flashProgress": 82,
+      "description": "Trồng theo phương pháp thủy canh hồi lưu khép kín, lá rau xanh nõn mướt mát, giòn ngọt tự nhiên, an toàn tuyệt đối không dư lượng thuốc BVTV.",
+      "stock": 50,
+      "specs": {
+        "origin": "Đà Lạt, Việt Nam",
+        "volume": "300g / túi",
+        "expiry": "3 - 5 ngày",
+        "storage": "Ngăn rau củ tủ lạnh",
+        "ingredients": "100% Xà lách mỡ thủy canh sạch"
+      },
+      "reviews": [
+        {
+          "name": "Trần Mai Anh",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Rau sạch sẽ không có hạt đất nào, rửa sơ là trộn dầu giấm ăn liền cực giòn."
+        }
+      ]
+    },
+    {
+      "id": "sp-61",
+      "name": "Cà rốt tươi Đà Lạt củ ngọt giòn túi 500g",
+      "brand": "VietGAP Đà Lạt",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 22000,
+      "salePrice": 17500,
+      "unit": "Túi 500g",
+      "image": "./images/products/sp-61.jpg",
+      "badge": "Giàu Beta-Caroten",
+      "rating": 4.8,
+      "reviewsCount": 140,
+      "soldCount": 2200,
+      "flashSale": false,
+      "flashProgress": 70,
+      "description": "Cà rốt Đà Lạt củ thon đều màu cam đậm, lõi nhỏ giòn ngọt, giàu vitamin A sáng mắt, rất lý tưởng để ép nước uống hoặc hầm súp canh sườn.",
+      "stock": 70,
+      "specs": {
+        "origin": "Lâm Đồng, Việt Nam",
+        "volume": "500g / túi",
+        "expiry": "10 ngày ở nhiệt độ mát",
+        "storage": "Để nơi khô ráo thoáng khí hoặc ngăn mát",
+        "ingredients": "100% Cà rốt tươi Đà Lạt"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Hải Yến",
+          "rating": 5,
+          "date": "20/09/2026",
+          "comment": "Cà rốt ép với táo thơm ngọt không hề hăng, củ cứng cáp tươi rói."
+        }
+      ]
+    },
+    {
+      "id": "sp-62",
+      "name": "Khoai tây vàng Đà Lạt vỏ mỏng ruột vàng túi 1kg",
+      "brand": "Đà Lạt Farm",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 35000,
+      "salePrice": 29000,
+      "unit": "Túi 1kg",
+      "image": "./images/products/sp-62.jpg",
+      "badge": "Đà Lạt 100%",
+      "rating": 4.9,
+      "reviewsCount": 280,
+      "soldCount": 4600,
+      "flashSale": false,
+      "flashProgress": 78,
+      "description": "Khoai tây giống vàng Đà Lạt ruột vàng óng, bở bùi ngọt tự nhiên, không sượng, thích hợp chiên xù, làm khoai tây nghiền hoặc nấu cà ri béo ngậy.",
+      "stock": 90,
+      "specs": {
+        "origin": "Đà Lạt, Việt Nam",
+        "volume": "1000g (1kg)",
+        "expiry": "15 ngày",
+        "storage": "Nơi khô thoáng, tránh ánh sáng trực tiếp",
+        "ingredients": "100% Khoai tây vàng tươi chọn lọc"
+      },
+      "reviews": [
+        {
+          "name": "Đỗ Minh Quân",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Khoai củ đều tay, chiên nồi chiên không dầu giòn rụm bên ngoài bở mềm bên trong."
+        }
+      ]
+    },
+    {
+      "id": "sp-63",
+      "name": "Dưa leo Baby giống Nhật Bản ngọt mát hộp 500g",
+      "brand": "VietGAP Đà Lạt",
+      "category": "rau-cu",
+      "categoryName": "Rau củ tươi sạch",
+      "originalPrice": 26000,
+      "salePrice": 21000,
+      "unit": "Hộp 500g",
+      "image": "./images/products/sp-63.jpg",
+      "badge": "Giòn tan",
+      "rating": 4.9,
+      "reviewsCount": 175,
+      "soldCount": 2700,
+      "flashSale": true,
+      "flashProgress": 86,
+      "description": "Dưa leo baby quả nhỏ xinh xắn, vỏ mỏng ruột đặc ít hạt, vị ngọt mát giải nhiệt, ăn kèm các món cuốn hoặc chấm muối ớt cực đã.",
+      "stock": 60,
+      "specs": {
+        "origin": "Lâm Đồng (Chuẩn VietGAP)",
+        "volume": "500g / hộp",
+        "expiry": "5 - 7 ngày",
+        "storage": "Ngăn mát tủ lạnh",
+        "ingredients": "100% Dưa leo baby giống Nhật"
+      },
+      "reviews": [
+        {
+          "name": "Lương Thùy Linh",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Dưa leo giòn rụm ngọt lịm không một chút đắng, đóng hộp sạch đẹp."
+        }
+      ]
+    },
+    {
+      "id": "sp-64",
+      "name": "Táo Envy New Zealand nhập khẩu size 70 hộp 3 quả",
+      "brand": "Envy",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 110000,
+      "salePrice": 89000,
+      "unit": "Hộp 3 quả",
+      "image": "./images/products/sp-64.jpg",
+      "badge": "New Zealand",
+      "rating": 5,
+      "reviewsCount": 390,
+      "soldCount": 5200,
+      "flashSale": true,
+      "flashProgress": 94,
+      "description": "Dòng táo cao cấp Envy New Zealand nổi tiếng với vỏ đỏ rực rỡ, thịt giòn đanh chắc nịch, thơm nồng nàn và độ ngọt đậm vị quý phái.",
+      "stock": 55,
+      "specs": {
+        "origin": "New Zealand (Envy™ Apples)",
+        "volume": "Hộp 3 quả (~800g)",
+        "expiry": "Dùng ngon trong 2 tuần khi giữ lạnh",
+        "storage": "Nhiệt độ 2°C - 5°C trong ngăn mát",
+        "ingredients": "100% Táo Envy tươi nhập khẩu loại 1"
+      },
+      "reviews": [
+        {
+          "name": "Bác Sĩ Hoàng Yến",
+          "rating": 5,
+          "date": "29/09/2026",
+          "comment": "Táo Envy cắn giòn tan ngọt lịm nước, quả căng bóng làm quà biếu cũng sang."
+        }
+      ]
+    },
+    {
+      "id": "sp-65",
+      "name": "Nho đen không hạt ngón tay Úc ngọt lịm hộp 500g",
+      "brand": "Nông Sản Nhập Khẩu",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 145000,
+      "salePrice": 125000,
+      "unit": "Hộp 500g",
+      "image": "./images/products/sp-65.jpg",
+      "badge": "Không hạt",
+      "rating": 4.9,
+      "reviewsCount": 220,
+      "soldCount": 3100,
+      "flashSale": false,
+      "flashProgress": 80,
+      "description": "Dáng quả thon dài độc đáo, vỏ mỏng màu tím đen phủ lớp phấn tự nhiên, cùi giòn sần sật mọng nước ngọt sắc không chát.",
+      "stock": 40,
+      "specs": {
+        "origin": "Úc (Australia)",
+        "volume": "500g / hộp",
+        "expiry": "7 ngày trong tủ lạnh",
+        "storage": "Bảo quản lạnh 0°C - 4°C, ăn đến đâu rửa đến đó",
+        "ingredients": "100% Nho ngón tay nhập khẩu nguyên chùm"
+      },
+      "reviews": [
+        {
+          "name": "Trịnh Gia Bảo",
+          "rating": 5,
+          "date": "27/09/2026",
+          "comment": "Nho tươi cuống xanh lét, ngọt lịm không hạt các bé nhà mình ăn rất yên tâm."
+        }
+      ]
+    },
+    {
+      "id": "sp-66",
+      "name": "Chuối tiêu hồng Laba Đà Lạt chín dẻo tự nhiên nải ~1.2kg",
+      "brand": "Đà Lạt Farm",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 38000,
+      "salePrice": 32000,
+      "unit": "Nải ~1.2kg",
+      "image": "./images/products/sp-66.jpg",
+      "badge": "Tiến Vua Laba",
+      "rating": 4.8,
+      "reviewsCount": 310,
+      "soldCount": 4400,
+      "flashSale": false,
+      "flashProgress": 76,
+      "description": "Đặc sản chuối Laba tiến vua trứ danh vùng đất Lâm Đồng, thịt chuối vàng đậm, dẻo quánh, vị ngọt thơm thảo mộc đặc trưng giàu Kali bổ não.",
+      "stock": 60,
+      "specs": {
+        "origin": "Đà Lạt, Việt Nam",
+        "volume": "Nải 1.1kg - 1.3kg",
+        "expiry": "4 - 6 ngày ở nhiệt độ phòng",
+        "storage": "Để nơi thoáng khí, không để trong túi nilon kín",
+        "ingredients": "100% Chuối Laba Đà Lạt chín tự nhiên"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Văn Quang",
+          "rating": 5,
+          "date": "23/09/2026",
+          "comment": "Chuối thơm dẻo bùi khác hẳn chuối thường, ăn trước khi tập gym rất tốt."
+        }
+      ]
+    },
+    {
+      "id": "sp-67",
+      "name": "Dưa hấu ruột đỏ không hạt Long An ngọt lịm quả ~2.5kg",
+      "brand": "Nông Sản Việt",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 55000,
+      "salePrice": 45000,
+      "unit": "Quả ~2.5kg",
+      "image": "./images/products/sp-67.jpg",
+      "badge": "Không hạt",
+      "rating": 4.9,
+      "reviewsCount": 420,
+      "soldCount": 6100,
+      "flashSale": true,
+      "flashProgress": 92,
+      "description": "Dưa hấu vỏ mỏng xanh bóng, ruột đỏ au từ tâm ra vỏ, hoàn toàn không hạt tiện lợi, hàm lượng nước dồi dào giải nhiệt mùa nóng cực sảng khoái.",
+      "stock": 50,
+      "specs": {
+        "origin": "Long An, Việt Nam",
+        "volume": "Quả 2.3kg - 2.7kg",
+        "expiry": "10 ngày để ngoài, bổ ra bảo quản lạnh 3 ngày",
+        "storage": "Nhiệt độ phòng hoặc ngăn mát",
+        "ingredients": "100% Dưa hấu ruột đỏ không hạt Mặt Trời Đỏ"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Kim Tuyến",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Bổ quả dưa đỏ au ngọt lịm nước, không có hạt nào ăn sướng miệng thật."
+        }
+      ]
+    },
+    {
+      "id": "sp-68",
+      "name": "Cam sành Tiền Giang mọng nước nhiều tép túi 1kg",
+      "brand": "Nông Sản Việt",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 35000,
+      "salePrice": 28000,
+      "unit": "Túi 1kg",
+      "image": "./images/products/sp-68.jpg",
+      "badge": "Vắt nước cực ngọt",
+      "rating": 4.8,
+      "reviewsCount": 260,
+      "soldCount": 3900,
+      "flashSale": false,
+      "flashProgress": 74,
+      "description": "Cam sành miền Tây vỏ xanh mỏng, ruột vàng cam mọng nước, vị chua ngọt thanh nhẹ chứa hàm lượng vitamin C cực lớn giúp tăng cường đề kháng.",
+      "stock": 80,
+      "specs": {
+        "origin": "Tiền Giang, Việt Nam",
+        "volume": "1000g (1kg)",
+        "expiry": "7 - 10 ngày",
+        "storage": "Để nơi thoáng mát hoặc ngăn rau tủ lạnh",
+        "ingredients": "100% Cam sành miền Tây tươi mới"
+      },
+      "reviews": [
+        {
+          "name": "Đặng Thị Thảo",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Vắt 2 quả cam được cả cốc to đầy ắp nước, pha chút mật ong uống bao tỉnh."
+        }
+      ]
+    },
+    {
+      "id": "sp-69",
+      "name": "Bơ sáp 034 Đắk Lắk cơm vàng dẻo béo túi 1kg",
+      "brand": "Nông Sản Việt",
+      "category": "trai-cay",
+      "categoryName": "Trái cây tươi",
+      "originalPrice": 65000,
+      "salePrice": 52000,
+      "unit": "Túi 1kg",
+      "image": "./images/products/sp-69.jpg",
+      "badge": "Dẻo quánh",
+      "rating": 4.9,
+      "reviewsCount": 310,
+      "soldCount": 4500,
+      "flashSale": false,
+      "flashProgress": 88,
+      "description": "Bơ dài 034 nức tiếng Tây Nguyên, hạt lép cơm vàng ươm, dẻo quánh béo ngậy không xơ, làm sinh tố bơ sữa hoặc dầm sữa chua ăn cực ghiền.",
+      "stock": 55,
+      "specs": {
+        "origin": "Đắk Lắk, Việt Nam",
+        "volume": "1000g (1kg / ~3-4 quả)",
+        "expiry": "Ủ chín ăn trong 3 ngày sau khi mềm tay",
+        "storage": "Để nhiệt độ phòng cho chín đều, chín rồi cho ngăn mát",
+        "ingredients": "100% Bơ sáp giống 034 tuyển chọn"
+      },
+      "reviews": [
+        {
+          "name": "Lê Cẩm Tú",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Bơ 034 dẻo quánh cơm vàng đậm, hạt bé tí teo, xay sinh tố béo ngậy thơm lừng."
+        }
+      ]
+    },
+    {
+      "id": "sp-70",
+      "name": "Thịt ba chỉ heo sạch chuẩn mát MeatDeli khay 400g",
+      "brand": "MeatDeli",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 79000,
+      "salePrice": 68000,
+      "unit": "Khay 400g",
+      "image": "./images/products/sp-70.jpg",
+      "badge": "Thịt mát Oxy Fresh",
+      "rating": 5,
+      "reviewsCount": 510,
+      "soldCount": 7900,
+      "flashSale": true,
+      "flashProgress": 95,
+      "description": "Thịt heo sạch MeatDeli ứng dụng công nghệ làm mát Oxy-Fresh 9 tầng châu Âu, tỷ lệ nạc mỡ cân đối lý tưởng, mềm mọng nước không chất tạo nạc.",
+      "stock": 60,
+      "specs": {
+        "origin": "Việt Nam (Masan MeatLife)",
+        "volume": "400g / khay",
+        "expiry": "5 ngày trong ngăn mát 0-4°C",
+        "storage": "Luôn bảo quản lạnh 0°C đến 4°C",
+        "ingredients": "100% Thịt heo ba chỉ tươi sạch nguyên chất"
+      },
+      "reviews": [
+        {
+          "name": "Cô Nguyễn Hồng",
+          "rating": 5,
+          "date": "29/09/2026",
+          "comment": "Thịt MeatDeli luộc lên nước trong veo không một chút bọt bẩn, thịt thơm ngọt mềm."
+        }
+      ]
+    },
+    {
+      "id": "sp-71",
+      "name": "Trứng gà tươi sạch kháng khuẩn Ba Huân hộp 10 quả",
+      "brand": "Ba Huân",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 36000,
+      "salePrice": 31000,
+      "unit": "Hộp 10 quả",
+      "image": "./images/products/sp-71.jpg",
+      "badge": "Xử lý UV",
+      "rating": 4.9,
+      "reviewsCount": 680,
+      "soldCount": 11500,
+      "flashSale": false,
+      "flashProgress": 90,
+      "description": "Trứng gà tươi Ba Huân trải qua quy trình khử trùng bằng tia UV và làm sạch tự động, lòng đỏ đỏ au giàu đạm và vitamin D bổ dưỡng cho bé.",
+      "stock": 120,
+      "specs": {
+        "origin": "Việt Nam (Ba Huân Group)",
+        "volume": "Hộp 10 quả",
+        "expiry": "30 ngày kể từ ngày đóng gói",
+        "storage": "Bảo quản ngăn mát tủ lạnh",
+        "ingredients": "100% Trứng gà công nghiệp sạch tiệt trùng"
+      },
+      "reviews": [
+        {
+          "name": "Trần Văn Cường",
+          "rating": 5,
+          "date": "27/09/2026",
+          "comment": "Lòng đỏ to tròn béo ngậy, chiên ốp la lòng đào chấm nước tương ăn kèm bánh mì rất đã."
+        }
+      ]
+    },
+    {
+      "id": "sp-72",
+      "name": "Thịt thăn bò Úc tươi thái lát xào nhúng lẩu khay 300g",
+      "brand": "PaciBeef",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 115000,
+      "salePrice": 98000,
+      "unit": "Khay 300g",
+      "image": "./images/products/sp-72.jpg",
+      "badge": "Bò Úc nhập",
+      "rating": 5,
+      "reviewsCount": 340,
+      "soldCount": 4600,
+      "flashSale": true,
+      "flashProgress": 88,
+      "description": "Thịt bò Úc ăn cỏ tự nhiên cắt lát mỏng tiêu chuẩn bằng máy chuyên dụng, thịt mềm tan ngọt thớ, không dai, nhúng lẩu hoặc xào cần tỏi cực nhanh chín.",
+      "stock": 45,
+      "specs": {
+        "origin": "Úc (Australia - Đóng gói tại VN)",
+        "volume": "300g / khay",
+        "expiry": "Ngăn đông 6 tháng, ngăn mát 3 ngày",
+        "storage": "Bảo quản lạnh sâu -18°C hoặc mát 0-4°C",
+        "ingredients": "100% Thịt thăn bò Úc nguyên chất"
+      },
+      "reviews": [
+        {
+          "name": "Ngô Trí Kiên",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Bò nhúng lẩu sôi 15 giây là chín tới mềm ngọt, thớ thịt đẹp mắt."
+        }
+      ]
+    },
+    {
+      "id": "sp-73",
+      "name": "Ức gà phi lê tươi sạch CP Foods khay 500g",
+      "brand": "CP Foods",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 48000,
+      "salePrice": 42000,
+      "unit": "Khay 500g",
+      "image": "./images/products/sp-73.jpg",
+      "badge": "Gymmer chân ái",
+      "rating": 4.8,
+      "reviewsCount": 290,
+      "soldCount": 5100,
+      "flashSale": false,
+      "flashProgress": 84,
+      "description": "Ức gà lọc bỏ hoàn toàn da và mỡ, dồi dào protein tinh khiết hỗ trợ phát triển cơ bắp và giảm mỡ, đóng khay hút chân không an toàn vệ sinh.",
+      "stock": 75,
+      "specs": {
+        "origin": "Việt Nam (CP Group Thái Lan)",
+        "volume": "500g / khay",
+        "expiry": "5 ngày trong ngăn mát",
+        "storage": "Bảo quản 0°C đến 4°C",
+        "ingredients": "100% Ức gà phi lê tươi CP sạch"
+      },
+      "reviews": [
+        {
+          "name": "Phan Tuấn Đạt",
+          "rating": 5,
+          "date": "24/09/2026",
+          "comment": "Ức gà CP tươi ngon không bị bở, ướp chút muối tiêu áp chảo ăn mềm mọng."
+        }
+      ]
+    },
+    {
+      "id": "sp-74",
+      "name": "Cá hồi Nauy tươi phi lê cắt khúc khay 250g",
+      "brand": "Leroy Seafood",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 165000,
+      "salePrice": 145000,
+      "unit": "Khay 250g",
+      "image": "./images/products/sp-74.jpg",
+      "badge": "Nauy nhập khẩu",
+      "rating": 5,
+      "reviewsCount": 310,
+      "soldCount": 3800,
+      "flashSale": true,
+      "flashProgress": 91,
+      "description": "Cá hồi Đại Tây Dương nhập khẩu trực tiếp từ Nauy, vân mỡ cam óng ả giàu Omega-3 và DHA, có thể ăn sống Sashimi hoặc áp chảo sốt bơ chanh thơm lừng.",
+      "stock": 35,
+      "specs": {
+        "origin": "Nauy (Norway - Leroy Seafood Group)",
+        "volume": "250g / khay",
+        "expiry": "Dùng ngon nhất trong 3 ngày",
+        "storage": "Luôn bảo quản lạnh 0°C - 2°C",
+        "ingredients": "100% Cá hồi Nauy tươi phi lê lọc xương"
+      },
+      "reviews": [
+        {
+          "name": "Bác Sĩ Thu Trang",
+          "rating": 5,
+          "date": "28/09/2026",
+          "comment": "Miếng cá hồi tươi rói, nấu cháo cho em bé hoặc áp chảo sốt cam ngon tuyệt hảo."
+        }
+      ]
+    },
+    {
+      "id": "sp-75",
+      "name": "Tôm thẻ chân trắng tươi sống làm sạch khay 300g",
+      "brand": "Nông Sản Việt",
+      "category": "thit-trung",
+      "categoryName": "Thịt, Trứng & Hải sản",
+      "originalPrice": 85000,
+      "salePrice": 74000,
+      "unit": "Khay 300g",
+      "image": "./images/products/sp-75.jpg",
+      "badge": "Tươi ngon",
+      "rating": 4.8,
+      "reviewsCount": 185,
+      "soldCount": 2600,
+      "flashSale": false,
+      "flashProgress": 72,
+      "description": "Tôm thẻ sinh thái vùng đầm phá Cà Mau, thịt săn chắc giòn ngọt tự nhiên, đã được làm sạch râu và chỉ lưng, luộc nước dừa hoặc nướng muối ớt đều tuyệt.",
+      "stock": 40,
+      "specs": {
+        "origin": "Cà Mau, Việt Nam",
+        "volume": "300g / khay",
+        "expiry": "3 ngày trong ngăn mát, 30 ngày trong ngăn đông",
+        "storage": "Nhiệt độ -18°C hoặc 0-4°C",
+        "ingredients": "100% Tôm thẻ chân trắng tươi chọn lọc"
+      },
+      "reviews": [
+        {
+          "name": "Hoàng Minh Trí",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Tôm thịt chắc nịch vỏ mỏng, hấp bia sả ngọt lịm chấm muối ớt xanh hết ý."
+        }
+      ]
+    },
+    {
+      "id": "sp-76",
+      "name": "Xúc xích tiệt trùng heo Vissan gói 5 cây x 35g",
+      "brand": "Vissan",
+      "category": "dong-lanh",
+      "categoryName": "Đồ đông lạnh & Chế biến",
+      "originalPrice": 24000,
+      "salePrice": 20000,
+      "unit": "Gói 5 cây",
+      "image": "./images/products/sp-76.jpg",
+      "badge": "Vissan chính hãng",
+      "rating": 4.8,
+      "reviewsCount": 340,
+      "soldCount": 6800,
+      "flashSale": false,
+      "flashProgress": 85,
+      "description": "Xúc xích tiệt trùng thơm ngon đậm đà vị thịt heo tự nhiên, tiện lợi bóc vỏ ăn liền hoặc ăn kèm mì tôm, bánh mì cho bữa sáng nhanh gọn.",
+      "stock": 110,
+      "specs": {
+        "origin": "Việt Nam (Vissan)",
+        "volume": "5 cây x 35g (175g)",
+        "expiry": "4 tháng kể từ NSX",
+        "storage": "Nhiệt độ phòng hoặc ngăn mát",
+        "ingredients": "Thịt heo (60%), mỡ heo, tinh bột bắp, muối, đường, tiêu"
+      },
+      "reviews": [
+        {
+          "name": "Lê Tấn Phát",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Xúc xích Vissan ăn từ nhỏ đến lớn vẫn mê, bóc ăn liền lúc đói siêu tiện."
+        }
+      ]
+    },
+    {
+      "id": "sp-77",
+      "name": "Há cảo tôm thịt CJ Cầu Tre khay 300g (12 viên)",
+      "brand": "CJ Cầu Tre",
+      "category": "dong-lanh",
+      "categoryName": "Đồ đông lạnh & Chế biến",
+      "originalPrice": 48000,
+      "salePrice": 41500,
+      "unit": "Khay 300g",
+      "image": "./images/products/sp-77.jpg",
+      "badge": "Chuẩn Dimsum",
+      "rating": 4.9,
+      "reviewsCount": 270,
+      "soldCount": 4200,
+      "flashSale": true,
+      "flashProgress": 88,
+      "description": "Lớp vỏ bột trong mờ dai mềm bao trọn phần nhân tôm thịt mọng nước giòn ngọt chuẩn phong vị Dimsum nhà hàng Hong Kong, chỉ cần hấp 6 phút là dùng được.",
+      "stock": 55,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn CJ Hàn Quốc)",
+        "volume": "300g (12 viên)",
+        "expiry": "12 tháng kể từ NSX",
+        "storage": "Ngăn đông tủ lạnh -18°C",
+        "ingredients": "Tôm (25%), thịt heo, củ sắn, bột mì, dầu mè, gia vị Dimsum"
+      },
+      "reviews": [
+        {
+          "name": "Trương Mỹ Duyên",
+          "rating": 5,
+          "date": "27/09/2026",
+          "comment": "Há cảo vỏ mỏng dai, cắn ngập nhân tôm ngọt thịt, chấm tương ớt xì dầu ngon tuyệt."
+        }
+      ]
+    },
+    {
+      "id": "sp-78",
+      "name": "Chả lụa bì ớt xiêm xanh G Kitchen cây 500g",
+      "brand": "G Kitchen",
+      "category": "dong-lanh",
+      "categoryName": "Đồ đông lạnh & Chế biến",
+      "originalPrice": 98000,
+      "salePrice": 85000,
+      "unit": "Cây 500g",
+      "image": "./images/products/sp-78.jpg",
+      "badge": "Ớt xiêm xanh cay thơm",
+      "rating": 4.9,
+      "reviewsCount": 380,
+      "soldCount": 5600,
+      "flashSale": false,
+      "flashProgress": 82,
+      "description": "Thịt heo sạch 3F Plus kết hợp bì sần sật và những quả ớt xiêm xanh rừng cay nồng thơm ngát, ăn kèm muối tiêu chanh hoặc dưa góp cực đưa cơm.",
+      "stock": 65,
+      "specs": {
+        "origin": "Việt Nam (GreenFeed - G Kitchen)",
+        "volume": "500g / cây",
+        "expiry": "40 ngày",
+        "storage": "Bảo quản ngăn mát 0°C - 4°C",
+        "ingredients": "Thịt heo sạch 3F Plus (70%), bì heo, ớt xiêm xanh tươi, nước mắm nhĩ"
+      },
+      "reviews": [
+        {
+          "name": "Đào Phương Linh",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Vị ớt xiêm thơm nức cay the the, bì giòn sần sật nhậu hay ăn cơm đều số 1."
+        }
+      ]
+    },
+    {
+      "id": "sp-79",
+      "name": "Bánh bao nhân thịt xá xíu trứng cút Thọ Phát gói 4 cái",
+      "brand": "Thọ Phát",
+      "category": "dong-lanh",
+      "categoryName": "Đồ đông lạnh & Chế biến",
+      "originalPrice": 42000,
+      "salePrice": 36000,
+      "unit": "Gói 4 cái",
+      "image": "./images/products/sp-79.jpg",
+      "badge": "Thọ Phát trứ danh",
+      "rating": 4.8,
+      "reviewsCount": 410,
+      "soldCount": 6500,
+      "flashSale": false,
+      "flashProgress": 79,
+      "description": "Vỏ bánh xốp mềm trắng ngần thơm mùi sữa kết hợp nhân thịt xá xíu đậm đà cùng trứng cút béo bùi, bữa ăn sáng hoàn hảo nóng hổi chỉ sau 10 phút hấp.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Bánh Bao Thọ Phát)",
+        "volume": "Gói 4 cái x 100g (400g)",
+        "expiry": "30 ngày trong ngăn đông",
+        "storage": "Bảo quản ngăn đá tủ lạnh",
+        "ingredients": "Bột mì hảo hạng, thịt heo xá xíu, trứng cút, mộc nhĩ, hành tím"
+      },
+      "reviews": [
+        {
+          "name": "Bùi Thế Bảo",
+          "rating": 5,
+          "date": "21/09/2026",
+          "comment": "Bánh bao Thọ Phát thì nổi tiếng rồi, hấp buổi sáng cho 2 đứa con đi học vừa ngon vừa tiện."
+        }
+      ]
+    },
+    {
+      "id": "sp-80",
+      "name": "Phô mai Con Bò Cười truyền thống hộp 8 miếng 112g",
+      "brand": "The Laughing Cow",
+      "category": "dong-lanh",
+      "categoryName": "Đồ đông lạnh & Chế biến",
+      "originalPrice": 41000,
+      "salePrice": 35500,
+      "unit": "Hộp 8 miếng",
+      "image": "./images/products/sp-80.png",
+      "badge": "Pháp",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "soldCount": 5400,
+      "flashSale": false,
+      "flashProgress": 80,
+      "description": "Phô mai tam giác mềm mịn ngậy béo giàu Canxi và Kẽm, bổ sung năng lượng nhanh chóng cho trẻ nhỏ, ăn trực tiếp hoặc phết lên bánh mì giòn tan.",
+      "stock": 90,
+      "specs": {
+        "origin": "Việt Nam (Tập đoàn Bel Pháp)",
+        "volume": "8 miếng x 14g (112g)",
+        "expiry": "9 tháng kể từ NSX",
+        "storage": "Nhiệt độ phòng hoặc ngăn mát",
+        "ingredients": "Sữa bò tiệt trùng, bơ, phô mai lên men tự nhiên, khoáng chất Canxi"
+      },
+      "reviews": [
+        {
+          "name": "Chị Lan Anh",
+          "rating": 5,
+          "date": "19/09/2026",
+          "comment": "Con mình thích ăn phô mai con bò cười phết bánh mì sandwich buổi sáng."
+        }
+      ]
+    },
+    {
+      "id": "sp-81",
+      "name": "Nước giặt xả OMO Matic cửa trước hoa anh đào túi 3.6kg",
+      "brand": "OMO",
+      "category": "hoa-pham",
+      "categoryName": "Hóa phẩm & Chăm sóc",
+      "originalPrice": 215000,
+      "salePrice": 189000,
+      "unit": "Túi 3.6kg",
+      "image": "./images/products/sp-81.jpg",
+      "badge": "Túi siêu tiết kiệm",
+      "rating": 5,
+      "reviewsCount": 780,
+      "soldCount": 12400,
+      "flashSale": true,
+      "flashProgress": 97,
+      "description": "Công thức màn chắn kháng bẩn Polyshield xoáy bay vết bẩn cứng đầu mà không hại sợi vải, lưu hương hoa anh đào thanh khiết sang trọng suốt cả tuần.",
+      "stock": 60,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "3.6kg / túi",
+        "expiry": "3 năm kể từ NSX",
+        "storage": "Để nơi khô ráo, đậy nắp kín sau khi dùng",
+        "ingredients": "Sodium Linear Alkylbenzene Sulfonate, tinh dầu hoa anh đào, chất quang hoạt"
+      },
+      "reviews": [
+        {
+          "name": "Cô Nguyễn Lan",
+          "rating": 5,
+          "date": "29/09/2026",
+          "comment": "Túi 3.6kg dùng được mấy tháng, giặt máy cửa trước ít bọt mà quần áo thơm nức."
+        }
+      ]
+    },
+    {
+      "id": "sp-82",
+      "name": "Nước rửa chén Sunlight thiên nhiên tinh dầu bưởi tây chai 750g",
+      "brand": "Sunlight",
+      "category": "hoa-pham",
+      "categoryName": "Hóa phẩm & Chăm sóc",
+      "originalPrice": 33000,
+      "salePrice": 28000,
+      "unit": "Chai 750g",
+      "image": "./images/products/sp-82.jpg",
+      "badge": "100% Gốc thực vật",
+      "rating": 4.9,
+      "reviewsCount": 520,
+      "soldCount": 9100,
+      "flashSale": false,
+      "flashProgress": 88,
+      "description": "Chiết xuất tinh dầu bưởi tây và lô hội tự nhiên dịu nhẹ với da tay, đánh bay dầu mỡ cứng đầu chỉ trong một lần quẹt, an toàn cho cả chén đĩa trẻ em.",
+      "stock": 120,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "750g / chai",
+        "expiry": "3 năm",
+        "storage": "Nơi thoáng mát",
+        "ingredients": "Chiết xuất bưởi tây tự nhiên, nha đam, hoạt chất làm sạch sinh học"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Hải Đăng",
+          "rating": 5,
+          "date": "23/09/2026",
+          "comment": "Rửa chén sạch bong kin kít, mùi bưởi thơm dễ chịu không bị khô rát tay."
+        }
+      ]
+    },
+    {
+      "id": "sp-83",
+      "name": "Dầu gội Sunsilk óng mượt rạng ngời tinh chất bồ kết chai 650g",
+      "brand": "Sunsilk",
+      "category": "hoa-pham",
+      "categoryName": "Hóa phẩm & Chăm sóc",
+      "originalPrice": 145000,
+      "salePrice": 125000,
+      "unit": "Chai 650g",
+      "image": "./images/products/sp-83.jpg",
+      "badge": "Óng mượt bồ kết",
+      "rating": 4.8,
+      "reviewsCount": 390,
+      "soldCount": 5800,
+      "flashSale": false,
+      "flashProgress": 76,
+      "description": "Hỗn hợp tinh chất bồ kết và dầu dừa tự nhiên giúp nuôi dưỡng mái tóc đen óng ả mượt mà, xua tan nỗi lo tóc xơ rối bết dính trong ngày dài.",
+      "stock": 70,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "650g / chai vòi nhấn",
+        "expiry": "3 năm",
+        "storage": "Tránh nhiệt độ cao và ánh nắng",
+        "ingredients": "Chiết xuất bồ kết đậm đặc, tinh dầu hoa trà, dưỡng chất Pro-V"
+      },
+      "reviews": [
+        {
+          "name": "Trương Thảo",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Gội xong tóc suôn mượt vào nếp, mùi bồ kết thoang thoảng lưu hương lâu."
+        }
+      ]
+    },
+    {
+      "id": "sp-84",
+      "name": "Sữa tắm Dưỡng Thể Chuyên Sâu Dove Deeply Nourishing chai 500g",
+      "brand": "Dove",
+      "category": "hoa-pham",
+      "categoryName": "Hóa phẩm & Chăm sóc",
+      "originalPrice": 135000,
+      "salePrice": 118000,
+      "unit": "Chai 500g",
+      "image": "./images/products/sp-84.jpg",
+      "badge": "Dưỡng ẩm sâu",
+      "rating": 4.9,
+      "reviewsCount": 460,
+      "soldCount": 6900,
+      "flashSale": false,
+      "flashProgress": 84,
+      "description": "Công nghệ NutriumMoisture độc quyền cung cấp dưỡng chất tự nhiên nuôi dưỡng làn da căng mọng mềm mại từ sâu bên trong, hương thơm quý phái.",
+      "stock": 65,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "500g / chai",
+        "expiry": "30 tháng",
+        "storage": "Nơi khô mát",
+        "ingredients": "Dưỡng chất dưỡng ẩm tự nhiên NutriumMoisture, glycerin, stearic acid"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Khánh Linh",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Tắm xong da mềm mượt như da em bé, bọt mịn màng thích lắm."
+        }
+      ]
+    },
+    {
+      "id": "sp-85",
+      "name": "Kem đánh răng P/S Than Hoạt Tính trắng răng tự nhiên tuýp 230g",
+      "brand": "P/S",
+      "category": "hoa-pham",
+      "categoryName": "Hóa phẩm & Chăm sóc",
+      "originalPrice": 45000,
+      "salePrice": 38000,
+      "unit": "Tuýp 230g",
+      "image": "./images/products/sp-85.jpg",
+      "badge": "Trắng răng tự nhiên",
+      "rating": 4.9,
+      "reviewsCount": 620,
+      "soldCount": 9400,
+      "flashSale": true,
+      "flashProgress": 90,
+      "description": "Than hoạt tính cao cấp kết hợp tinh chất tre tự nhiên giúp loại bỏ vết ố vàng trên men răng, trả lại nụ cười rạng rỡ và hơi thở thơm mát tự tin.",
+      "stock": 140,
+      "specs": {
+        "origin": "Việt Nam (Unilever)",
+        "volume": "230g / tuýp lớn",
+        "expiry": "3 năm",
+        "storage": "Đậy nắp sau khi dùng",
+        "ingredients": "Bột than hoạt tính, tinh chất tre thiên nhiên, Canxi, Fluoride"
+      },
+      "reviews": [
+        {
+          "name": "Trần Đức Trọng",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Đánh răng rất sạch mảng bám, răng sáng lên thấy rõ sau 2 tuần dùng."
+        }
+      ]
+    },
+    {
+      "id": "sp-86",
+      "name": "Chảo chống dính đáy từ Sunhouse Mama 24cm",
+      "brand": "Sunhouse",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 225000,
+      "salePrice": 185000,
+      "unit": "Chiếc 24cm",
+      "image": "./images/products/sp-86.jpg",
+      "badge": "Đáy từ cao cấp",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "soldCount": 4100,
+      "flashSale": true,
+      "flashProgress": 88,
+      "description": "Chảo chống dính Sunhouse Mama đúc nhôm nguyên khối dày dặn, phủ lớp chống dính đá hoa cương siêu bền, đáy từ bắt nhiệt cực nhanh dùng được cho mọi loại bếp.",
+      "stock": 45,
+      "specs": {
+        "origin": "Việt Nam (Sunhouse Group)",
+        "volume": "Đường kính 24cm, dày 2.8mm",
+        "expiry": "Bảo hành chính hãng 12 tháng",
+        "storage": "Vệ sinh bằng miếng bọt biển mềm, tránh chà búi sắt",
+        "ingredients": "Hợp kim nhôm đúc, chống dính Whitford (Mỹ), tay cầm bọc silicon cách nhiệt"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Thị Mai",
+          "rating": 5,
+          "date": "28/09/2026",
+          "comment": "Chảo chiên trứng không cần dầu vẫn trượt ro ro, đáy từ bắt nhiệt rất nhạy với bếp từ Bosch."
+        }
+      ]
+    },
+    {
+      "id": "sp-87",
+      "name": "Nồi cơm điện nắp gài Sunhouse dung tích 1.8L",
+      "brand": "Sunhouse",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 520000,
+      "salePrice": 445000,
+      "unit": "Chiếc 1.8L",
+      "image": "./images/products/sp-87.png",
+      "badge": "Tiết kiệm điện",
+      "rating": 4.9,
+      "reviewsCount": 450,
+      "soldCount": 5600,
+      "flashSale": false,
+      "flashProgress": 75,
+      "description": "Lòng nồi hợp kim nhôm tráng men chống dính kép bền bỉ, công nghệ ủ ấm 3D giữ cơm nóng dẻo suốt 24 giờ mà không bị khô hay ôi thiu.",
+      "stock": 45,
+      "specs": {
+        "origin": "Việt Nam (Sunhouse)",
+        "volume": "Dung tích 1.8 Lít (4 - 6 người ăn)",
+        "expiry": "Bảo hành 12 tháng tại các TTBH toàn quốc",
+        "storage": "Để nơi khô ráo, rút phích cắm sau khi dùng",
+        "ingredients": "Vỏ nhựa PP cao cấp cách nhiệt, lòng nồi hợp kim nhôm chống dính"
+      },
+      "reviews": [
+        {
+          "name": "Trần Văn Hưng",
+          "rating": 5,
+          "date": "25/09/2026",
+          "comment": "Nấu cơm dẻo thơm chín đều không bị cháy đáy, dung tích 1.8L vừa vặn cho cả nhà 4 người."
+        }
+      ]
+    },
+    {
+      "id": "sp-88",
+      "name": "Ấm đun siêu tốc inox 2 lớp cách nhiệt Lock&Lock 1.8L",
+      "brand": "Lock&Lock",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 380000,
+      "salePrice": 299000,
+      "unit": "Chiếc 1.8L",
+      "image": "./images/products/sp-88.jpg",
+      "badge": "Lock&Lock Hàn Quốc",
+      "rating": 5,
+      "reviewsCount": 580,
+      "soldCount": 7200,
+      "flashSale": true,
+      "flashProgress": 94,
+      "description": "Thân ấm 2 lớp chống bỏng tay, ruột ấm bằng inox 304 nguyên khối không mùi, tự ngắt điện an toàn khi nước sôi hoặc cạn nước, đun sôi 1.8L chỉ trong 4 phút.",
+      "stock": 50,
+      "specs": {
+        "origin": "Hàn Quốc (Gia công Trung Quốc / Lock&Lock)",
+        "volume": "1.8 Lít, Công suất 1800W",
+        "expiry": "Bảo hành chính hãng 24 tháng",
+        "storage": "Tránh ngâm đế điện vào nước",
+        "ingredients": "Ruột inox 304 thực phẩm cao cấp, vỏ ngoài nhựa chống bỏng"
+      },
+      "reviews": [
+        {
+          "name": "Lê Hoàng Quân",
+          "rating": 5,
+          "date": "29/09/2026",
+          "comment": "Ấm đun siêu nhanh, vỏ ngoài sờ không hề nóng, Lock&Lock dùng bền bỉ yên tâm."
+        }
+      ]
+    },
+    {
+      "id": "sp-89",
+      "name": "Bộ 3 hộp thủy tinh chịu nhiệt bảo quản thực phẩm Lock&Lock",
+      "brand": "Lock&Lock",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 215000,
+      "salePrice": 175000,
+      "unit": "Bộ 3 hộp",
+      "image": "./images/products/sp-89.jpg",
+      "badge": "Chịu nhiệt 400°C",
+      "rating": 5,
+      "reviewsCount": 620,
+      "soldCount": 8900,
+      "flashSale": false,
+      "flashProgress": 86,
+      "description": "Thủy tinh Borosilicate cao cấp chịu sốc nhiệt lên tới 400°C, dùng an toàn trong lò vi sóng, lò nướng và máy rửa bát, nắp gài 4 cạnh khóa kín chống tràn 100%.",
+      "stock": 65,
+      "specs": {
+        "origin": "Việt Nam (Lock&Lock Living)",
+        "volume": "Bộ 3 hộp (400ml, 630ml, 950ml)",
+        "expiry": "Độ bền vĩnh cửu",
+        "storage": "Mở nắp khi cho vào lò vi sóng",
+        "ingredients": "Thủy tinh Borosilicate, nắp nhựa PP không chứa BPA, gioăng silicone"
+      },
+      "reviews": [
+        {
+          "name": "Nguyễn Thùy Linh",
+          "rating": 5,
+          "date": "26/09/2026",
+          "comment": "Mang cơm đi làm bằng hộp Lock&Lock không lo canh tràn ra túi, quay lò vi sóng thoải mái."
+        }
+      ]
+    },
+    {
+      "id": "sp-90",
+      "name": "Bộ 10 đôi đũa hợp kim kháng khuẩn mạ vàng phong cách Nhật",
+      "brand": "Inochi",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 75000,
+      "salePrice": 59000,
+      "unit": "Bộ 10 đôi",
+      "image": "./images/products/sp-90.jpg",
+      "badge": "Chống mốc 100%",
+      "rating": 4.8,
+      "reviewsCount": 380,
+      "soldCount": 6400,
+      "flashSale": false,
+      "flashProgress": 72,
+      "description": "Chất liệu sợi thủy tinh và hợp kim cao cấp chịu nhiệt 220°C, bề mặt nhám chống trơn trượt khi gắp thức ăn, không bám mỡ, không bao giờ bị ẩm mốc như đũa gỗ.",
+      "stock": 80,
+      "specs": {
+        "origin": "Việt Nam (Inochi Nhật Bản)",
+        "volume": "Hộp 10 đôi (Dài 24.3cm)",
+        "expiry": "Sử dụng lâu dài",
+        "storage": "Rửa sạch sau khi dùng, dùng được máy rửa bát",
+        "ingredients": "Sợi thủy tinh cao cấp (Glass Fiber) phủ ion bạc kháng khuẩn"
+      },
+      "reviews": [
+        {
+          "name": "Phạm Thúy Hằng",
+          "rating": 5,
+          "date": "22/09/2026",
+          "comment": "Đũa cầm đầm tay, đầu đũa nhám gắp sợi bún hay hột lạc không bị tuột, không lo mốc."
+        }
+      ]
+    },
+    {
+      "id": "sp-91",
+      "name": "Bình giữ nhiệt Inox 316 Lock&Lock Energetic One-Touch 550ml",
+      "brand": "Lock&Lock",
+      "category": "gia-dung",
+      "categoryName": "Đồ gia dụng & Bếp",
+      "originalPrice": 340000,
+      "salePrice": 285000,
+      "unit": "Bình 550ml",
+      "image": "./images/products/sp-91.jpg",
+      "badge": "Inox 316 Y tế",
+      "rating": 5,
+      "reviewsCount": 520,
+      "soldCount": 7800,
+      "flashSale": true,
+      "flashProgress": 96,
+      "description": "Lòng bình làm từ thép không gỉ inox 316 y tế cao cấp chống ăn mòn tuyệt đối, giữ nóng 12 tiếng và giữ lạnh 24 tiếng, nắp bật mở một chạm có khóa an toàn chống rò rỉ.",
+      "stock": 60,
+      "specs": {
+        "origin": "Hàn Quốc (Lock&Lock)",
+        "volume": "Dung tích 550ml",
+        "expiry": "Bảo hành giữ nhiệt 1 năm",
+        "storage": "Tránh va đập mạnh làm móp chân không",
+        "ingredients": "Lòng inox 316, thân inox 304, nắp nhựa PP nguyên sinh"
+      },
+      "reviews": [
+        {
+          "name": "Vũ Hải Đăng",
+          "rating": 5,
+          "date": "29/09/2026",
+          "comment": "Bình giữ đá từ sáng tới tối tan không đáng kể, ruột 316 bóng loáng không bám mùi cà phê."
+        }
+      ]
+    }
+  ]
+}

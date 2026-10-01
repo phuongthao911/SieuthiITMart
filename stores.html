@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Chuỗi Cửa Hàng - IT Mart</title>
+    <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển đơn hàng từ <strong>300.000đ</strong></span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:098122445"><i class="fa-solid fa-phone"></i> Hotline: 0981.224.45</a>
+                <a href="stores.html" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-location-dot"></i> Hệ thống cửa hàng</a>
+                <a href="./Log_in.html" id="topBarAuthLink"><i class="fa-solid fa-user"></i> Đăng nhập / Đăng ký</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="site-header">
+        <div class="navbar-main">
+            <div class="container">
+                <!-- Logo Brand -->
+                <a href="index.html" class="brand-logo" title="IT Mart - Trang chủ">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                </a>
+
+                <!-- Header Navigation Links -->
+                <nav style="display: flex; gap: 20px; align-items: center; margin-left: 20px;">
+                    <a href="index.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Trang chủ</a>
+                    <a href="stores.html" style="text-decoration: none; color: var(--primary); font-weight: 700; font-size: 14.5px;">Hệ thống cửa hàng</a>
+                    <a href="about.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Giới thiệu</a>
+                    <a href="policy.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Hỗ trợ & Chính sách</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="header-actions" style="margin-left: auto;">
+                    <a href="Log_in.html" class="header-action-btn" id="headerUserBtn" title="Tài khoản cá nhân">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <a href="index.html#cart" class="header-action-btn cart-btn" id="cartHeaderBtn" title="Xem giỏ hàng">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Giỏ hàng</span>
+                        <div class="cart-badge" id="cartBadgeCount">0</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HERO BANNER -->
+    <section class="page-hero">
+        <div class="container page-hero-inner">
+            <div class="breadcrumb-nav">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <span class="separator">/</span>
+                <span class="current">Hệ thống cửa hàng</span>
+            </div>
+            <h1 class="page-hero-title">Hệ Thống Chuỗi Cửa Hàng IT Mart</h1>
+            <p class="page-hero-subtitle">Tìm kiếm siêu thị IT Mart gần bạn nhất để trải nghiệm mua sắm trực tiếp hoặc nhận hàng hỏa tốc trong 2 giờ.</p>
+        </div>
+    </section>
+
+    <!-- STORES CONTAINER -->
+    <div class="container page-container">
+        
+        <!-- Filter & Search Bar -->
+        <div class="stores-filter-bar">
+            <div class="city-filter-buttons">
+                <button type="button" class="city-btn active" data-city="all">Tất cả khu vực (6)</button>
+                <button type="button" class="city-btn" data-city="hanoi">Hà Nội (3)</button>
+                <button type="button" class="city-btn" data-city="hcm">TP. Hồ Chí Minh (2)</button>
+                <button type="button" class="city-btn" data-city="danang">Đà Nẵng (1)</button>
+            </div>
+            <div class="store-search-input-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="storeSearchInput" placeholder="Tìm theo đường, quận, chi nhánh...">
+            </div>
+        </div>
+
+        <!-- Stores Cards Grid -->
+        <div class="stores-grid" id="storesGrid">
+            
+            <!-- Store 1: Cầu Giấy, HN -->
+            <div class="store-card" data-city="hanoi">
+                <div class="store-card-header">
+                    <span class="store-badge">Hà Nội • Flagship Store</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Cầu Giấy</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>124 Hoàng Quốc Việt, Phường Nghĩa Tân, Quận Cầu Giấy, Hà Nội</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:00 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 101)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-square-parking"></i> Giữ xe ô tô</span>
+                        <span class="facility-tag"><i class="fa-solid fa-snowflake"></i> Kho lạnh đạt chuẩn</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=124+Hoàng+Quốc+Việt+Cầu+Giấy+Hà+Nội" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Store 2: Đống Đa, HN -->
+            <div class="store-card" data-city="hanoi">
+                <div class="store-card-header">
+                    <span class="store-badge">Hà Nội</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Đống Đa</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>45 Phố Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:00 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 102)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-motorcycle"></i> Giữ xe máy</span>
+                        <span class="facility-tag"><i class="fa-solid fa-snowflake"></i> Quầy sữa tươi mát</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=45+Thái+Hà+Đống+Đa+Hà+Nội" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Store 3: Hai Bà Trưng, HN -->
+            <div class="store-card" data-city="hanoi">
+                <div class="store-card-header">
+                    <span class="store-badge">Hà Nội</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Hai Bà Trưng</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>304 Bạch Mai, Phường Bạch Mai, Quận Hai Bà Trưng, Hà Nội</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:00 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 103)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-qrcode"></i> Thanh toán VietQR</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=304+Bạch+Mai+Hai+Bà+Trưng+Hà+Nội" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Store 4: Quận 1, TP. HCM -->
+            <div class="store-card" data-city="hcm">
+                <div class="store-card-header">
+                    <span class="store-badge">TP. Hồ Chí Minh • Premium</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Quận 1</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>88 Hai Bà Trưng, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:30 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 201)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-square-parking"></i> Giữ xe miễn phí</span>
+                        <span class="facility-tag"><i class="fa-solid fa-credit-card"></i> Quẹt thẻ POS</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=88+Hai+Bà+Trưng+Quận+1+TP+Hồ+Chí+Minh" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Store 5: Bình Thạnh, TP. HCM -->
+            <div class="store-card" data-city="hcm">
+                <div class="store-card-header">
+                    <span class="store-badge">TP. Hồ Chí Minh</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Bình Thạnh</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>215 Điện Biên Phủ, Phường 15, Quận Bình Thạnh, TP. Hồ Chí Minh</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:00 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 202)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-snowflake"></i> Kho mát chuyên dụng</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=215+Điện+Biên+Phủ+Bình+Thạnh+TP+Hồ+Chí+Minh" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Store 6: Hải Châu, Đà Nẵng -->
+            <div class="store-card" data-city="danang">
+                <div class="store-card-header">
+                    <span class="store-badge">Đà Nẵng</span>
+                    <span class="store-status">Đang mở cửa</span>
+                </div>
+                <div class="store-card-body">
+                    <h3 class="store-name">IT Mart Hải Châu</h3>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>156 Nguyễn Văn Linh, Phường Vĩnh Trung, Quận Hải Châu, Đà Nẵng</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>07:00 - 22:00 (Mở cửa cả ngày lễ)</span>
+                    </div>
+                    <div class="store-info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0981.224.45 (Máy lẻ 301)</span>
+                    </div>
+                    <div class="store-facilities">
+                        <span class="facility-tag"><i class="fa-solid fa-square-parking"></i> Bãi xe rộng rãi</span>
+                        <span class="facility-tag"><i class="fa-solid fa-bolt"></i> Giao 2H nội thành</span>
+                    </div>
+                </div>
+                <div class="store-card-actions">
+                    <a href="https://maps.google.com/?q=156+Nguyễn+Văn+Linh+Hải+Châu+Đà+Nẵng" target="_blank" rel="noopener" class="store-btn store-btn-directions">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường
+                    </a>
+                    <a href="tel:098122445" class="store-btn store-btn-call">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                    <p><strong>Công ty Cổ phần Dịch vụ Thương mại Tổng hợp IT Mart</strong></p>
+                    <p>Mã số doanh nghiệp: 0124854292 cấp ngày 24/10/2023</p>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Hotline: 0981.224.45 (8:00 - 21:30)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Email: itmart.cskh@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Về IT Mart</h4>
+                    <ul>
+                        <li><a href="about.html#intro">Giới thiệu IT Mart</a></li>
+                        <li><a href="stores.html">Danh sách cửa hàng</a></li>
+                        <li><a href="about.html#quality">Tiêu chuẩn quản lý chất lượng</a></li>
+                        <li><a href="about.html#privacy">Chính sách bảo mật thông tin</a></li>
+                        <li><a href="about.html#terms">Điều khoản và điều kiện giao dịch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="policy.html#help">Trung tâm trợ giúp</a></li>
+                        <li><a href="policy.html#shipping">Chính sách giao hàng hỏa tốc</a></li>
+                        <li><a href="policy.html#return">Chính sách đổi trả trong 7 ngày</a></li>
+                        <li><a href="policy.html#payment">Hướng dẫn thanh toán trực tuyến</a></li>
+                        <li><a href="policy.html#feedback">Ý kiến đóng góp & khiếu nại</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hình Thức Thanh Toán</h4>
+                    <p style="margin-bottom: 14px;">Hỗ trợ đa dạng phương thức an toàn:</p>
+                    <div style="display: flex; gap: 10px; font-size: 28px; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fa-solid fa-money-bill-wave" title="Tiền mặt khi nhận hàng (COD)"></i>
+                        <i class="fa-solid fa-qrcode" title="Chuyển khoản QR ngân hàng"></i>
+                    </div>
+                    <p><i class="fa-solid fa-clock"></i> Mở cửa: 7:00 - 22:00 tất cả các ngày</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT Mart - Tươi Ngon Thượng Hạng. Dự án Bài tập lớn Lập trình Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/pages.js"></script>
+</body>
+</html>

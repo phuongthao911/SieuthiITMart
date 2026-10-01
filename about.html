@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu & Tiêu Chuẩn Chất Lượng - IT Mart</title>
+    <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển đơn hàng từ <strong>300.000đ</strong></span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:098122445"><i class="fa-solid fa-phone"></i> Hotline: 0981.224.45</a>
+                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Hệ thống cửa hàng</a>
+                <a href="./Log_in.html" id="topBarAuthLink"><i class="fa-solid fa-user"></i> Đăng nhập / Đăng ký</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="site-header">
+        <div class="navbar-main">
+            <div class="container">
+                <!-- Logo Brand -->
+                <a href="index.html" class="brand-logo" title="IT Mart - Trang chủ">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                </a>
+
+                <!-- Header Navigation Links -->
+                <nav style="display: flex; gap: 20px; align-items: center; margin-left: 20px;">
+                    <a href="index.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Trang chủ</a>
+                    <a href="stores.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Hệ thống cửa hàng</a>
+                    <a href="about.html" style="text-decoration: none; color: var(--primary); font-weight: 700; font-size: 14.5px;">Giới thiệu</a>
+                    <a href="policy.html" style="text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 14.5px;">Hỗ trợ & Chính sách</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="header-actions" style="margin-left: auto;">
+                    <a href="Log_in.html" class="header-action-btn" id="headerUserBtn" title="Tài khoản cá nhân">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <a href="index.html#cart" class="header-action-btn cart-btn" id="cartHeaderBtn" title="Xem giỏ hàng">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Giỏ hàng</span>
+                        <div class="cart-badge" id="cartBadgeCount">0</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HERO BANNER -->
+    <section class="page-hero">
+        <div class="container page-hero-inner">
+            <div class="breadcrumb-nav">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <span class="separator">/</span>
+                <span class="current">Về IT Mart</span>
+            </div>
+            <h1 class="page-hero-title">Về Chúng Tôi & Tiêu Chuẩn IT Mart</h1>
+            <p class="page-hero-subtitle">Hệ thống phân phối bách hóa, thực phẩm tươi sống, sữa dinh dưỡng và đồ gia dụng hàng đầu - Cam kết chuẩn tươi ngon, chính hãng 100%.</p>
+        </div>
+    </section>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div class="container page-container">
+        <div class="page-layout-grid">
+            
+            <!-- STICKY SIDEBAR NAVIGATION -->
+            <aside class="page-sidebar">
+                <div class="sidebar-title">
+                    <i class="fa-solid fa-compass"></i> Mục lục tài liệu
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#intro" class="sidebar-menu-link active"><i class="fa-solid fa-building"></i> Giới thiệu IT Mart</a></li>
+                    <li><a href="#quality" class="sidebar-menu-link"><i class="fa-solid fa-shield-halved"></i> Tiêu chuẩn chất lượng</a></li>
+                    <li><a href="#privacy" class="sidebar-menu-link"><i class="fa-solid fa-user-shield"></i> Chính sách bảo mật</a></li>
+                    <li><a href="#terms" class="sidebar-menu-link"><i class="fa-solid fa-file-contract"></i> Điều khoản giao dịch</a></li>
+                    <li><a href="stores.html" class="sidebar-menu-link"><i class="fa-solid fa-store"></i> Hệ thống chuỗi cửa hàng</a></li>
+                    <li><a href="policy.html" class="sidebar-menu-link"><i class="fa-solid fa-headset"></i> Trung tâm trợ giúp</a></li>
+                </ul>
+
+                <div class="sidebar-hotline-box">
+                    <h5>Tổng đài chăm sóc khách hàng</h5>
+                    <a href="tel:098122445" class="sidebar-hotline-number">0981.224.45</a>
+                    <p>8:00 - 21:30 tất cả các ngày</p>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT SECTIONS -->
+            <main>
+                <!-- 1. GIỚI THIỆU IT MART -->
+                <section class="page-content-card" id="intro">
+                    <div class="content-section-header">
+                        <h2><i class="fa-solid fa-building"></i> Giới Thiệu IT Mart</h2>
+                        <p>Công ty Cổ phần Dịch vụ Thương mại Tổng hợp IT Mart - Thành lập từ 2023</p>
+                    </div>
+                    <div class="content-body">
+                        <p><strong>IT Mart</strong> là thương hiệu chuỗi siêu thị bách hóa tiện lợi được thành lập với mục tiêu mang đến những sản phẩm sữa dinh dưỡng tươi mới, thực phẩm tươi ngon đạt chuẩn vệ sinh an toàn, cùng thiết bị gia dụng và đồ dùng gia đình chất lượng cao cho hàng triệu gia đình Việt Nam.</p>
+                        
+                        <p>Với khẩu hiệu hành động <em>"Tươi Ngon Thượng Hạng - Đồng Hành Cùng Mọi Bữa Ăn"</em>, IT Mart không ngừng đầu tư mở rộng chuỗi cung ứng khép kín từ các nông trại sữa tiêu chuẩn quốc tế đến kệ hàng của người tiêu dùng.</p>
+
+                        <!-- Highlights Grid -->
+                        <div class="feature-cards-grid">
+                            <div class="feature-box">
+                                <div class="feature-box-icon"><i class="fa-solid fa-award"></i></div>
+                                <h4>100% Chính Hãng</h4>
+                                <p>Nhập khẩu và phân phối trực tiếp từ Vinamilk, TH True MILK, Sunhouse, Lock&Lock, Unilever...</p>
+                            </div>
+                            <div class="feature-box">
+                                <div class="feature-box-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <h4>Giao Siêu Tốc 2H</h4>
+                                <p>Đội ngũ giao vận nội thành chuyên nghiệp, bảo quản thùng lạnh giữ trọn vẹn hương vị tươi ngon.</p>
+                            </div>
+                            <div class="feature-box">
+                                <div class="feature-box-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                                <h4>Đổi Trả 7 Ngày</h4>
+                                <p>Chính sách hoàn tiền và đổi mới sản phẩm linh hoạt nếu phát hiện lỗi hoặc không đúng mô tả.</p>
+                            </div>
+                        </div>
+
+                        <h3>Hành Trình Phát Triển</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">10/2023</div>
+                                <div class="timeline-title">Thành lập Công ty Cổ phần Dịch vụ Thương mại IT Mart</div>
+                                <p class="timeline-desc">Được cấp giấy phép đăng ký kinh doanh mã số 0124854292, mở siêu thị đầu tiên tại Hà Nội.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2024 - 2025</div>
+                                <div class="timeline-title">Mở rộng chuỗi cửa hàng & kho bảo quản lạnh</div>
+                                <p class="timeline-desc">Phát triển hệ thống cửa hàng tại Hà Nội, Đà Nẵng và TP. Hồ Chí Minh, hoàn thiện kho lạnh đạt chuẩn ISO 22000.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2026 Đến nay</div>
+                                <div class="timeline-title">Chuyển đổi số & Ra mắt nền tảng mua sắm trực tuyến IT Mart</div>
+                                <p class="timeline-desc">Ứng dụng mua sắm đa kênh (Omnichannel), tích hợp giỏ hàng thông minh, mã voucher giảm giá và thanh toán QR VietQR tiện lợi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. TIÊU CHUẨN QUẢN LÝ CHẤT LƯỢNG -->
+                <section class="page-content-card" id="quality">
+                    <div class="content-section-header">
+                        <h2><i class="fa-solid fa-shield-halved"></i> Tiêu Chuẩn Quản Lý Chất Lượng</h2>
+                        <p>Quy trình kiểm soát nghiêm ngặt 3 lớp trước khi sản phẩm tới tay khách hàng</p>
+                    </div>
+                    <div class="content-body">
+                        <p>Tại IT Mart, chúng tôi đặt sức khỏe và quyền lợi của người tiêu dùng lên hàng đầu. Mọi sản phẩm sữa và thực phẩm đều trải qua các tiêu chuẩn khắt khe:</p>
+                        
+                        <h3>1. Nguồn Gốc Xuất Xứ Minh Bạch</h3>
+                        <ul>
+                            <li><strong>100% hóa đơn chứng từ:</strong> Toàn bộ sản phẩm đều có giấy tờ công bố chất lượng, chứng nhận an toàn thực phẩm của Bộ Y Tế.</li>
+                            <li><strong>Hợp tác chiến lược:</strong> Ký kết trực tiếp cùng các tập đoàn thực phẩm hàng đầu như Công ty Cổ phần Sữa Việt Nam (Vinamilk), Tập đoàn TH, Ba Vì Milk, Sahmyook Hàn Quốc, Promess Pháp...</li>
+                        </ul>
+
+                        <h3>2. Chuỗi Cung Ứng Lạnh Chuyên Biệt (Cold Chain)</h3>
+                        <ul>
+                            <li><strong>Nhiệt độ bảo quản:</strong> Toàn bộ sữa thanh trùng, sữa chua và thực phẩm mát luôn được duy trì ở dải nhiệt độ 2°C – 6°C từ kho tổng đến quầy kệ.</li>
+                            <li><strong>Giám sát tự động IoT:</strong> Cảm biến nhiệt độ cảnh báo tức thì 24/7 đối với hệ thống tủ mát chuyên dụng.</li>
+                        </ul>
+
+                        <h3>3. Cam Kết Hạn Sử Dụng (Date Mới Nhất)</h3>
+                        <ul>
+                            <li>Không bán hàng cận date dưới 30% thời hạn sử dụng tổng thể.</li>
+                            <li>Kiểm tra và đảo date hàng ngày theo nguyên tắc FIFO (Nhập trước - Xuất trước).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 3. CHÍNH SÁCH BẢO MẬT THÔNG TIN -->
+                <section class="page-content-card" id="privacy">
+                    <div class="content-section-header">
+                        <h2><i class="fa-solid fa-user-shield"></i> Chính Sách Bảo Mật Thông Tin</h2>
+                        <p>Bảo vệ tuyệt đối thông tin cá nhân và dữ liệu thanh toán của khách hàng</p>
+                    </div>
+                    <div class="content-body">
+                        <p>Chính sách bảo mật này mô tả cách thức IT Mart thu thập, sử dụng và bảo vệ thông tin cá nhân khi bạn mua sắm tại website hoặc các ứng dụng của chúng tôi:</p>
+                        
+                        <h3>1. Mục Đích Thu Thập Thông Tin</h3>
+                        <p>Chúng tôi chỉ thu thập các thông tin cần thiết phục vụ cho việc:</p>
+                        <ul>
+                            <li>Xử lý và giao nhận đơn hàng đến đúng địa chỉ của bạn.</li>
+                            <li>Gửi thông báo tình trạng đơn hàng, mã giảm giá và chương trình tri ân thành viên.</li>
+                            <li>Chăm sóc khách hàng, hỗ trợ khiếu nại hoặc xử lý đổi trả.</li>
+                        </ul>
+
+                        <h3>2. Phạm Vi Thu Thập</h3>
+                        <p>Bao gồm: Họ và tên, số điện thoại, địa chỉ nhận hàng, địa chỉ email (không bắt buộc) và lịch sử các đơn hàng đã đặt.</p>
+
+                        <h3>3. Cam Kết Bảo Mật & Không Chia Sẻ Dữ Liệu</h3>
+                        <ul>
+                            <li>IT Mart <strong>không bao giờ</strong> bán, chia sẻ hoặc thương mại hóa thông tin khách hàng cho bên thứ ba vì mục đích tiếp thị ngoài ý muốn.</li>
+                            <li>Thông tin chỉ được chia sẻ duy nhất với đối tác vận chuyển để thực hiện việc giao hàng.</li>
+                            <li>Mật khẩu tài khoản được mã hóa một chiều an toàn, đảm bảo tính riêng tư tuyệt đối.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 4. ĐIỀU KHOẢN VÀ ĐIỀU KIỆN GIAO DỊCH -->
+                <section class="page-content-card" id="terms">
+                    <div class="content-section-header">
+                        <h2><i class="fa-solid fa-file-contract"></i> Điều Khoản Và Điều Kiện Giao Dịch</h2>
+                        <p>Quy định quyền lợi và nghĩa vụ giữa khách hàng và IT Mart</p>
+                    </div>
+                    <div class="content-body">
+                        <h3>1. Chấp Thuận Điều Khoản</h3>
+                        <p>Khi tiến hành đặt hàng trên website IT Mart, quý khách đồng ý tuân thủ các quy định và điều khoản được nêu tại đây.</p>
+
+                        <h3>2. Giá Cả Và Khuyến Mại</h3>
+                        <ul>
+                            <li>Giá bán niêm yết trên website là giá đã bao gồm thuế Giá trị gia tăng (VAT).</li>
+                            <li>Giá có thể thay đổi tùy thuộc vào các chương trình Flash Sale, mã giảm giá coupon áp dụng tại thời điểm đặt đơn.</li>
+                        </ul>
+
+                        <h3>3. Xác Nhận Và Hủy Đơn Hàng</h3>
+                        <ul>
+                            <li>Sau khi quý khách đặt đơn thành công, hệ thống sẽ ghi nhận vào mục <em>Lịch sử đơn hàng</em>.</li>
+                            <li>Quý khách có thể tự thao tác hủy đơn trong mục Lịch sử đơn hàng khi đơn còn ở trạng thái <em>Chờ xác nhận</em> hoặc liên hệ tổng đài 0981.224.45 để được hỗ trợ.</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                    <p><strong>Công ty Cổ phần Dịch vụ Thương mại Tổng hợp IT Mart</strong></p>
+                    <p>Mã số doanh nghiệp: 0124854292 cấp ngày 24/10/2023</p>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Hotline: 0981.224.45 (8:00 - 21:30)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Email: itmart.cskh@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Về IT Mart</h4>
+                    <ul>
+                        <li><a href="about.html#intro">Giới thiệu IT Mart</a></li>
+                        <li><a href="stores.html">Danh sách cửa hàng</a></li>
+                        <li><a href="about.html#quality">Tiêu chuẩn quản lý chất lượng</a></li>
+                        <li><a href="about.html#privacy">Chính sách bảo mật thông tin</a></li>
+                        <li><a href="about.html#terms">Điều khoản và điều kiện giao dịch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="policy.html#help">Trung tâm trợ giúp</a></li>
+                        <li><a href="policy.html#shipping">Chính sách giao hàng hỏa tốc</a></li>
+                        <li><a href="policy.html#return">Chính sách đổi trả trong 7 ngày</a></li>
+                        <li><a href="policy.html#payment">Hướng dẫn thanh toán trực tuyến</a></li>
+                        <li><a href="policy.html#feedback">Ý kiến đóng góp & khiếu nại</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hình Thức Thanh Toán</h4>
+                    <p style="margin-bottom: 14px;">Hỗ trợ đa dạng phương thức an toàn:</p>
+                    <div style="display: flex; gap: 10px; font-size: 28px; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fa-solid fa-money-bill-wave" title="Tiền mặt khi nhận hàng (COD)"></i>
+                        <i class="fa-solid fa-qrcode" title="Chuyển khoản QR ngân hàng"></i>
+                    </div>
+                    <p><i class="fa-solid fa-clock"></i> Mở cửa: 7:00 - 22:00 tất cả các ngày</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT Mart - Tươi Ngon Thượng Hạng. Dự án Bài tập lớn Lập trình Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Chi Tiết Sản Phẩm - IT Mart</title>
+    <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Stylesheets (Tách riêng biệt) -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển đơn hàng từ <strong>300.000đ</strong></span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:098122445"><i class="fa-solid fa-phone"></i> Hotline: 0981.224.45</a>
+                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Hệ thống cửa hàng</a>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <a href="./Log_in.html" id="topBarAuthLink"><i class="fa-solid fa-user"></i> Đăng nhập / Đăng ký</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="site-header">
+        <div class="navbar-main">
+            <div class="container">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                </a>
+                <div class="search-container">
+                    <form class="search-box" action="index.html" method="GET">
+                        <i class="fa-solid fa-magnifying-glass" style="color: var(--gray-400); margin-left: 2px;"></i>
+                        <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, thương hiệu...">
+                        <button type="submit" class="search-btn" aria-label="Tìm kiếm" title="Tìm kiếm">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="header-actions">
+                    <button class="header-action-btn" onclick="WishlistSystem.openModal()" title="Danh sách yêu thích">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Yêu thích</span>
+                        <div class="cart-badge wishlist-badge" id="wishlistBadgeCount">0</div>
+                    </button>
+                    <a href="Log_in.html" class="header-action-btn" id="headerUserBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <button class="header-action-btn cart-btn" id="cartHeaderBtn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Giỏ hàng</span>
+                        <div class="cart-badge" id="cartBadgeCount">0</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="index.html" id="bcCategory">Danh mục</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span id="bcProductName">Chi tiết</span>
+        </nav>
+
+        <!-- Product Main Details Card -->
+        <div class="product-detail-card" id="detailCard">
+            <div class="product-detail-grid">
+                <!-- Left: Image -->
+                <div class="detail-img-box">
+                    <span class="detail-badge" id="pBadge">Chính hãng</span>
+                    <img id="pImg" src="" alt="Hình ảnh sản phẩm">
+                </div>
+
+                <!-- Right: Details -->
+                <div class="detail-info-box">
+                    <div class="detail-brand-sold-row">
+                        <span class="detail-category-tag" id="pCategory">DANH MỤC</span>
+                        <span class="detail-brand">Hãng: <strong id="pBrand">TH True Milk</strong></span>
+                        <span class="detail-sold" id="pSold"><i class="fa-solid fa-fire"></i> Đã bán 1.4k</span>
+                    </div>
+                    
+                    <h1 class="detail-title" id="pName">Đang tải sản phẩm...</h1>
+                    
+                    <div class="detail-rating-row">
+                        <div class="stars" id="pStars">★★★★★</div>
+                        <span id="pReviews">(0 đánh giá)</span>
+                        <span>•</span>
+                        <span id="pStock"><i class="fa-solid fa-circle-check"></i> Còn hàng</span>
+                    </div>
+
+                    <div class="detail-price-box">
+                        <span class="detail-sale-price" id="pSalePrice">0đ</span>
+                        <span class="detail-orig-price" id="pOrigPrice">0đ</span>
+                        <span class="detail-discount-tag" id="pDiscountTag">-0%</span>
+                        <span class="detail-unit-text">/ ĐVT: <strong id="pUnit">Hộp</strong></span>
+                    </div>
+
+                    <!-- MÃ GIẢM GIÁ TIỆN ÍCH -->
+                    <div class="detail-coupon-row">
+                        <span class="coupon-tag-label"><i class="fa-solid fa-ticket"></i> Mã ưu đãi:</span>
+                        <div class="coupon-badges">
+                            <span class="coupon-badge" title="Miễn phí ship">FREESHIP (Freeship 300k)</span>
+                            <span class="coupon-badge" title="Giảm 10%">ITMART10 (Giảm 10%)</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-perks">
+                        <div class="perk-item">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div><strong>Giao siêu tốc 2H</strong><p>Nội thành Hà Nội</p></div>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-snowflake"></i>
+                            <div><strong>Bảo quản lạnh chuẩn</strong><p>Giữ vị sữa tươi mát</p></div>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div><strong>100% Chính hãng</strong><p>Đổi trả trong 7 ngày</p></div>
+                        </div>
+                    </div>
+
+                    <div class="qty-label">Chọn số lượng:</div>
+                    <div class="qty-action-row">
+                        <div class="qty-picker">
+                            <button type="button" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                            <input type="number" id="detailQty" value="1" min="1" max="99">
+                            <button type="button" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button type="button" class="btn-add-detail" id="btnAddToCartDetail">
+                            <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                        </button>
+                        <button type="button" class="btn-buy-now" id="btnBuyNowDetail">
+                            <i class="fa-solid fa-bolt"></i> Mua Ngay
+                        </button>
+                        <button type="button" class="btn-detail-wishlist" id="btnDetailWishlist" title="Lưu vào yêu thích">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="detail-desc-box">
+                        <h4>Mô tả sản phẩm:</h4>
+                        <p id="pDescription">Đang tải thông tin chi tiết...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT SPECIFICATIONS CARD -->
+        <div class="product-specs-card" id="specsCard">
+            <h3 class="specs-title"><i class="fa-solid fa-circle-info"></i> Thông Số Kỹ Thuật & Chi Tiết Sản Phẩm</h3>
+            <table class="specs-table">
+                <tbody>
+                    <tr><th>Thương hiệu</th><td id="specBrand">-</td></tr>
+                    <tr><th>Xuất xứ thương hiệu</th><td id="specOrigin">-</td></tr>
+                    <tr><th>Quy cách / Thể tích</th><td id="specVolume">-</td></tr>
+                    <tr><th>Hạn sử dụng</th><td id="specExpiry">-</td></tr>
+                    <tr><th>Hướng dẫn bảo quản</th><td id="specStorage">-</td></tr>
+                    <tr><th>Thành phần dinh dưỡng</th><td id="specIngredients">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CUSTOMER REVIEWS & RATINGS -->
+        <div class="product-reviews-card" id="reviewsCard">
+            <h3 class="reviews-section-title"><i class="fa-solid fa-star"></i> Đánh Giá Từ Khách Hàng</h3>
+            <div class="reviews-overview">
+                <div class="reviews-score-box">
+                    <span class="score-big" id="revAvgScore">4.9</span>
+                    <div class="stars" id="revAvgStars">★★★★★</div>
+                    <span class="score-count" id="revTotalCount">Dựa trên 142 lượt đánh giá</span>
+                </div>
+                <div class="reviews-bars">
+                    <div class="bar-row"><span>5 <i class="fa-solid fa-star"></i></span><div class="bar-track"><div class="bar-fill" style="width: 88%"></div></div><span>88%</span></div>
+                    <div class="bar-row"><span>4 <i class="fa-solid fa-star"></i></span><div class="bar-track"><div class="bar-fill" style="width: 9%"></div></div><span>9%</span></div>
+                    <div class="bar-row"><span>3 <i class="fa-solid fa-star"></i></span><div class="bar-track"><div class="bar-fill" style="width: 3%"></div></div><span>3%</span></div>
+                    <div class="bar-row"><span>2 <i class="fa-solid fa-star"></i></span><div class="bar-track"><div class="bar-fill" style="width: 0%"></div></div><span>0%</span></div>
+                    <div class="bar-row"><span>1 <i class="fa-solid fa-star"></i></span><div class="bar-track"><div class="bar-fill" style="width: 0%"></div></div><span>0%</span></div>
+                </div>
+            </div>
+
+            <!-- Danh sách nhận xét -->
+            <div class="reviews-list" id="reviewsList"></div>
+
+            <!-- Form gửi nhận xét -->
+            <div class="review-form-box">
+                <h4><i class="fa-solid fa-pen-to-square"></i> Viết đánh giá của bạn</h4>
+                <form id="addReviewForm" onsubmit="handleReviewSubmit(event)">
+                    <div class="review-form-row">
+                        <label>Đánh giá chất lượng:</label>
+                        <div class="star-select-options" id="starSelector">
+                            <i class="fa-solid fa-star star-opt active" data-rating="1"></i>
+                            <i class="fa-solid fa-star star-opt active" data-rating="2"></i>
+                            <i class="fa-solid fa-star star-opt active" data-rating="3"></i>
+                            <i class="fa-solid fa-star star-opt active" data-rating="4"></i>
+                            <i class="fa-solid fa-star star-opt active" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="review-form-field">
+                        <label>Họ và tên của bạn *</label>
+                        <input type="text" id="reviewerName" placeholder="Nguyễn Văn A" required>
+                    </div>
+                    <div class="review-form-field">
+                        <label>Cảm nhận của bạn về sản phẩm *</label>
+                        <textarea id="reviewerComment" rows="3" placeholder="Chia sẻ cảm nhận về mùi vị, đóng gói, hạn sử dụng..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-review">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi Đánh Giá Ngay
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- RELATED PRODUCTS -->
+        <section class="related-section">
+            <div class="related-header">
+                <h3>Sản phẩm liên quan</h3>
+                <a href="index.html">Xem tất cả &rarr;</a>
+            </div>
+            <div class="products-grid" id="relatedProductsGrid"></div>
+        </section>
+
+        <!-- RECENTLY VIEWED PRODUCTS -->
+        <section class="recent-view-section" id="recentViewSection" style="display: none;">
+            <div class="recent-view-header">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Sản Phẩm Bạn Vừa Xem</h3>
+                <button type="button" class="btn-clear-recent" onclick="clearRecentlyViewed()">Xóa lịch sử</button>
+            </div>
+            <div class="recent-view-grid" id="recentViewGrid"></div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./images/IT Mart.png" alt="IT Mart Logo">
+                    <p><strong>Công ty Cổ phần Dịch vụ Thương mại Tổng hợp IT Mart</strong></p>
+                    <p>Mã số doanh nghiệp: 0124854292 cấp ngày 24/10/2023</p>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Hotline: 0981.224.45 (8:00 - 21:30)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Email: itmart.cskh@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Về IT Mart</h4>
+                    <ul>
+                        <li><a href="about.html#intro">Giới thiệu IT Mart</a></li>
+                        <li><a href="stores.html">Danh sách cửa hàng</a></li>
+                        <li><a href="about.html#quality">Tiêu chuẩn quản lý chất lượng</a></li>
+                        <li><a href="about.html#privacy">Chính sách bảo mật thông tin</a></li>
+                        <li><a href="about.html#terms">Điều khoản và điều kiện giao dịch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="policy.html#help">Trung tâm trợ giúp</a></li>
+                        <li><a href="policy.html#shipping">Chính sách giao hàng hỏa tốc</a></li>
+                        <li><a href="policy.html#return">Chính sách đổi trả trong 7 ngày</a></li>
+                        <li><a href="policy.html#payment">Hướng dẫn thanh toán trực tuyến</a></li>
+                        <li><a href="policy.html#feedback">Ý kiến đóng góp & khiếu nại</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hình Thức Thanh Toán</h4>
+                    <p style="margin-bottom: 14px;">Hỗ trợ đa dạng phương thức an toàn:</p>
+                    <div style="display: flex; gap: 10px; font-size: 28px; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fa-solid fa-money-bill-wave" title="Tiền mặt khi nhận hàng (COD)"></i>
+                        <i class="fa-solid fa-qrcode" title="Chuyển khoản QR ngân hàng"></i>
+                    </div>
+                    <p><i class="fa-solid fa-clock"></i> Mở cửa: 7:00 - 22:00 tất cả các ngày</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT Mart - Tươi Ngon Thượng Hạng. Dự án Bài tập lớn Lập trình Web.</p>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Về Trang chủ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER & BACKDROP -->
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <div class="cart-drawer-header-left">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Giỏ Hàng Của Bạn</h3>
+                <span id="cartDrawerCount">(0 món)</span>
+            </div>
+            <button class="cart-drawer-close" id="cartCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer-body" id="cartDrawerBody"></div>
+        <div class="cart-drawer-footer" id="cartDrawerFooter"></div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-box checkout-modal-box">
+            <div class="modal-header-row">
+                <h3><i class="fa-solid fa-clipboard-check"></i> Thông Tin Đặt Hàng</h3>
+                <button type="button" class="modal-close-icon" onclick="CartSystem.closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form onsubmit="CartSystem.confirmOrder(event)">
+                <div id="checkoutOrderSummary" class="checkout-summary-box"></div>
+                <div class="checkout-form-fields">
+                    <div>
+                        <label>Họ và tên *</label>
+                        <input type="text" id="orderName" required placeholder="Nguyễn Văn A">
+                    </div>
+                    <div>
+                        <label>Số điện thoại *</label>
+                        <input type="tel" id="orderPhone" required placeholder="0987654321">
+                    </div>
+                    <div>
+                        <label>Địa chỉ giao hàng *</label>
+                        <input type="text" id="orderAddress" required placeholder="Số nhà, đường, phường/xã, quận/huyện...">
+                    </div>
+                    <div>
+                        <label>Ghi chú đơn hàng</label>
+                        <textarea id="orderNote" rows="2" placeholder="Ghi chú thêm về thời gian giao hàng..."></textarea>
+                    </div>
+                    <div>
+                        <label>Phương thức thanh toán</label>
+                        <label class="radio-label">
+                            <input type="radio" name="paymentMethod" value="cod" checked> Tiền mặt khi nhận hàng (COD)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="paymentMethod" value="qr"> Chuyển khoản QR ngân hàng
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-checkout"><i class="fa-solid fa-check"></i> Xác Nhận Đặt Hàng</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER SUCCESS MODAL -->
+    <div class="modal-backdrop" id="orderSuccessModal">
+        <div class="modal-box success-modal-box">
+            <div class="success-icon-wrap">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Đặt Hàng Thành Công!</h2>
+            <p class="success-order-code">Mã đơn: <strong id="successOrderId">ITM-123456</strong></p>
+            <div class="success-summary-card">
+                <p><strong>Người nhận:</strong> <span id="successCustomerName"></span> (<span id="successCustomerPhone"></span>)</p>
+                <p><strong>Địa chỉ:</strong> <span id="successCustomerAddress"></span></p>
+                <p><strong>Tổng tiền:</strong> <strong id="successOrderTotal"></strong></p>
+                <p><strong>Thanh toán:</strong> <span id="successPaymentMethod"></span></p>
+            </div>
+            <button class="btn-checkout" onclick="window.location.href='index.html'">
+                Tiếp tục mua sắm
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS (Tách riêng biệt) -->
+    <script src="js/products.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>

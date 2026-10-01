@@ -1,57 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-    <link rel="stylesheet" href="./login.css">
-    <link rel="stylesheet" href="./shop_Band/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <title>Đăng Nhập / Đăng Ký - IT Mart</title>
+    <link rel="icon" href="./images/Logo.png" type="image/x-icon">
     
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom Login CSS (Tách riêng biệt) -->
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    <div class="modal">
-        <div class="modal-container">
-            <div class="modal-out">
-                <a class="icon-arrow-left" href="index.html"><i class="ti-arrow-left icon-arrow-left"></i></a>
-                <i class="ti-home icon-home"></i>
-            </div>
-            <header class="modal-header">
-                <h2>Login</h2>
-            </header>
-                <form action="">
-            <div class="modal-body">
 
-                <div class="modal-input">
-                <input type="number" class="modal-phone-number" placeholder="Phone number " required>
-
-                </div>
-
-                <div  class="modal-input">
-                <input type="password" class="modal-password" placeholder="Password " required>
-                </div>
-                
-                <button class="modal-login">
-                    <h3>Login</h3>
-                </button>
-
-                <div class="modal-forget">
-                    <a href="#" class="modal-forgot-password">Forgot password?</a>
-                </div>
-                <hr>
-
-                <button class="modal-signIn">
-                    <h3>Sign up</h3>
-                </button>
-                
-            </div>
-                </form>
-            <footer class="modal-footer">
-                
-            </footer>
-
+    <div class="login-card">
+        <!-- Top Nav -->
+        <div class="card-top-nav">
+            <a href="index.html" title="Quay lại"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" title="Trang chủ"><i class="fa-solid fa-house"></i></a>
         </div>
 
+        <!-- Header -->
+        <div class="brand-header">
+            <a href="index.html">
+                <img src="./images/IT Mart.png" alt="IT Mart Logo">
+            </a>
+            <h2 id="authTitle">Chào Mừng Trở Lại!</h2>
+            <p id="authSubtitle">Đăng nhập để nhận ưu đãi tích điểm và mã giảm giá</p>
+        </div>
+
+        <!-- Auth Tabs Toggle -->
+        <div class="auth-tabs">
+            <button type="button" class="auth-tab-btn active" id="tabLogin" onclick="switchAuthTab('login')">Đăng Nhập</button>
+            <button type="button" class="auth-tab-btn" id="tabRegister" onclick="switchAuthTab('register')">Đăng Ký</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="loginPhone">Số điện thoại</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="loginPhone" required placeholder="Nhập số điện thoại của bạn (VD: 098122445)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Mật khẩu</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="loginPassword" required placeholder="Nhập mật khẩu">
+                    <i class="fa-regular fa-eye toggle-pwd" onclick="togglePassword('loginPassword', this)"></i>
+                </div>
+            </div>
+
+            <div class="form-extras">
+                <label class="remember-label">
+                    <input type="checkbox" id="rememberMe" checked> Ghi nhớ đăng nhập
+                </label>
+                <a href="javascript:void(0)" onclick="alert('Tính năng khôi phục mật khẩu qua SMS OTP đang được hoàn thiện!')">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn-auth-submit">
+                <i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập
+            </button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="registerForm" class="register-form-hidden" onsubmit="handleRegister(event)">
+            <div class="form-group">
+                <label for="regName">Họ và tên</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="regName" required placeholder="Họ và tên của bạn">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="regPhone">Số điện thoại</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="regPhone" required placeholder="Số điện thoại dùng để nhận hàng">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="regPassword">Mật khẩu</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="regPassword" required placeholder="Tạo mật khẩu (tối thiểu 6 ký tự)">
+                    <i class="fa-regular fa-eye toggle-pwd" onclick="togglePassword('regPassword', this)"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="regConfirmPassword">Xác nhận mật khẩu</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <input type="password" id="regConfirmPassword" required placeholder="Nhập lại mật khẩu vừa tạo">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-auth-submit">
+                <i class="fa-solid fa-user-plus"></i> Đăng Ký Tài Khoản
+            </button>
+        </form>
+
+        <!-- Divider & Social Buttons -->
+        <div class="auth-divider">
+            <span>Hoặc tiếp tục với</span>
+        </div>
+
+        <div class="social-auth">
+            <button type="button" class="btn-social" onclick="alert('Đăng nhập Google thành công mô phỏng!'); window.location.href='index.html';">
+                <i class="fa-brands fa-google google-icon"></i> Google
+            </button>
+            <button type="button" class="btn-social" onclick="alert('Đăng nhập Facebook thành công mô phỏng!'); window.location.href='index.html';">
+                <i class="fa-brands fa-facebook facebook-icon"></i> Facebook
+            </button>
+        </div>
     </div>
-    
+
+    <!-- Scripts (Tách riêng biệt) -->
+    <script src="js/auth.js"></script>
 </body>
 </html>
